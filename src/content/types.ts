@@ -47,6 +47,8 @@ export type Guide = {
   keywords?: string[];
   /** Wann die Anleitung zuletzt gegen die echte App geprüft wurde, z. B. "2026-11" */
   checked: string;
+  /** Passende Anleitungen (Slugs), werden unter der Anleitung verlinkt */
+  related?: string[];
   /** Zusammenfassung am Ende: "Das haben Sie gelernt" */
   takeaways?: string[];
 };

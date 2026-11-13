@@ -12,6 +12,7 @@ import { AccessBadge, DifficultyMeter, deviceList } from "@/components/GuideMeta
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Icon } from "@/components/Icon";
 import { panel } from "@/components/ui";
+import { GuideCard } from "@/components/GuideCard";
 
 export function generateStaticParams() {
   return guides.map((g) => ({ slug: g.slug }));
@@ -38,6 +39,7 @@ async function GuideContent({ params }: { params: PageProps<"/anleitung/[slug]">
   const guide = getGuide(slug);
   if (!guide) notFound();
   const category = getCategory(guide.category);
+  const related = (guide.related ?? []).map(getGuide).filter((g) => g !== undefined);
 
   return (
     <article>
@@ -84,6 +86,17 @@ async function GuideContent({ params }: { params: PageProps<"/anleitung/[slug]">
           <GuideBody guide={guide} />
         </Suspense>
       </div>
+
+      {related.length > 0 && (
+        <section aria-labelledby="passend" className="no-print mt-14">
+          <h2 id="passend" className="mb-5 text-[1.6rem] font-bold sm:text-3xl">Passende Anleitung</h2>
+          <ul className="grid gap-4 lg:grid-cols-2">
+            {related.map((g) => (
+              <GuideCard key={g.slug} guide={g} />
+            ))}
+          </ul>
+        </section>
+      )}
     </article>
   );
 }

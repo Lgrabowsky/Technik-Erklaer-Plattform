@@ -99,7 +99,7 @@ export const unterwegs: Guide[] = [
   },
   {
     slug: "deutschlandticket-kaufen",
-    title: "Das Deutschlandticket im DB Navigator kaufen und kündigen",
+    title: "Das Deutschlandticket im DB Navigator kaufen",
     summary: "Bus und Bahn im Nahverkehr in ganz Deutschland: So bestellen Sie das Deutschlandticket in der App der Deutschen Bahn – und so kündigen Sie es wieder.",
     category: "unterwegs",
     app: "DB Navigator (App der Deutschen Bahn)",
@@ -109,7 +109,7 @@ export const unterwegs: Guide[] = [
     access: "premium",
     priceCents: 299,
     checked: "2026-11",
-    keywords: ["Deutschlandticket", "Deutschland-Ticket", "D-Ticket", "Nahverkehr", "Abo", "Monatskarte", "kündigen", "DB Navigator"],
+    keywords: ["Deutschlandticket", "Deutschland-Ticket", "D-Ticket", "Nahverkehr", "Abo", "Monatskarte", "bestellen", "DB Navigator"],
     needs: [
       "Die App „DB Navigator“ – rotes Symbol mit weißem „DB“ (aus Play Store bzw. App Store)",
       "Ihre E-Mail-Adresse – für das DB-Kundenkonto",
@@ -168,16 +168,76 @@ export const unterwegs: Guide[] = [
         text: "Haben Sie Ihr Abo vor dem 15. Oktober 2026 bestellt? Dann bittet die Bahn Sie, dem neuen Preis von 66,80 Euro ab Januar 2027 zuzustimmen. Sie bekommen dazu eine Nachricht im DB Navigator bzw. per E-Mail. Tippen Sie dort auf Zustimmen.",
         warning: "Ohne Zustimmung bis zum 30. November 2026 endet Ihr Abo am 31. Dezember 2026. Sie können danach aber jederzeit neu bestellen.",
       },
-      {
-        title: "Kündigen",
-        text: "Tippen Sie unten auf „Tickets“, dann auf „Meine Tickets“ und auf Ihr Deutschland-Ticket. Wischen Sie unter dem Ticket nach oben und tippen Sie auf „Abo kündigen“. Bestätigen Sie die Kündigung.",
-        warning: "Kündigen Sie spätestens am 10. des Monats. Dann endet das Abo am Monatsende. Danach gilt die Kündigung erst zum Ende des nächsten Monats.",
-      },
     ],
     takeaways: [
       "Tickets → Deutschland-Ticket → bestellen.",
       "Ticket steht unter Tickets → Meine Tickets.",
-      "Kündigen bis zum 10. des Monats über „Abo kündigen“.",
     ],
+    related: ["deutschlandticket-kuendigen"],
+  },
+  {
+    slug: "deutschlandticket-kuendigen",
+    title: "Das Deutschlandticket im DB Navigator kündigen",
+    summary: "Sie brauchen das Deutschlandticket nicht mehr? So kündigen Sie Ihr Abo in der App der Deutschen Bahn – und so halten Sie die Frist ein.",
+    category: "unterwegs",
+    app: "DB Navigator (App der Deutschen Bahn)",
+    devices: ["android", "iphone"],
+    difficulty: "leicht",
+    minutes: 5,
+    access: "free",
+    checked: "2026-11",
+    keywords: ["Deutschlandticket", "Deutschland-Ticket", "D-Ticket", "kündigen", "Kündigung", "Abo beenden", "DB Navigator"],
+    needs: [
+      "Die App „DB Navigator“, in der Sie das Ticket gekauft haben",
+      "Ihre Zugangsdaten für das DB-Kundenkonto (E-Mail und Passwort)",
+    ],
+    steps: [
+      {
+        title: "Zuerst: die Frist",
+        text: "Kündigen Sie spätestens am 10. eines Monats. Dann endet Ihr Abo am Ende dieses Monats. Kündigen Sie später, endet es erst am Ende des nächsten Monats.",
+        tip: "Beispiel: Kündigung am 8. März → letzter Tag ist der 31. März. Kündigung am 12. März → letzter Tag ist der 30. April.",
+      },
+      {
+        title: "Sonderfall Preiserhöhung 2027",
+        text: "Haben Sie Ihr Abo vor dem 15. Oktober 2026 bestellt und dem neuen Preis von 66,80 Euro bis 30. November 2026 nicht zugestimmt? Dann endet Ihr Abo am 31. Dezember 2026 von selbst. Sie müssen nicht extra kündigen.",
+      },
+      {
+        title: "DB Navigator öffnen",
+        text: "Tippen Sie auf das rote Symbol mit den weißen Buchstaben „DB“. Sind Sie nicht angemeldet, melden Sie sich mit E-Mail und Passwort an.",
+      },
+      {
+        title: "Unten auf „Tickets“ tippen",
+        text: "Tippen Sie in der Leiste am unteren Bildschirmrand auf „Tickets“.",
+      },
+      {
+        title: "Oben „Meine Tickets“ wählen",
+        text: "Tippen Sie oben auf „Meine Tickets“. Sie sehen jetzt Ihre gekauften Tickets.",
+      },
+      {
+        title: "Ihr Deutschland-Ticket öffnen",
+        text: "Tippen Sie auf „Deutschland-Ticket“. Es öffnet sich das Ticket mit dem Code.",
+      },
+      {
+        title: "Nach unten wischen bis „Abo kündigen“",
+        text: "Legen Sie den Finger auf das Ticket und wischen Sie nach oben. Unter dem Ticket erscheint der Knopf „Abo kündigen“. Tippen Sie darauf.",
+        tip: "Sie sehen den Knopf nicht? Prüfen Sie, ob Sie mit demselben Konto angemeldet sind, mit dem Sie das Ticket gekauft haben.",
+      },
+      {
+        title: "Enddatum prüfen und bestätigen",
+        text: "Die App zeigt Ihnen, bis wann Ihr Ticket noch gilt. Prüfen Sie das Datum und bestätigen Sie die Kündigung.",
+        warning: "Erst nach dem Bestätigen ist die Kündigung wirksam. Schließen Sie die App nicht vorher.",
+      },
+      {
+        title: "Bestätigung aufheben",
+        text: "Sie bekommen eine E-Mail von der Bahn mit der Kündigungsbestätigung. Heben Sie diese E-Mail auf. Ihr Ticket gilt noch bis zum letzten Tag – danach wird nichts mehr abgebucht.",
+        tip: "Kein Handy zur Hand? Kündigen geht auch am Computer auf bahn.de: oben anmelden, dann „Meine Abos“ und „Kündigung“.",
+      },
+    ],
+    takeaways: [
+      "Kündigen bis zum 10. → Abo endet am Monatsende.",
+      "Tickets → Meine Tickets → Deutschland-Ticket → „Abo kündigen“.",
+      "Bestätigungs-E-Mail aufheben.",
+    ],
+    related: ["deutschlandticket-kaufen"],
   },
 ];
