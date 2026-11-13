@@ -59,6 +59,11 @@ async function GuideContent({ params }: { params: PageProps<"/anleitung/[slug]">
           </div>
           <h1 className="mb-4 text-[2rem] font-bold sm:text-5xl">{guide.title}</h1>
           <p className="text-xl text-ink-soft">{guide.summary}</p>
+          {guide.app && (
+            <p className="mt-5 inline-flex flex-wrap items-center gap-x-2 rounded-2xl bg-surface px-4 py-2 text-lg">
+              <span className="text-muted">Gilt für:</span> <strong>{guide.app}</strong>
+            </p>
+          )}
           <p className="mt-4 text-base text-muted">Zuletzt geprüft: {formatChecked(guide.checked)}</p>
         </header>
 

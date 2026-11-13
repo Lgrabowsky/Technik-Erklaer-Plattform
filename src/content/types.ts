@@ -22,6 +22,8 @@ export type Guide = {
   title: string;
   summary: string;
   category: CategorySlug;
+  /** Für welche App / Seite die Anleitung genau gilt, z. B. "DB Navigator" */
+  app?: string;
   devices: Device[];
   difficulty: Difficulty;
   minutes: number;
