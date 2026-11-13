@@ -83,7 +83,7 @@ export const unterwegs: Guide[] = [
       },
       {
         title: "Anmelden oder als Gast kaufen",
-        text: "Haben Sie ein DB-Konto, melden Sie sich an. Sonst können Sie „Ohne Anmeldung buchen“ wählen und Ihren Namen eingeben.",
+        text: "Haben Sie ein DB-Konto, melden Sie sich an. Sonst können Sie „Ohne Anmeldung fortfahren“ wählen und Ihren Namen eingeben.",
         tip: "Mit Konto finden Sie Ihre Fahrkarten jederzeit wieder – auch auf einem neuen Handy.",
       },
       {
