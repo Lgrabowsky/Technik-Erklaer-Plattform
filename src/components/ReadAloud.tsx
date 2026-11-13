@@ -46,7 +46,7 @@ export function ReadAloud({ text }: { text: string }) {
     <button
       type="button"
       onClick={toggle}
-      className="no-print inline-flex min-h-12 items-center gap-2 rounded-lg border-2 border-primary bg-surface px-4 font-bold text-primary hover:bg-primary-soft"
+      className="no-print inline-flex min-h-12 shrink-0 items-center gap-2 rounded-full bg-bg px-5 font-semibold text-ink hover:bg-signal"
     >
       <Icon name="speaker" className="h-6 w-6" />
       {speaking ? "Vorlesen stoppen" : "Vorlesen"}

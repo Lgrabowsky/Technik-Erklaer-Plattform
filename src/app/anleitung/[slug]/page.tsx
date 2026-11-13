@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { Suspense } from "react";
 import { notFound } from "next/navigation";
 import { getGuide, guides } from "@/content/guides";
@@ -9,9 +8,10 @@ import { canAccess, getEntitlements } from "@/lib/entitlements";
 import { StepViewer } from "@/components/StepViewer";
 import { StepContent } from "@/components/StepContent";
 import { Paywall } from "@/components/Paywall";
-import { AccessBadge, DeviceList, DifficultyLabel } from "@/components/GuideMeta";
+import { AccessBadge, DifficultyMeter, deviceList } from "@/components/GuideMeta";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Icon } from "@/components/Icon";
-import { card } from "@/components/ui";
+import { panel } from "@/components/ui";
 
 export function generateStaticParams() {
   return guides.map((g) => ({ slug: g.slug }));
@@ -30,47 +30,44 @@ export default async function GuidePage({ params }: PageProps<"/anleitung/[slug]
   const category = getCategory(guide.category);
 
   return (
-    <article className="space-y-8">
-      <p className="no-print">
-        <Link href={`/kategorie/${guide.category}`} className="text-lg font-bold text-primary underline">
-          ← Zurück zu „{category?.title}“
-        </Link>
-      </p>
+    <article>
+      <Breadcrumbs
+        items={[
+          { href: "/", label: "Start" },
+          { href: `/kategorie/${guide.category}`, label: category?.title ?? "Thema" },
+          { label: "Anleitung" },
+        ]}
+      />
 
-      <header className="space-y-3">
-        <AccessBadge access={guide.access} />
-        <h1 className="text-4xl font-bold">{guide.title}</h1>
-        <p className="text-xl">{guide.summary}</p>
-        <dl className="flex flex-wrap gap-x-8 gap-y-1 text-lg">
-          <div>
-            <dt className="inline font-bold">Schwierigkeit: </dt>
-            <dd className="inline"><DifficultyLabel difficulty={guide.difficulty} /></dd>
+      <div className="grid gap-8 lg:grid-cols-[1fr_22rem]">
+        <header>
+          <div className="mb-4 flex flex-wrap items-center gap-x-5 gap-y-2 text-lg text-ink-soft">
+            <AccessBadge access={guide.access} />
+            <DifficultyMeter difficulty={guide.difficulty} />
+            <span>ca. {guide.minutes} Minuten</span>
+            <span>{deviceList(guide.devices)}</span>
           </div>
-          <div>
-            <dt className="inline font-bold">Dauer: </dt>
-            <dd className="inline">ca. {guide.minutes} Minuten</dd>
-          </div>
-          <div>
-            <dt className="inline font-bold">Für: </dt>
-            <dd className="inline"><DeviceList devices={guide.devices} /></dd>
-          </div>
-        </dl>
-      </header>
+          <h1 className="mb-4 text-[2.4rem] font-bold sm:text-5xl">{guide.title}</h1>
+          <p className="text-xl text-ink-soft">{guide.summary}</p>
+        </header>
 
-      <section aria-labelledby="vorbereitung" className={card}>
-        <h2 id="vorbereitung" className="mb-3 text-2xl font-bold">Das brauchen Sie</h2>
-        <ul className="space-y-2 text-xl">
-          {guide.needs.map((n) => (
-            <li key={n} className="flex gap-3">
-              <Icon name="check" className="mt-1 h-7 w-7 shrink-0 text-success" /> {n}
-            </li>
-          ))}
-        </ul>
-      </section>
+        <aside aria-labelledby="vorbereitung" className="self-start rounded-4xl border-2 border-ink p-6">
+          <h2 id="vorbereitung" className="mb-4 text-xl font-bold">Das brauchen Sie</h2>
+          <ul className="space-y-3">
+            {guide.needs.map((n) => (
+              <li key={n} className="flex gap-3">
+                <Icon name="check" className="mt-1 h-6 w-6 shrink-0" /> {n}
+              </li>
+            ))}
+          </ul>
+        </aside>
+      </div>
 
-      <Suspense fallback={<p className="text-xl">Anleitung wird geladen …</p>}>
-        <GuideBody guide={guide} />
-      </Suspense>
+      <div className="mt-10 space-y-6">
+        <Suspense fallback={<p className="text-xl">Anleitung wird geladen …</p>}>
+          <GuideBody guide={guide} />
+        </Suspense>
+      </div>
     </article>
   );
 }
@@ -83,9 +80,8 @@ async function GuideBody({ guide }: { guide: Guide }) {
     return (
       <>
         {guide.access === "premium" && (
-          <p className="rounded-xl bg-success-soft p-4 text-lg font-bold text-success">
-            <Icon name="check" className="mr-2 inline h-6 w-6" />
-            Freigeschaltet – viel Erfolg!
+          <p className="inline-flex items-center gap-2 rounded-full bg-signal px-5 py-2 text-lg font-semibold">
+            <Icon name="check" className="h-6 w-6" /> Freigeschaltet
           </p>
         )}
         <StepViewer steps={guide.steps} takeaways={guide.takeaways} />
@@ -98,9 +94,12 @@ async function GuideBody({ guide }: { guide: Guide }) {
   const preview = guide.steps[0];
   return (
     <>
-      <section aria-labelledby="vorschau" className={card}>
-        <p className="mb-2 text-lg font-bold">Schritt 1 von {guide.steps.length} (Vorschau)</p>
-        <h2 id="vorschau" className="mb-5 text-3xl font-bold">{preview.title}</h2>
+      <section aria-labelledby="vorschau" className={panel}>
+        <p className="mb-3 text-lg font-semibold">
+          Schritt <span className="text-2xl font-bold">01</span>
+          <span className="text-muted"> / {String(guide.steps.length).padStart(2, "0")} · Vorschau</span>
+        </p>
+        <h2 id="vorschau" className="mb-6 text-[2rem] font-bold sm:text-4xl">{preview.title}</h2>
         <StepContent step={preview} />
       </section>
       <Paywall guide={guide} />

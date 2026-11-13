@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { categories, getCategory } from "@/content/categories";
 import { getGuidesByCategory } from "@/content/guides";
 import { GuideCard } from "@/components/GuideCard";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { Icon } from "@/components/Icon";
 
 export function generateStaticParams() {
   return categories.map((c) => ({ slug: c.slug }));
@@ -21,18 +22,21 @@ export default async function CategoryPage({ params }: PageProps<"/kategorie/[sl
   const list = getGuidesByCategory(slug);
 
   return (
-    <div className="space-y-6">
-      <p>
-        <Link href="/" className="text-lg font-bold text-primary underline">
-          ← Zurück zur Startseite
-        </Link>
-      </p>
-      <h1 className="text-4xl font-bold">{category.title}</h1>
-      <p className="text-xl">{category.description}</p>
+    <div>
+      <Breadcrumbs items={[{ href: "/", label: "Start" }, { href: "/themen", label: "Themen" }, { label: category.title }]} />
+      <div className="mb-10 flex items-center gap-5">
+        <span className="flex h-20 w-20 shrink-0 items-center justify-center rounded-3xl bg-signal">
+          <Icon name={category.icon} className="h-11 w-11" />
+        </span>
+        <div>
+          <h1 className="text-[2.2rem] font-bold sm:text-5xl">{category.title}</h1>
+          <p className="mt-2 text-xl text-ink-soft">{category.description}</p>
+        </div>
+      </div>
       {list.length === 0 ? (
         <p className="text-xl">Hier kommen bald neue Anleitungen.</p>
       ) : (
-        <ul className="grid gap-5 md:grid-cols-2">
+        <ul className="grid gap-4 lg:grid-cols-2">
           {list.map((g) => (
             <GuideCard key={g.slug} guide={g} />
           ))}

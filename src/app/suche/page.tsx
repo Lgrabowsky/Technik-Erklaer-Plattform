@@ -3,13 +3,15 @@ import { Suspense } from "react";
 import { searchGuides } from "@/content/guides";
 import { GuideCard } from "@/components/GuideCard";
 import { SearchForm } from "@/components/SearchForm";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = { title: "Suchen" };
 
 export default function SearchPage({ searchParams }: PageProps<"/suche">) {
   return (
-    <div className="space-y-8">
-      <h1 className="text-4xl font-bold">Anleitung suchen</h1>
+    <div>
+      <Breadcrumbs items={[{ href: "/", label: "Start" }, { label: "Suchen" }]} />
+      <h1 className="mb-8 text-[2.4rem] font-bold sm:text-5xl">Suchen</h1>
       <Suspense fallback={<SearchForm />}>
         <Results searchParams={searchParams} />
       </Suspense>
@@ -25,13 +27,13 @@ async function Results({ searchParams }: { searchParams: PageProps<"/suche">["se
     <>
       <SearchForm defaultValue={q} />
       {q && (
-        <section aria-live="polite" className="space-y-5">
-          <h2 className="text-2xl font-bold">
+        <section aria-live="polite" className="mt-10">
+          <h2 className="mb-6 text-2xl font-bold">
             {results.length === 0
-              ? `Leider nichts gefunden zu „${q}“. Versuchen Sie ein anderes Wort.`
-              : `${results.length} ${results.length === 1 ? "Anleitung" : "Anleitungen"} gefunden`}
+              ? `Leider nichts gefunden zu „${q}“. Versuchen Sie ein anderes Wort oder schauen Sie unter „Themen“.`
+              : `${results.length} ${results.length === 1 ? "Anleitung" : "Anleitungen"} zu „${q}“`}
           </h2>
-          <ul className="grid gap-5 md:grid-cols-2">
+          <ul className="grid gap-4 lg:grid-cols-2">
             {results.map((g) => (
               <GuideCard key={g.slug} guide={g} />
             ))}

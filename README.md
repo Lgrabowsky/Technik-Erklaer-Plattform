@@ -33,9 +33,12 @@ Schreibregeln: „Sie“-Form, kurze Sätze, ein Schritt = eine Handlung, Bedien
 
 ## Barrierefreiheit
 
-- Grundschrift 20 px, umschaltbar auf 24 px und 28 px (wird gemerkt)
-- Schrift „Atkinson Hyperlegible“, speziell für gute Lesbarkeit entwickelt
-- Hoher Kontrast, Links immer unterstrichen, Knöpfe mindestens 56 px hoch
+- Grundschrift 20 px, über „A A A“ oben rechts umschaltbar auf 23 px und 27 px (wird gemerkt)
+- Schrift „Lexend“, entwickelt für leichteres Lesen
+- Farben: Tinte auf warmem Hellgrau, ein Signal-Akzent (Limette) für „aktiv / weiter“; alle Texte mind. 7:1 Kontrast (WCAG AAA)
+- Menü mit vier festen Punkten (Start, Themen, Suchen, Mein Zugang): am Computer oben, am Handy als Leiste unten wie in Handy-Apps
+- „Sie sind hier“-Pfad (Brotkrumen) auf jeder Unterseite
+- Links immer unterstrichen, Knöpfe mindestens 60 px hoch, lange Wörter werden getrennt statt abgeschnitten
 - Deutlicher Fokus-Rahmen für Tastatur, „Zum Inhalt springen“-Link
 - Vorlesefunktion über die Sprachausgabe des Geräts
 - Kein verstecktes Menü, keine Animationen bei „Bewegung reduzieren“

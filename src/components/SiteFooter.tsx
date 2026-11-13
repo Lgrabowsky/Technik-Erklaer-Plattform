@@ -2,18 +2,24 @@ import Link from "next/link";
 
 export function SiteFooter() {
   return (
-    <footer className="no-print mt-16 border-t-4 border-primary bg-surface">
-      <div className="mx-auto max-w-5xl space-y-3 px-4 py-8">
-        <p className="text-lg">
-          <strong>Hilfe bei Betrug:</strong> Polizei-Notruf <a href="tel:110" className="font-bold text-primary underline">110</a> ·
-          Karten-Sperrnotruf <a href="tel:116116" className="font-bold text-primary underline">116 116</a>
-        </p>
-        <p className="flex flex-wrap gap-x-6">
-          <Link href="/preise" className="text-primary underline">Preise</Link>
-          <span>Impressum (folgt)</span>
-          <span>Datenschutz (folgt)</span>
-        </p>
+    <footer className="no-print mt-20 bg-ink text-white">
+      <div className="mx-auto grid max-w-6xl gap-8 px-4 py-12 sm:grid-cols-2">
+        <div>
+          <p className="mb-3 text-lg font-semibold text-signal">Betrug bemerkt?</p>
+          <p className="text-lg">
+            Polizei: <a href="tel:110" className="font-bold text-white underline">110</a>
+            <br />
+            Karte sperren: <a href="tel:116116" className="font-bold text-white underline">116 116</a>
+          </p>
+        </div>
+        <ul className="space-y-2 text-lg sm:text-right">
+          <li><Link href="/preise" className="text-white underline">Preise</Link></li>
+          <li>Impressum (folgt)</li>
+          <li>Datenschutz (folgt)</li>
+        </ul>
       </div>
+      {/* Platz für die feste Menüleiste am Handy */}
+      <div className="h-[4.5rem] lg:hidden" aria-hidden="true" />
     </footer>
   );
 }

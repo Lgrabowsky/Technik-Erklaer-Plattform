@@ -1,6 +1,8 @@
 import type { Category } from "@/content/types";
 
-const paths: Record<Category["icon"] | "lock" | "check" | "search" | "arrow-left" | "arrow-right" | "speaker" | "print", string> = {
+type Extra = "lock" | "check" | "search" | "arrow-left" | "arrow-right" | "speaker" | "print" | "home" | "grid" | "user" | "steps";
+
+const paths: Record<Category["icon"] | Extra, string> = {
   phone: "M8 2h8a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm4 16h.01",
   heart: "M12 21s-7-4.5-9.5-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.5 6C19 16.5 12 21 12 21z",
   train: "M6 3h12a2 2 0 0 1 2 2v10a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V5a2 2 0 0 1 2-2zm-2 8h16M8 15h.01M16 15h.01M8 18l-2 3M16 18l2 3",
@@ -13,6 +15,10 @@ const paths: Record<Category["icon"] | "lock" | "check" | "search" | "arrow-left
   "arrow-right": "M5 12h14m-6-6l6 6-6 6",
   speaker: "M4 9h4l5-4v14l-5-4H4V9zm12 0a4 4 0 0 1 0 6m2.5-8.5a7.5 7.5 0 0 1 0 11",
   print: "M7 9V3h10v6M7 17H4v-7h16v7h-3M7 14h10v7H7z",
+  home: "M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1v-9z",
+  grid: "M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z",
+  user: "M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm-8 9a8 8 0 0 1 16 0",
+  steps: "M4 20h5v-5h5v-5h5V5",
 };
 
 export function Icon({

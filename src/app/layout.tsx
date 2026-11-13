@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
-import { Atkinson_Hyperlegible } from "next/font/google";
+import { Lexend } from "next/font/google";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { textSizeScript } from "@/components/TextSizeToggle";
 import "./globals.css";
 
-// Schrift, die speziell für gute Lesbarkeit bei Sehschwäche entwickelt wurde.
-const readable = Atkinson_Hyperlegible({
-  variable: "--font-readable",
+// Lexend wurde entwickelt, um das Lesen zu erleichtern – klar, modern, gut unterscheidbare Buchstaben.
+const lexend = Lexend({
+  variable: "--font-lexend",
   subsets: ["latin"],
-  weight: ["400", "700"],
+  weight: ["400", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -23,19 +23,19 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="de" className={`${readable.variable} h-full`} suppressHydrationWarning>
+    <html lang="de" className={`${lexend.variable} h-full`} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: textSizeScript }} />
       </head>
       <body className="flex min-h-full flex-col">
         <a
           href="#inhalt"
-          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:bg-surface focus:p-4 focus:text-lg focus:font-bold"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-full focus:bg-signal focus:px-6 focus:py-3 focus:text-lg focus:font-bold"
         >
           Zum Inhalt springen
         </a>
         <SiteHeader />
-        <main id="inhalt" className="mx-auto w-full max-w-5xl flex-1 px-4 py-8">
+        <main id="inhalt" className="mx-auto w-full max-w-6xl flex-1 px-4 pt-8 pb-12 sm:pt-12">
           {children}
         </main>
         <SiteFooter />

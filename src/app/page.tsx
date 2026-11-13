@@ -2,51 +2,79 @@ import Link from "next/link";
 import { categories } from "@/content/categories";
 import { guides } from "@/content/guides";
 import { GuideCard } from "@/components/GuideCard";
-import { Icon } from "@/components/Icon";
+import { CategoryTile } from "@/components/CategoryTile";
 import { SearchForm } from "@/components/SearchForm";
+import { eyebrow } from "@/components/ui";
+
+const quickLinks = [
+  { label: "Arzttermin buchen", href: "/anleitung/arzttermin-online-buchen" },
+  { label: "Fahrkarte kaufen", href: "/anleitung/fahrplan-und-ticket-db-navigator" },
+  { label: "Betrug erkennen", href: "/anleitung/betrug-erkennen-sms-anrufe" },
+  { label: "Schrift vergrößern", href: "/anleitung/schrift-vergroessern" },
+];
 
 export default function Home() {
   const free = guides.filter((g) => g.access === "free");
   return (
-    <div className="space-y-12">
-      <section>
-        <h1 className="mb-3 text-4xl font-bold">Technik einfach erklärt</h1>
-        <p className="mb-6 max-w-3xl text-xl">
-          Hier lernen Sie in Ruhe, wie Sie Ihr Smartphone, Tablet oder Ihren Computer benutzen.
-          Jede Anleitung zeigt Ihnen einen Schritt nach dem anderen.
-        </p>
-        <SearchForm />
+    <div className="space-y-20">
+      <section className="pt-2">
+        <p className={`${eyebrow} mb-4`}>Technik einfach erklärt</p>
+        <h1 className="mb-8 max-w-4xl text-[2.3rem] font-bold sm:text-6xl">
+          Was möchten Sie heute lernen?
+        </h1>
+        <SearchForm label="Tippen Sie ein Stichwort ein:" />
+        <div className="mt-6">
+          <p className="mb-3 text-lg text-muted">Oder direkt starten:</p>
+          <ul className="flex flex-wrap gap-3">
+            {quickLinks.map((q) => (
+              <li key={q.href}>
+                <Link
+                  href={q.href}
+                  className="inline-flex min-h-12 items-center rounded-full bg-surface px-5 text-lg font-semibold text-ink no-underline ring-ink hover:ring-2"
+                >
+                  {q.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <section aria-labelledby="so-gehts">
+        <h2 id="so-gehts" className="sr-only">So funktioniert es</h2>
+        <ol className="grid gap-4 sm:grid-cols-3">
+          {[
+            ["Thema wählen", "Suchen Sie aus, wobei Sie Hilfe brauchen."],
+            ["Schritt für Schritt", "Immer nur eine Sache auf dem Bildschirm."],
+            ["Geschafft", "Am Ende wissen Sie, wie es geht – in Ihrem Tempo."],
+          ].map(([title, text], i) => (
+            <li key={title} className="flex gap-4 border-t-2 border-ink pt-5">
+              <span className="shrink-0 whitespace-nowrap text-4xl font-bold leading-none text-ink">{String(i + 1).padStart(2, "0")}</span>
+              <span>
+                <span className="block text-xl font-bold">{title}</span>
+                <span className="block text-ink-soft">{text}</span>
+              </span>
+            </li>
+          ))}
+        </ol>
       </section>
 
       <section aria-labelledby="themen">
-        <h2 id="themen" className="mb-5 text-3xl font-bold">
-          Wobei brauchen Sie Hilfe?
-        </h2>
-        <ul className="grid gap-5 sm:grid-cols-2">
+        <div className="mb-6 flex flex-wrap items-end justify-between gap-4">
+          <h2 id="themen" className="text-4xl font-bold">Themen</h2>
+          <Link href="/themen" className="text-lg font-semibold text-ink underline">Alle Themen ansehen</Link>
+        </div>
+        <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {categories.map((c) => (
-            <li key={c.slug}>
-              <Link
-                href={`/kategorie/${c.slug}`}
-                className="flex h-full items-start gap-4 rounded-2xl border-[3px] border-primary bg-surface p-6 no-underline hover:bg-primary-soft"
-              >
-                <span className="rounded-xl bg-primary p-3 text-white">
-                  <Icon name={c.icon} className="h-10 w-10" />
-                </span>
-                <span>
-                  <span className="block text-2xl font-bold text-primary underline">{c.title}</span>
-                  <span className="block text-foreground">{c.description}</span>
-                </span>
-              </Link>
-            </li>
+            <CategoryTile key={c.slug} category={c} />
           ))}
         </ul>
       </section>
 
       <section aria-labelledby="kostenlos">
-        <h2 id="kostenlos" className="mb-5 text-3xl font-bold">
-          Kostenlos ausprobieren
-        </h2>
-        <ul className="grid gap-5 md:grid-cols-2">
+        <h2 id="kostenlos" className="mb-2 text-4xl font-bold">Kostenlos ausprobieren</h2>
+        <p className="mb-6 text-xl text-ink-soft">Diese Anleitungen können Sie sofort und ohne Anmeldung nutzen.</p>
+        <ul className="grid gap-4 lg:grid-cols-2">
           {free.map((g) => (
             <GuideCard key={g.slug} guide={g} />
           ))}

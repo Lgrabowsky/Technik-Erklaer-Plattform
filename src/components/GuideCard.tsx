@@ -1,23 +1,31 @@
 import Link from "next/link";
 import type { Guide } from "@/content/types";
-import { DeviceList, DifficultyLabel, AccessBadge } from "./GuideMeta";
+import { AccessBadge, DifficultyMeter, deviceList } from "./GuideMeta";
+import { Icon } from "./Icon";
 
 export function GuideCard({ guide }: { guide: Guide }) {
   return (
     <li>
       <Link
         href={`/anleitung/${guide.slug}`}
-        className="block h-full rounded-2xl border-2 border-border bg-surface p-6 no-underline hover:border-primary hover:bg-primary-soft"
+        className="group flex h-full items-center gap-5 rounded-4xl bg-surface p-6 no-underline ring-ink transition-shadow hover:ring-2 sm:p-7"
       >
-        <div className="mb-2">
-          <AccessBadge access={guide.access} />
-        </div>
-        <h3 className="mb-2 text-2xl font-bold text-primary underline">{guide.title}</h3>
-        <p className="mb-3">{guide.summary}</p>
-        <p className="text-muted">
-          <DifficultyLabel difficulty={guide.difficulty} /> · ca. {guide.minutes} Minuten ·{" "}
-          <DeviceList devices={guide.devices} />
-        </p>
+        <span className="flex-1">
+          <span className="mb-3 flex flex-wrap items-center gap-x-4 gap-y-2 text-base text-muted">
+            <AccessBadge access={guide.access} />
+            <DifficultyMeter difficulty={guide.difficulty} />
+            <span>{guide.minutes} Min.</span>
+          </span>
+          <span className="mb-2 block text-2xl font-bold text-ink">{guide.title}</span>
+          <span className="block text-ink-soft">{guide.summary}</span>
+          <span className="mt-3 block text-base text-muted">Für {deviceList(guide.devices)}</span>
+        </span>
+        <span
+          className="hidden h-14 w-14 shrink-0 items-center justify-center rounded-full bg-bg text-ink transition-colors group-hover:bg-signal sm:flex"
+          aria-hidden="true"
+        >
+          <Icon name="arrow-right" className="h-7 w-7" />
+        </span>
       </Link>
     </li>
   );

@@ -1,74 +1,88 @@
 @import "tailwindcss";
 
 /*
-  Farbschema: bewusst hell, warm und mit sehr hohem Kontrast (WCAG AAA).
-  Alle Farben als Tokens, damit ein Kontrast-Modus später leicht ergänzt werden kann.
+  Designsystem "Klar":
+  - Tinte (fast Schwarz) auf warmem Hellgrau, Weiß für Flächen
+  - Ein einziger Signal-Akzent: Limette. Er markiert immer "hier geht es weiter" / "aktiv".
+  - Alle Text-Kombinationen erreichen mindestens 7:1 Kontrast (WCAG AAA).
 */
 :root {
-  --background: #fffdf7;
+  --bg: #f3f1ec;
   --surface: #ffffff;
-  --foreground: #141414;
-  --muted: #3d3d3d;
-  --primary: #0a3a8c;
-  --primary-hover: #072a66;
-  --primary-soft: #e6eefc;
-  --success: #0b5d2a;
-  --success-soft: #e3f4e8;
-  --warning: #7a3e00;
-  --warning-soft: #fff1d6;
-  --danger: #9b1111;
-  --danger-soft: #fde7e7;
-  --border: #6b6b6b;
-  --focus: #ffbf00;
+  --ink: #0d0f14;
+  --ink-soft: #2e3138;
+  --muted: #454953;
+  --line: #d9d5cc;
+  --signal: #d4ff3a;
+  --signal-soft: #f1ffc4;
+  --mint: #e4f5ec;
+  --danger: #8f1a13;
+  --danger-soft: #fce8e6;
   color-scheme: light;
 }
 
 @theme inline {
-  --color-background: var(--background);
+  --color-bg: var(--bg);
   --color-surface: var(--surface);
-  --color-foreground: var(--foreground);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
   --color-muted: var(--muted);
-  --color-primary: var(--primary);
-  --color-primary-hover: var(--primary-hover);
-  --color-primary-soft: var(--primary-soft);
-  --color-success: var(--success);
-  --color-success-soft: var(--success-soft);
-  --color-warning: var(--warning);
-  --color-warning-soft: var(--warning-soft);
+  --color-line: var(--line);
+  --color-signal: var(--signal);
+  --color-signal-soft: var(--signal-soft);
+  --color-mint: var(--mint);
   --color-danger: var(--danger);
   --color-danger-soft: var(--danger-soft);
-  --color-border: var(--border);
-  --font-sans: var(--font-readable), system-ui, sans-serif;
+  --font-sans: var(--font-lexend), system-ui, sans-serif;
+  --radius-4xl: 2rem;
 }
 
-/* Grundschrift 20px; über den Schalter "Schrift größer" auf 24px bzw. 28px. */
+/* Grundschrift 20px; über "Schriftgröße" auf 23px bzw. 27px. */
 html {
   font-size: 125%;
 }
 html[data-textsize="gross"] {
-  font-size: 150%;
+  font-size: 143.75%;
 }
 html[data-textsize="sehr-gross"] {
-  font-size: 175%;
+  font-size: 168.75%;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: var(--bg);
+  color: var(--ink);
   font-family: var(--font-sans);
   line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  /* Lange deutsche Wörter ("Krankenversicherungskarte") sauber trennen statt überlaufen */
+  hyphens: auto;
+  overflow-wrap: break-word;
 }
 
-/* Gut sichtbarer Fokus-Rahmen für Tastatur-Nutzer */
+/* Grid- und Flex-Kinder dürfen schmaler als ihr längstes Wort werden */
+.grid > *,
+.flex > * {
+  min-width: 0;
+}
+
+h1,
+h2,
+h3 {
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  text-wrap: balance;
+}
+
 :focus-visible {
-  outline: 4px solid var(--focus);
+  outline: 4px solid var(--ink);
   outline-offset: 3px;
-  box-shadow: 0 0 0 7px var(--foreground);
-  border-radius: 6px;
+  box-shadow: 0 0 0 9px var(--signal);
+  border-radius: 12px;
 }
 
 a {
-  text-underline-offset: 0.2em;
+  text-underline-offset: 0.22em;
+  text-decoration-thickness: 2px;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -81,5 +95,8 @@ a {
 @media print {
   .no-print {
     display: none !important;
+  }
+  body {
+    background: white;
   }
 }
