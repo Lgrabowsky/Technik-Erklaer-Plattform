@@ -41,6 +41,8 @@ export type Guide = {
    * "Welches Gerät haben Sie?"
    */
   variants?: Variant[];
+  /** Frage für die Auswahl (Standard: "Welches Gerät haben Sie?") */
+  chooser?: Chooser;
   /** Zusätzliche Suchbegriffe, z. B. "Videotelefonie", "Rezept" */
   keywords?: string[];
   /** Wann die Anleitung zuletzt gegen die echte App geprüft wurde, z. B. "2026-11" */
@@ -49,15 +51,34 @@ export type Guide = {
   takeaways?: string[];
 };
 
+/**
+ * Eine Variante der Anleitung – z. B. für ein Gerät (Android/iPhone)
+ * oder für eine Krankenkasse (TK, AOK, …).
+ */
 export type Variant = {
-  device: Device;
+  device?: Device;
+  /** Name auf dem Auswahl-Knopf, z. B. "TK – Techniker Krankenkasse" */
+  label?: string;
+  /** Kleiner Zusatz unter dem Namen, z. B. "App: TK-App" */
+  hint?: string;
   steps: Step[];
+  /**
+   * Intern: Knopf-Namen konnten noch nicht in der echten App geprüft werden.
+   * Wird Besuchern nicht angezeigt – nur für die Redaktion.
+   */
+  unverified?: boolean;
 };
 
-/** Ein durchklickbarer Ablauf (gemeinsam oder für ein bestimmtes Gerät) */
-export type Flow = {
-  device?: Device;
-  steps: Step[];
+/** Ein durchklickbarer Ablauf (gemeinsam oder eine Variante) */
+export type Flow = Variant;
+
+/** Frage vor den Schritten, wenn es mehrere Varianten gibt */
+export type Chooser = {
+  question: string;
+  hint: string;
+  /** Text des Links zum Wechseln, z. B. "Andere Krankenkasse wählen" */
+  switchLabel: string;
+  icon?: "phone" | "heart";
 };
 
 export type CategorySlug =

@@ -27,7 +27,7 @@ Technik: Next.js 16 (App Router, Cache Components), TypeScript, Tailwind CSS 4.
 
 ### Neue Anleitung hinzufügen
 
-In der passenden Datei unter `src/content/guides/` einen Eintrag ergänzen. Gleicher Ablauf auf allen Geräten → `steps`; unterschiedliche Abläufe für Android und iPhone → `variants` (die Seite fragt dann zuerst „Welches Gerät haben Sie?“). `checked` ist das Datum, an dem die Anleitung zuletzt mit der echten App geprüft wurde. `access: "free"` ist für alle sichtbar, `access: "premium"` braucht Abo oder Einzelkauf (`priceCents` setzt den Einzelpreis).
+In der passenden Datei unter `src/content/guides/` einen Eintrag ergänzen. Gleicher Ablauf auf allen Geräten → `steps`; unterschiedliche Abläufe für Android und iPhone → `variants` (die Seite fragt dann zuerst „Welches Gerät haben Sie?“). Varianten können auch für Krankenkassen o. Ä. gelten – dann mit `label`, `hint` und eigener Frage in `chooser` (Beispiel: `src/content/guides/kassen.ts`). `unverified: true` markiert Varianten, deren Knopf-Namen noch in der echten App nachgeprüft werden müssen. `checked` ist das Datum, an dem die Anleitung zuletzt mit der echten App geprüft wurde. `access: "free"` ist für alle sichtbar, `access: "premium"` braucht Abo oder Einzelkauf (`priceCents` setzt den Einzelpreis).
 
 Schreibregeln: „Sie“-Form, kurze Sätze, ein Schritt = eine Handlung, Bedienelemente in „Anführungszeichen“ genau so benennen, wie sie auf dem Gerät heißen.
 

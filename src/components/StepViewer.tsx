@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import type { Device, Flow } from "@/content/types";
+import type { Chooser, Device, Flow } from "@/content/types";
 import { Icon } from "./Icon";
 import { ReadAloud } from "./ReadAloud";
 import { StepContent, stepSpeechText } from "./StepContent";
@@ -20,7 +20,30 @@ const deviceChoices: Record<Device, { label: string; hint: string }> = {
   computer: { label: "Computer", hint: "Laptop oder PC" },
 };
 
-export function StepViewer({ flows, takeaways }: { flows: Flow[]; takeaways?: string[] }) {
+const deviceChooser: Chooser = {
+  question: "Welches Gerät haben Sie?",
+  hint: "Die Schritte sind je nach Gerät etwas anders. Tippen Sie auf Ihr Gerät.",
+  switchLabel: "Anderes Gerät wählen",
+  icon: "phone",
+};
+
+function flowLabel(f: Flow) {
+  return f.label ?? deviceChoices[f.device ?? "android"].label;
+}
+
+function flowHint(f: Flow) {
+  return f.hint ?? (f.device ? deviceChoices[f.device].hint : undefined);
+}
+
+export function StepViewer({
+  flows,
+  takeaways,
+  chooser = deviceChooser,
+}: {
+  flows: Flow[];
+  takeaways?: string[];
+  chooser?: Chooser;
+}) {
   // Bei mehreren Abläufen (Android / iPhone) zuerst fragen, welches Gerät man hat.
   const [flowIndex, setFlowIndex] = useState<number | null>(flows.length > 1 ? null : 0);
   const [index, setIndex] = useState(0);
@@ -44,46 +67,43 @@ export function StepViewer({ flows, takeaways }: { flows: Flow[]; takeaways?: st
     return (
       <section aria-labelledby="geraet-frage" id="schritt-start" className="scroll-mt-28">
         <div className={panel}>
-          <h2 id="geraet-frage" className="mb-2 text-[1.8rem] font-bold sm:text-4xl">Welches Gerät haben Sie?</h2>
-          <p className="mb-6 text-lg text-ink-soft">Die Schritte sind je nach Gerät etwas anders. Tippen Sie auf Ihr Gerät.</p>
-          <ul className="grid gap-3 sm:grid-cols-2">
-            {flows.map((f, i) => {
-              const choice = deviceChoices[f.device ?? "android"];
-              return (
-                <li key={i}>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      setFlowIndex(i);
-                      setIndex(0);
-                    }}
-                    className="flex w-full items-center gap-4 rounded-3xl border-[3px] border-ink bg-surface p-5 text-left hover:bg-signal"
-                  >
-                    <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-ink text-signal">
-                      <Icon name="phone" className="h-8 w-8" />
-                    </span>
-                    <span>
-                      <span className="block text-xl font-bold">{choice.label}</span>
-                      <span className="block text-base text-ink-soft">{choice.hint}</span>
-                    </span>
-                  </button>
-                </li>
-              );
-            })}
+          <h2 id="geraet-frage" className="mb-2 text-[1.8rem] font-bold sm:text-4xl">{chooser.question}</h2>
+          <p className="mb-6 text-lg text-ink-soft">{chooser.hint}</p>
+          <ul className={`grid gap-3 ${flows.length > 2 ? "sm:grid-cols-2 lg:grid-cols-3" : "sm:grid-cols-2"}`}>
+            {flows.map((f, i) => (
+              <li key={i}>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setFlowIndex(i);
+                    setIndex(0);
+                  }}
+                  className="flex h-full min-h-16 w-full items-center gap-4 rounded-3xl border-[3px] border-ink bg-surface p-4 text-left hover:bg-signal sm:p-5"
+                >
+                  <span className={`h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-ink text-signal ${flows.length > 2 ? "hidden sm:flex" : "flex"}`}>
+                    <Icon name={chooser.icon ?? "phone"} className="h-8 w-8" />
+                  </span>
+                  <span>
+                    <span className="block text-xl font-bold">{flowLabel(f)}</span>
+                    {flowHint(f) && <span className="block text-base text-ink-soft">{flowHint(f)}</span>}
+                  </span>
+                </button>
+              </li>
+            ))}
           </ul>
         </div>
       </section>
     );
   }
 
-  const deviceLabel = flows.length > 1 && flows[flowIndex].device ? deviceChoices[flows[flowIndex].device].label : null;
+  const deviceLabel = flows.length > 1 ? flowLabel(flows[flowIndex]) : null;
   const switchDevice = deviceLabel && (
     <p className="no-print mb-4 flex flex-wrap items-center gap-x-3 text-lg">
       <span>
         Anleitung für: <strong>{deviceLabel}</strong>
       </span>
       <button type="button" className="min-h-12 font-semibold underline underline-offset-4" onClick={() => setFlowIndex(null)}>
-        Anderes Gerät wählen
+        {chooser.switchLabel}
       </button>
     </p>
   );

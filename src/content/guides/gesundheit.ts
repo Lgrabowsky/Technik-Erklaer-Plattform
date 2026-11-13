@@ -1,4 +1,5 @@
 import type { Guide } from "../types";
+import { epaPatientenakte, rechnungEinreichen } from "./kassen";
 
 export const gesundheit: Guide[] = [
   {
@@ -142,117 +143,6 @@ export const gesundheit: Guide[] = [
     ],
     takeaways: ["116117 = Termine und Bereitschaftsdienst, 112 = Notfall.", "Mit Vermittlungscode gibt es einen Facharzttermin innerhalb von 4 Wochen."],
   },
-  {
-    slug: "rechnung-krankenkasse-einreichen",
-    title: "Eine Rechnung bei der Krankenkasse per App einreichen",
-    summary: "Fotografieren statt Brief schicken: So reichen Sie Belege in der App Ihrer Krankenkasse ein.",
-    category: "gesundheit",
-    devices: ["android", "iphone"],
-    difficulty: "anspruchsvoll",
-    minutes: 20,
-    access: "premium",
-    priceCents: 399,
-    checked: "2026-11",
-    keywords: ["Beleg", "Rechnung", "Erstattung", "Krankenkasse", "Zusatzversicherung", "Beihilfe"],
-    needs: [
-      "Die App Ihrer Krankenkasse (z. B. „TK-App“, „BARMER-App“, „AOK Mein Leben“, „DAK App“)",
-      "Ihre Zugangsdaten für die App",
-      "Die Rechnung auf Papier oder als PDF",
-    ],
-    steps: [
-      {
-        title: "Wann reicht man Rechnungen ein?",
-        text: "Privat Versicherte reichen fast alle Arzt- und Apothekenrechnungen ein. Gesetzlich Versicherte nur in bestimmten Fällen – etwa für Zusatzversicherungen, Bonusprogramme oder wenn die Kasse eine Leistung erstattet.",
-        tip: "Unsicher? Rufen Sie kurz bei Ihrer Kasse an und fragen Sie, ob die Rechnung erstattet wird.",
-      },
-      {
-        title: "App öffnen und anmelden",
-        text: "Öffnen Sie die App Ihrer Krankenkasse und melden Sie sich an. Bei der ersten Anmeldung schickt die Kasse oft einen Brief mit Freischalt-Code – das kann einige Tage dauern.",
-      },
-      {
-        title: "„Dokument einreichen“ finden",
-        text: "Suchen Sie einen Knopf wie „Rechnung einreichen“, „Dokumente senden“ oder „Postfach → Neue Nachricht“. Er ist oft auf der Startseite oder unter „Services“.",
-      },
-      {
-        title: "Art der Rechnung wählen",
-        text: "Die App fragt, worum es geht – zum Beispiel „Arztrechnung“, „Arzneimittel“ oder „Bonusprogramm“. Tippen Sie die passende Auswahl an.",
-      },
-      {
-        title: "Rechnung fotografieren",
-        text: "Legen Sie die Rechnung auf einen dunklen Tisch bei gutem Licht. Halten Sie das Handy gerade darüber. Viele Apps erkennen die Ränder und lösen selbst aus. Sonst tippen Sie auf den runden Auslöser.",
-        tip: "Prüfen Sie das Foto: Ist alles scharf und gut lesbar? Wenn nicht, tippen Sie auf „Wiederholen“.",
-      },
-      {
-        title: "Weitere Seiten hinzufügen",
-        text: "Hat die Rechnung mehrere Seiten, tippen Sie auf „Seite hinzufügen“ und fotografieren Sie jede Seite.",
-      },
-      {
-        title: "Absenden",
-        text: "Wählen Sie, für wen die Rechnung ist (z. B. Sie selbst oder mitversicherte Angehörige). Tippen Sie auf „Absenden“. Sie sehen eine Bestätigung.",
-      },
-      {
-        title: "Original aufheben",
-        text: "Heben Sie die Papier-Rechnung noch mindestens bis zur Erstattung auf. Manchmal fragt die Kasse nach.",
-      },
-    ],
-  },
-  {
-    slug: "epa-patientenakte",
-    title: "Die elektronische Patientenakte (ePA) verstehen und einrichten",
-    summary: "Was die ePA ist, was sie für Sie bedeutet und wie Sie sie mit der App Ihrer Kasse ansehen.",
-    category: "gesundheit",
-    devices: ["android", "iphone"],
-    difficulty: "anspruchsvoll",
-    minutes: 30,
-    access: "premium",
-    priceCents: 399,
-    checked: "2026-11",
-    keywords: ["ePA", "Patientenakte", "GesundheitsID", "Befunde", "Widerspruch"],
-    needs: [
-      "Ein neueres Handy mit NFC (fast alle Handys ab ca. 2020)",
-      "Die ePA-App Ihrer Krankenkasse",
-      "Ihre Gesundheitskarte mit PIN – oder Ihren Personalausweis mit Online-Funktion und PIN",
-    ],
-    steps: [
-      {
-        title: "Was ist die ePA?",
-        text: "Die ePA ist eine digitale Akte für Ihre Gesundheitsdaten: Befunde, Arztbriefe und eine Liste Ihrer Medikamente. Seit 2025 haben alle gesetzlich Versicherten eine – außer sie haben widersprochen.",
-      },
-      {
-        title: "Brauche ich die App überhaupt?",
-        text: "Nein. Ihre Praxen und Apotheken können die ePA auch nutzen, wenn Sie die App nie öffnen. Die App brauchen Sie nur, wenn Sie selbst hineinschauen oder festlegen möchten, wer was sehen darf.",
-        tip: "Möchten Sie keine ePA? Dann können Sie bei Ihrer Krankenkasse widersprechen – per Brief, Telefon oder in der App.",
-      },
-      {
-        title: "ePA-App installieren",
-        text: "Laden Sie die ePA-App Ihrer Kasse aus dem App Store oder Play Store. Bei manchen Kassen ist es die normale Kassen-App (z. B. „TK-App“, „AOK Mein Leben“), bei anderen eine eigene App.",
-      },
-      {
-        title: "Ausweisen",
-        text: "Beim ersten Start müssen Sie zeigen, dass Sie es wirklich sind. Wählen Sie eine der angebotenen Möglichkeiten: Gesundheitskarte mit PIN, Personalausweis mit PIN oder eine Prüfung in der Postfiliale (POSTIDENT).",
-        tip: "Keine PIN für Ihre Gesundheitskarte? Die können Sie kostenlos bei Ihrer Krankenkasse bestellen. Sie kommt per Post.",
-      },
-      {
-        title: "Karte ans Handy halten",
-        text: "Wenn Sie die Karte nutzen: Halten Sie sie flach an die Rückseite Ihres Handys (beim iPhone oben, bei Android meist in der Mitte). Halten Sie still, bis die App „Erfolgreich“ meldet.",
-      },
-      {
-        title: "Eigenen Zugangscode festlegen",
-        text: "Die App bittet Sie, einen Code (meist 6 Ziffern) festzulegen. Damit melden Sie sich künftig an. Schreiben Sie ihn an einem sicheren Ort auf – nicht auf das Handy.",
-      },
-      {
-        title: "In die Akte schauen",
-        text: "Tippen Sie auf „Dokumente“ oder „Meine Akte“. Hier sehen Sie, was Praxen eingestellt haben. Unter „Medikationsliste“ finden Sie Ihre verordneten Medikamente.",
-      },
-      {
-        title: "Zugriffe verwalten",
-        text: "Unter „Berechtigungen“ oder „Zugriffe“ können Sie einzelnen Praxen den Zugriff entziehen oder einzelne Dokumente verbergen.",
-      },
-    ],
-    takeaways: [
-      "Die ePA funktioniert auch ohne App.",
-      "Widerspruch ist jederzeit bei der Krankenkasse möglich.",
-      "Den App-Code und die Karten-PIN nie weitergeben.",
-    ],
-  },
+  rechnungEinreichen,
+  epaPatientenakte,
 ];

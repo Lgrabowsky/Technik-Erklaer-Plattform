@@ -100,7 +100,7 @@ async function GuideBody({ guide }: { guide: Guide }) {
             <Icon name="check" className="h-6 w-6" /> Freigeschaltet
           </p>
         )}
-        <StepViewer flows={getFlows(guide)} takeaways={guide.takeaways} />
+        <StepViewer flows={getFlows(guide)} takeaways={guide.takeaways} chooser={guide.chooser} />
       </>
     );
   }
