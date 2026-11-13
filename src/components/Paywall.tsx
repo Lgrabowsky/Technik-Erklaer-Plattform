@@ -1,14 +1,14 @@
 import Link from "next/link";
 import type { Guide } from "@/content/types";
-import { stepCount } from "@/content/guides";
-import { formatEuro, pricing } from "@/config/pricing";
-import { buyGuide, buySubscription } from "@/lib/actions";
+import { formatEuro } from "@/lib/format";
+import { guidePriceCents, stepCount, type Pricing } from "@/lib/content";
 import { Icon } from "./Icon";
 import { btnGhost, btnSignal } from "./ui";
 
-export function Paywall({ guide }: { guide: Guide }) {
-  const price = guide.priceCents ?? pricing.defaultGuideCents;
+export function Paywall({ guide, pricing }: { guide: Guide; pricing: Pricing }) {
+  const price = guidePriceCents(guide, pricing);
   const rest = stepCount(guide) - 1;
+  const back = `/anleitung/${guide.slug}`;
   return (
     <section aria-labelledby="paywall-titel" className="rounded-4xl bg-ink p-5 text-white sm:p-10">
       <div className="mb-8 flex items-center gap-4">
@@ -39,12 +39,9 @@ export function Paywall({ guide }: { guide: Guide }) {
                 </li>
               ))}
             </ul>
-            <form action={buySubscription}>
-              <input type="hidden" name="zurueck" value={`/anleitung/${guide.slug}`} />
-              <button type="submit" className={`${btnSignal} w-full min-h-16 ring-2 ring-ink`}>
-                Alles-Zugang starten
-              </button>
-            </form>
+            <Link href={`/bestellen?art=abo&weiter=${encodeURIComponent(back)}`} className={`${btnSignal} w-full min-h-16 ring-2 ring-ink`}>
+              {pricing.subscription.name} wählen
+            </Link>
           </div>
         )}
 
@@ -56,19 +53,18 @@ export function Paywall({ guide }: { guide: Guide }) {
               <span className="text-lg text-muted">einmalig</span>
             </p>
             <p className="mb-6 flex-1">Einmal zahlen, für immer behalten. Kein Abo, nichts zu kündigen.</p>
-            <form action={buyGuide}>
-              <input type="hidden" name="slug" value={guide.slug} />
-              <button type="submit" className={`${btnGhost} w-full min-h-16`}>
-                Anleitung kaufen
-              </button>
-            </form>
+            <Link href={`/bestellen?art=anleitung&slug=${encodeURIComponent(guide.slug)}`} className={`${btnGhost} w-full min-h-16`}>
+              Diese Anleitung wählen
+            </Link>
           </div>
         )}
       </div>
 
       <p className="mt-6 text-lg text-white/85">
-        <strong className="text-signal">Demo:</strong> Es wird kein Geld abgebucht.{" "}
-        <Link href="/konto" className="font-semibold text-white underline">Meinen Zugang ansehen</Link>
+        Schon gekauft?{" "}
+        <Link href={`/anmelden?weiter=${encodeURIComponent(back)}`} className="font-semibold text-white underline">
+          Hier anmelden
+        </Link>
       </p>
     </section>
   );
