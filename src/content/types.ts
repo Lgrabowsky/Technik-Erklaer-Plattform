@@ -22,6 +22,8 @@ export type Guide = {
   title: string;
   summary: string;
   category: CategorySlug;
+  /** Unterthema (Slug), z. B. "deutschlandticket" */
+  subtopic?: string;
   /** Für welche App / Seite die Anleitung genau gilt, z. B. "DB Navigator" */
   app?: string;
   devices: Device[];
@@ -30,6 +32,8 @@ export type Guide = {
   access: Access;
   /** Preis für den Einzelkauf in Cent (nur bei premium) */
   priceCents?: number;
+  /** Datenbank-ID (für Käufe) */
+  id?: number;
   /** "Das brauchen Sie" – Vorbereitung vor dem Start */
   needs: string[];
   /**
@@ -83,16 +87,21 @@ export type Chooser = {
   icon?: "phone" | "heart";
 };
 
-export type CategorySlug =
-  | "grundlagen"
-  | "gesundheit"
-  | "unterwegs"
-  | "bezahlen"
-  | "sicherheit";
+export type CategorySlug = string;
+
+export type CategoryIcon = "phone" | "heart" | "train" | "card" | "shield";
 
 export type Category = {
   slug: CategorySlug;
   title: string;
   description: string;
-  icon: "phone" | "heart" | "train" | "card" | "shield";
+  icon: CategoryIcon;
+};
+
+/** Unterpunkt innerhalb eines Themengebiets, z. B. Bus & Bahn → Deutschlandticket */
+export type Subtopic = {
+  slug: string;
+  title: string;
+  description?: string;
+  category: CategorySlug;
 };

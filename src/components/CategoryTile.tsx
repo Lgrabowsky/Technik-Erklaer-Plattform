@@ -1,14 +1,12 @@
 import Link from "next/link";
 import type { Category } from "@/content/types";
-import { getGuidesByCategory } from "@/content/guides";
 import { Icon } from "./Icon";
 
-export function CategoryTile({ category }: { category: Category }) {
-  const count = getGuidesByCategory(category.slug).length;
+export function CategoryTile({ category, count, href, label }: { category: Category; count: number; href?: string; label?: string }) {
   return (
     <li>
       <Link
-        href={`/kategorie/${category.slug}`}
+        href={href ?? `/kategorie/${category.slug}`}
         className="group flex h-full flex-col gap-6 rounded-4xl bg-surface p-5 no-underline sm:p-7 transition-colors hover:bg-ink"
       >
         <span className="flex items-start justify-between">
@@ -20,9 +18,8 @@ export function CategoryTile({ category }: { category: Category }) {
           </span>
         </span>
         <span>
-          <span className="mb-1 block text-2xl font-bold text-ink group-hover:text-white">
-            {category.title}
-          </span>
+          {label && <span className="mb-1 block text-base font-semibold text-muted group-hover:text-white">{label}</span>}
+          <span className="mb-1 block text-2xl font-bold text-ink group-hover:text-white">{category.title}</span>
           <span className="block text-ink-soft group-hover:text-white">{category.description}</span>
         </span>
       </Link>
