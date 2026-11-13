@@ -4,31 +4,31 @@ export const categories: Category[] = [
   {
     slug: "grundlagen",
     title: "Smartphone-Grundlagen",
-    description: "Apps installieren, Schrift vergrößern, Fotos verschicken.",
+    description: "Apps installieren, WhatsApp, Videoanrufe, Schrift vergrößern.",
     icon: "phone",
   },
   {
     slug: "gesundheit",
     title: "Gesundheit & Arzt",
-    description: "Arzttermine online buchen, Rechnungen bei der Krankenkasse einreichen.",
+    description: "E-Rezept, Arzttermine, Krankenkassen-App und Patientenakte.",
     icon: "heart",
   },
   {
     slug: "unterwegs",
     title: "Bus & Bahn",
-    description: "Fahrpläne abrufen und Fahrkarten auf dem Handy kaufen.",
+    description: "Verbindungen finden, Fahrkarten und Deutschlandticket kaufen.",
     icon: "train",
   },
   {
     slug: "bezahlen",
     title: "Online bezahlen",
-    description: "Sicher im Internet einkaufen und bezahlen.",
+    description: "Sicher einkaufen, PayPal und Überweisungen per App.",
     icon: "card",
   },
   {
     slug: "sicherheit",
     title: "Sicher im Netz",
-    description: "Betrug, Fälschungen und KI-Inhalte erkennen.",
+    description: "Betrug, Phishing, Fälschungen und KI-Inhalte erkennen; sichere Passwörter.",
     icon: "shield",
   },
 ];

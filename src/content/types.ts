@@ -30,9 +30,32 @@ export type Guide = {
   priceCents?: number;
   /** "Das brauchen Sie" – Vorbereitung vor dem Start */
   needs: string[];
-  steps: Step[];
+  /**
+   * Entweder ein gemeinsamer Ablauf für alle Geräte (`steps`) …
+   */
+  steps?: Step[];
+  /**
+   * … oder getrennte Abläufe je Gerät. Dann fragt die Seite zuerst:
+   * "Welches Gerät haben Sie?"
+   */
+  variants?: Variant[];
+  /** Zusätzliche Suchbegriffe, z. B. "Videotelefonie", "Rezept" */
+  keywords?: string[];
+  /** Wann die Anleitung zuletzt gegen die echte App geprüft wurde, z. B. "2026-11" */
+  checked: string;
   /** Zusammenfassung am Ende: "Das haben Sie gelernt" */
   takeaways?: string[];
+};
+
+export type Variant = {
+  device: Device;
+  steps: Step[];
+};
+
+/** Ein durchklickbarer Ablauf (gemeinsam oder für ein bestimmtes Gerät) */
+export type Flow = {
+  device?: Device;
+  steps: Step[];
 };
 
 export type CategorySlug =

@@ -11,7 +11,7 @@ export default function SearchPage({ searchParams }: PageProps<"/suche">) {
   return (
     <div>
       <Breadcrumbs items={[{ href: "/", label: "Start" }, { label: "Suchen" }]} />
-      <h1 className="mb-8 text-[2.4rem] font-bold sm:text-5xl">Suchen</h1>
+      <h1 className="mb-8 text-[2rem] font-bold sm:text-5xl">Suchen</h1>
       <Suspense fallback={<SearchForm />}>
         <Results searchParams={searchParams} />
       </Suspense>

@@ -17,7 +17,7 @@ Technik: Next.js 16 (App Router, Cache Components), TypeScript, Tailwind CSS 4.
 
 | Pfad | Inhalt |
 | --- | --- |
-| `src/content/guides.ts` | Alle Anleitungen (Titel, Kategorie, Gerät, Schwierigkeit, Vorbereitung, Schritte mit Tipp/Warnung) |
+| `src/content/guides/*.ts` | Alle Anleitungen, eine Datei je Thema (Titel, Gerät, Schwierigkeit, Vorbereitung, Schritte mit Tipp/Warnung, Prüfdatum) |
 | `src/content/categories.ts` | Themenbereiche auf der Startseite |
 | `src/content/types.ts` | Datenmodell für Anleitungen |
 | `src/config/pricing.ts` | Preise und Schalter, welche Kaufwege angezeigt werden |
@@ -27,13 +27,14 @@ Technik: Next.js 16 (App Router, Cache Components), TypeScript, Tailwind CSS 4.
 
 ### Neue Anleitung hinzufügen
 
-In `src/content/guides.ts` einen Eintrag ergänzen. `access: "free"` ist für alle sichtbar, `access: "premium"` braucht Abo oder Einzelkauf (`priceCents` setzt den Einzelpreis).
+In der passenden Datei unter `src/content/guides/` einen Eintrag ergänzen. Gleicher Ablauf auf allen Geräten → `steps`; unterschiedliche Abläufe für Android und iPhone → `variants` (die Seite fragt dann zuerst „Welches Gerät haben Sie?“). `checked` ist das Datum, an dem die Anleitung zuletzt mit der echten App geprüft wurde. `access: "free"` ist für alle sichtbar, `access: "premium"` braucht Abo oder Einzelkauf (`priceCents` setzt den Einzelpreis).
 
 Schreibregeln: „Sie“-Form, kurze Sätze, ein Schritt = eine Handlung, Bedienelemente in „Anführungszeichen“ genau so benennen, wie sie auf dem Gerät heißen.
 
 ## Barrierefreiheit
 
-- Grundschrift 20 px, über „A A A“ oben rechts umschaltbar auf 23 px und 27 px (wird gemerkt)
+- Grundschrift 18 px (Handy 17 px), über „A A A“ oben rechts umschaltbar auf 21/24 px (Handy 19/22 px), wird gemerkt
+- Am Handy klebt die „Weiter“-Leiste über dem Menü, damit sie immer erreichbar ist
 - Schrift „Lexend“, entwickelt für leichteres Lesen
 - Farben: Tinte auf warmem Hellgrau, ein Signal-Akzent (Limette) für „aktiv / weiter“; alle Texte mind. 7:1 Kontrast (WCAG AAA)
 - Menü mit vier festen Punkten (Start, Themen, Suchen, Mein Zugang): am Computer oben, am Handy als Leiste unten wie in Handy-Apps

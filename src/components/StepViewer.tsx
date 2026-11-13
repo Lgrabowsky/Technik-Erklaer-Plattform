@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import type { Step } from "@/content/types";
+import type { Device, Flow } from "@/content/types";
 import { Icon } from "./Icon";
 import { ReadAloud } from "./ReadAloud";
 import { StepContent, stepSpeechText } from "./StepContent";
@@ -14,12 +14,21 @@ const pad = (n: number) => String(n).padStart(2, "0");
  * Zeigt eine Anleitung Schritt für Schritt: immer nur ein Schritt auf dem Bildschirm,
  * große "Zurück"/"Weiter"-Knöpfe, Fortschritt als Segmente und Vorlesefunktion.
  */
-export function StepViewer({ steps, takeaways }: { steps: Step[]; takeaways?: string[] }) {
+const deviceChoices: Record<Device, { label: string; hint: string }> = {
+  android: { label: "Android-Handy", hint: "z. B. Samsung, Xiaomi, Motorola, Google Pixel" },
+  iphone: { label: "iPhone", hint: "von Apple – hinten ist ein Apfel abgebildet" },
+  computer: { label: "Computer", hint: "Laptop oder PC" },
+};
+
+export function StepViewer({ flows, takeaways }: { flows: Flow[]; takeaways?: string[] }) {
+  // Bei mehreren Abläufen (Android / iPhone) zuerst fragen, welches Gerät man hat.
+  const [flowIndex, setFlowIndex] = useState<number | null>(flows.length > 1 ? null : 0);
   const [index, setIndex] = useState(0);
   const [allAtOnce, setAllAtOnce] = useState(false);
   const headingRef = useRef<HTMLHeadingElement>(null);
   const firstRender = useRef(true);
-  const done = index >= steps.length;
+  const steps = flowIndex === null ? [] : flows[flowIndex].steps;
+  const done = flowIndex !== null && index >= steps.length;
 
   useEffect(() => {
     if (firstRender.current) {
@@ -29,11 +38,60 @@ export function StepViewer({ steps, takeaways }: { steps: Step[]; takeaways?: st
     // Fokus auf die neue Überschrift: Bildschirmleser lesen sie vor, die Seite springt zum Schritt.
     headingRef.current?.focus({ preventScroll: true });
     document.getElementById("schritt-start")?.scrollIntoView({ block: "start" });
-  }, [index]);
+  }, [index, flowIndex]);
+
+  if (flowIndex === null) {
+    return (
+      <section aria-labelledby="geraet-frage" id="schritt-start" className="scroll-mt-28">
+        <div className={panel}>
+          <h2 id="geraet-frage" className="mb-2 text-[1.8rem] font-bold sm:text-4xl">Welches Gerät haben Sie?</h2>
+          <p className="mb-6 text-lg text-ink-soft">Die Schritte sind je nach Gerät etwas anders. Tippen Sie auf Ihr Gerät.</p>
+          <ul className="grid gap-3 sm:grid-cols-2">
+            {flows.map((f, i) => {
+              const choice = deviceChoices[f.device ?? "android"];
+              return (
+                <li key={i}>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setFlowIndex(i);
+                      setIndex(0);
+                    }}
+                    className="flex w-full items-center gap-4 rounded-3xl border-[3px] border-ink bg-surface p-5 text-left hover:bg-signal"
+                  >
+                    <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-ink text-signal">
+                      <Icon name="phone" className="h-8 w-8" />
+                    </span>
+                    <span>
+                      <span className="block text-xl font-bold">{choice.label}</span>
+                      <span className="block text-base text-ink-soft">{choice.hint}</span>
+                    </span>
+                  </button>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      </section>
+    );
+  }
+
+  const deviceLabel = flows.length > 1 && flows[flowIndex].device ? deviceChoices[flows[flowIndex].device].label : null;
+  const switchDevice = deviceLabel && (
+    <p className="no-print mb-4 flex flex-wrap items-center gap-x-3 text-lg">
+      <span>
+        Anleitung für: <strong>{deviceLabel}</strong>
+      </span>
+      <button type="button" className="min-h-12 font-semibold underline underline-offset-4" onClick={() => setFlowIndex(null)}>
+        Anderes Gerät wählen
+      </button>
+    </p>
+  );
 
   if (allAtOnce) {
     return (
       <section aria-label="Alle Schritte">
+        {switchDevice}
         <div className="no-print mb-6 flex flex-wrap gap-3">
           <button type="button" className={btnGhost} onClick={() => setAllAtOnce(false)}>
             Zurück zur Schritt-Ansicht
@@ -57,6 +115,7 @@ export function StepViewer({ steps, takeaways }: { steps: Step[]; takeaways?: st
 
   return (
     <section aria-label="Anleitung" id="schritt-start" className="scroll-mt-28">
+      {switchDevice}
       {/* Fortschritt: ein Segment pro Schritt */}
       <div className="mb-5 flex items-center gap-4">
         <p className="shrink-0 text-lg font-semibold tabular-nums" aria-live="polite">
@@ -83,7 +142,7 @@ export function StepViewer({ steps, takeaways }: { steps: Step[]; takeaways?: st
             <span className="flex h-20 w-20 items-center justify-center rounded-full bg-signal">
               <Icon name="check" className="h-11 w-11" />
             </span>
-            <h2 ref={headingRef} tabIndex={-1} className="text-5xl font-bold">
+            <h2 ref={headingRef} tabIndex={-1} className="text-[2.2rem] font-bold sm:text-5xl">
               Geschafft!
             </h2>
             <p className="text-[1.35rem]">Sehr gut gemacht. Sie haben alle Schritte erledigt.</p>
@@ -103,7 +162,7 @@ export function StepViewer({ steps, takeaways }: { steps: Step[]; takeaways?: st
         ) : (
           <>
             <div className="mb-6 flex flex-wrap items-start justify-between gap-4">
-              <h2 ref={headingRef} tabIndex={-1} className="text-[2rem] font-bold sm:text-4xl">
+              <h2 ref={headingRef} tabIndex={-1} className="text-[1.6rem] font-bold sm:text-4xl">
                 {steps[index].title}
               </h2>
               <ReadAloud key={index} text={stepSpeechText(steps[index])} />
@@ -113,22 +172,26 @@ export function StepViewer({ steps, takeaways }: { steps: Step[]; takeaways?: st
         )}
       </div>
 
-      <nav aria-label="Schritte" className="no-print mt-5 flex flex-col-reverse gap-3 sm:flex-row sm:justify-between">
+      {/* Am Handy klebt die Knopfleiste über dem Menü, damit "Weiter" immer erreichbar ist */}
+      <nav
+        aria-label="Schritte"
+        className="no-print sticky bottom-[calc(4.25rem+env(safe-area-inset-bottom))] z-30 -mx-4 mt-4 flex gap-3 bg-bg/95 px-4 py-3 backdrop-blur sm:static sm:mx-0 sm:mt-5 sm:justify-between sm:bg-transparent sm:p-0 lg:bottom-0"
+      >
         {index > 0 ? (
-          <button type="button" className={btnGhost} onClick={() => setIndex(index - 1)}>
+          <button type="button" className={`${btnGhost} min-h-16 px-5`} onClick={() => setIndex(index - 1)}>
             <Icon name="arrow-left" className="h-6 w-6" /> Zurück
           </button>
         ) : (
           <span className="hidden sm:block" />
         )}
         {done ? (
-          <Link href="/themen" className={`${btnPrimary} min-h-16 sm:min-w-64`}>
+          <Link href="/themen" className={`${btnPrimary} min-h-16 flex-1 sm:flex-none sm:min-w-64`}>
             Nächstes Thema wählen
           </Link>
         ) : (
           <button
             type="button"
-            className={`${btnSignal} min-h-16 text-xl sm:min-w-64`}
+            className={`${btnSignal} min-h-16 flex-1 text-xl ring-2 ring-ink sm:flex-none sm:min-w-64`}
             onClick={() => setIndex(index + 1)}
           >
             {index === steps.length - 1 ? "Fertig" : "Weiter"}

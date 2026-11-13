@@ -14,7 +14,7 @@ export default function AccountPage() {
   return (
     <div>
       <Breadcrumbs items={[{ href: "/", label: "Start" }, { label: "Mein Zugang" }]} />
-      <h1 className="mb-10 text-[2.4rem] font-bold sm:text-5xl">Mein Zugang</h1>
+      <h1 className="mb-10 text-[2rem] font-bold sm:text-5xl">Mein Zugang</h1>
       <div className="space-y-4">
         <Suspense fallback={<p className="text-xl">Wird geladen …</p>}>
           <AccountDetails />

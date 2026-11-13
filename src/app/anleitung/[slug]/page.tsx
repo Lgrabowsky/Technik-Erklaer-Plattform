@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import { notFound } from "next/navigation";
-import { getGuide, guides } from "@/content/guides";
+import { formatChecked, getFlows, getGuide, guides, stepCount } from "@/content/guides";
 import { getCategory } from "@/content/categories";
 import type { Guide } from "@/content/types";
 import { canAccess, getEntitlements } from "@/lib/entitlements";
@@ -47,8 +47,9 @@ export default async function GuidePage({ params }: PageProps<"/anleitung/[slug]
             <span>ca. {guide.minutes} Minuten</span>
             <span>{deviceList(guide.devices)}</span>
           </div>
-          <h1 className="mb-4 text-[2.4rem] font-bold sm:text-5xl">{guide.title}</h1>
+          <h1 className="mb-4 text-[2rem] font-bold sm:text-5xl">{guide.title}</h1>
           <p className="text-xl text-ink-soft">{guide.summary}</p>
+          <p className="mt-4 text-base text-muted">Zuletzt geprüft: {formatChecked(guide.checked)}</p>
         </header>
 
         <aside aria-labelledby="vorbereitung" className="self-start rounded-4xl border-2 border-ink p-6">
@@ -84,22 +85,22 @@ async function GuideBody({ guide }: { guide: Guide }) {
             <Icon name="check" className="h-6 w-6" /> Freigeschaltet
           </p>
         )}
-        <StepViewer steps={guide.steps} takeaways={guide.takeaways} />
+        <StepViewer flows={getFlows(guide)} takeaways={guide.takeaways} />
       </>
     );
   }
 
   // Nicht freigeschaltet: Nur Schritt 1 als Vorschau. Die übrigen Schritte
   // werden gar nicht erst an den Browser geschickt.
-  const preview = guide.steps[0];
+  const preview = getFlows(guide)[0].steps[0];
   return (
     <>
       <section aria-labelledby="vorschau" className={panel}>
         <p className="mb-3 text-lg font-semibold">
           Schritt <span className="text-2xl font-bold">01</span>
-          <span className="text-muted"> / {String(guide.steps.length).padStart(2, "0")} · Vorschau</span>
+          <span className="text-muted"> / {String(stepCount(guide)).padStart(2, "0")} · Vorschau</span>
         </p>
-        <h2 id="vorschau" className="mb-6 text-[2rem] font-bold sm:text-4xl">{preview.title}</h2>
+        <h2 id="vorschau" className="mb-6 text-[1.6rem] font-bold sm:text-4xl">{preview.title}</h2>
         <StepContent step={preview} />
       </section>
       <Paywall guide={guide} />

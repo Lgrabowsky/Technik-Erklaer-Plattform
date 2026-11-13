@@ -3,7 +3,7 @@ import type { Step } from "@/content/types";
 export function StepContent({ step }: { step: Step }) {
   return (
     <div className="space-y-5">
-      <p className="text-[1.35rem] leading-relaxed">{step.text}</p>
+      <p className="text-[1.2rem] leading-relaxed sm:text-[1.35rem]">{step.text}</p>
       {step.image && (
         // eslint-disable-next-line @next/next/no-img-element
         <img src={step.image.src} alt={step.image.alt} className="max-h-[60vh] rounded-3xl" />

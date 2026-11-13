@@ -8,7 +8,7 @@ export function GuideCard({ guide }: { guide: Guide }) {
     <li>
       <Link
         href={`/anleitung/${guide.slug}`}
-        className="group flex h-full items-center gap-5 rounded-4xl bg-surface p-6 no-underline ring-ink transition-shadow hover:ring-2 sm:p-7"
+        className="group flex h-full items-center gap-5 rounded-4xl bg-surface p-5 no-underline ring-ink transition-shadow hover:ring-2 sm:p-7"
       >
         <span className="flex-1">
           <span className="mb-3 flex flex-wrap items-center gap-x-4 gap-y-2 text-base text-muted">
@@ -16,7 +16,7 @@ export function GuideCard({ guide }: { guide: Guide }) {
             <DifficultyMeter difficulty={guide.difficulty} />
             <span>{guide.minutes} Min.</span>
           </span>
-          <span className="mb-2 block text-2xl font-bold text-ink">{guide.title}</span>
+          <span className="mb-2 block text-[1.35rem] font-bold text-ink sm:text-2xl">{guide.title}</span>
           <span className="block text-ink-soft">{guide.summary}</span>
           <span className="mt-3 block text-base text-muted">Für {deviceList(guide.devices)}</span>
         </span>

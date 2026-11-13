@@ -9,7 +9,7 @@ export function CategoryTile({ category }: { category: Category }) {
     <li>
       <Link
         href={`/kategorie/${category.slug}`}
-        className="group flex h-full flex-col gap-6 rounded-4xl bg-surface p-7 no-underline transition-colors hover:bg-ink"
+        className="group flex h-full flex-col gap-6 rounded-4xl bg-surface p-5 no-underline sm:p-7 transition-colors hover:bg-ink"
       >
         <span className="flex items-start justify-between">
           <span className="flex h-16 w-16 items-center justify-center rounded-2xl bg-signal text-ink">

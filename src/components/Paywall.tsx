@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Guide } from "@/content/types";
+import { stepCount } from "@/content/guides";
 import { formatEuro, pricing } from "@/config/pricing";
 import { buyGuide, buySubscription } from "@/lib/actions";
 import { Icon } from "./Icon";
@@ -7,9 +8,9 @@ import { btnGhost, btnSignal } from "./ui";
 
 export function Paywall({ guide }: { guide: Guide }) {
   const price = guide.priceCents ?? pricing.defaultGuideCents;
-  const rest = guide.steps.length - 1;
+  const rest = stepCount(guide) - 1;
   return (
-    <section aria-labelledby="paywall-titel" className="rounded-4xl bg-ink p-6 text-white sm:p-10">
+    <section aria-labelledby="paywall-titel" className="rounded-4xl bg-ink p-5 text-white sm:p-10">
       <div className="mb-8 flex items-center gap-4">
         <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-signal text-ink">
           <Icon name="lock" className="h-7 w-7" />

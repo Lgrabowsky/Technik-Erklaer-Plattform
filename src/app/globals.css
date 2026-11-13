@@ -37,15 +37,29 @@
   --radius-4xl: 2rem;
 }
 
-/* Grundschrift 20px; über "Schriftgröße" auf 23px bzw. 27px. */
+/*
+  Schriftgrößen: Normal 18px, Groß 21px, Sehr groß 24px.
+  Auf Handys jeweils etwas kleiner (17 / 19 / 22px), damit mehr Text auf den Bildschirm passt.
+*/
 html {
-  font-size: 125%;
+  font-size: 106.25%;
 }
 html[data-textsize="gross"] {
-  font-size: 143.75%;
+  font-size: 118.75%;
 }
 html[data-textsize="sehr-gross"] {
-  font-size: 168.75%;
+  font-size: 137.5%;
+}
+@media (min-width: 640px) {
+  html {
+    font-size: 112.5%;
+  }
+  html[data-textsize="gross"] {
+    font-size: 131.25%;
+  }
+  html[data-textsize="sehr-gross"] {
+    font-size: 150%;
+  }
 }
 
 body {

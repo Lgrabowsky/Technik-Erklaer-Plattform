@@ -25,11 +25,11 @@ export default async function CategoryPage({ params }: PageProps<"/kategorie/[sl
     <div>
       <Breadcrumbs items={[{ href: "/", label: "Start" }, { href: "/themen", label: "Themen" }, { label: category.title }]} />
       <div className="mb-10 flex items-center gap-5">
-        <span className="flex h-20 w-20 shrink-0 items-center justify-center rounded-3xl bg-signal">
+        <span className="flex h-16 w-16 shrink-0 items-center justify-center rounded-3xl bg-signal sm:h-20 sm:w-20">
           <Icon name={category.icon} className="h-11 w-11" />
         </span>
         <div>
-          <h1 className="text-[2.2rem] font-bold sm:text-5xl">{category.title}</h1>
+          <h1 className="text-[2rem] font-bold sm:text-5xl">{category.title}</h1>
           <p className="mt-2 text-xl text-ink-soft">{category.description}</p>
         </div>
       </div>

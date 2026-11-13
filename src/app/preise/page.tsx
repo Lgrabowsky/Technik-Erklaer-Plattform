@@ -13,7 +13,7 @@ export default function PricingPage() {
   return (
     <div>
       <Breadcrumbs items={[{ href: "/", label: "Start" }, { label: "Preise" }]} />
-      <h1 className="mb-3 text-[2.4rem] font-bold sm:text-5xl">Preise</h1>
+      <h1 className="mb-3 text-[2rem] font-bold sm:text-5xl">Preise</h1>
       <p className="mb-10 max-w-3xl text-xl text-ink-soft">
         Viele Anleitungen sind kostenlos. Für alle weiteren gibt es zwei Wege – Sie entscheiden.
       </p>
