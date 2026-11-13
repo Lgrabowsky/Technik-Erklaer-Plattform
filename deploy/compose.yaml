@@ -1,0 +1,79 @@
+# Startet die Plattform auf dem Hetzner-Server.
+# Aufruf im Ordner /opt/technik-plattform:
+#   docker compose up -d                    (eigener Reverse Proxy ist schon vorhanden)
+#   docker compose --profile caddy up -d    (Caddy übernimmt Port 80/443 und HTTPS)
+
+name: technik-plattform
+
+# Protokolle begrenzen, damit die Festplatte nicht vollläuft (3 x 10 MB je Dienst)
+x-logging: &logging
+  driver: json-file
+  options:
+    max-size: "10m"
+    max-file: "3"
+
+services:
+  app:
+    image: ${APP_IMAGE:-ghcr.io/lgrabowsky/technik-erklaer-plattform:latest}
+    restart: unless-stopped
+    logging: *logging
+    env_file: .env
+    environment:
+      DATABASE_URL: postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@db:5432/${POSTGRES_DB}
+    depends_on:
+      db:
+        condition: service_healthy
+    # Nur lokal erreichbar. Von außen kommt man nur über den Reverse Proxy herein.
+    ports:
+      - "127.0.0.1:${APP_PORT:-3000}:3000"
+    networks: [internal, web]
+    mem_limit: 768m
+
+  db:
+    image: postgres:17-alpine
+    restart: unless-stopped
+    logging: *logging
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    # Kein Port nach außen: Die Datenbank ist nur für die App erreichbar.
+    networks: [internal]
+    mem_limit: 512m
+
+  caddy:
+    profiles: [caddy]
+    image: caddy:2-alpine
+    restart: unless-stopped
+    logging: *logging
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
+    environment:
+      DOMAIN: ${DOMAIN}
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy-data:/data
+      - caddy-config:/config
+    depends_on: [app]
+    networks: [web]
+
+networks:
+  # Nur App und Datenbank, ohne Internetzugang
+  internal:
+    internal: true
+  # App und Caddy, mit Internetzugang (die App braucht ihn für Stripe und E-Mail)
+  web:
+
+volumes:
+  db-data:
+  caddy-data:
+  caddy-config:

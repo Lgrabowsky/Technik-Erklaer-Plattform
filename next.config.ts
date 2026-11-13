@@ -1,7 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  // Schlanker Produktions-Build für Docker (siehe deploy/README.md)
+  output: "standalone",
   cacheComponents: true,
   partialPrefetching: true,
   turbopack: {

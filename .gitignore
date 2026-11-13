@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Vorlage für die Server-Einstellungen gehört ins Repository
+!deploy/.env.example
