@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { notFound } from "next/navigation";
 import { categories, getCategory } from "@/content/categories";
 import { getGuidesByCategory } from "@/content/guides";
@@ -15,7 +16,16 @@ export async function generateMetadata({ params }: PageProps<"/kategorie/[slug]"
   return { title: getCategory(slug)?.title };
 }
 
-export default async function CategoryPage({ params }: PageProps<"/kategorie/[slug]">) {
+// params hinter Suspense lesen – so bleibt die Navigation sofort (Next.js "Instant Navigation").
+export default function CategoryPage({ params }: PageProps<"/kategorie/[slug]">) {
+  return (
+    <Suspense fallback={<p className="text-xl">Wird geladen …</p>}>
+      <CategoryContent params={params} />
+    </Suspense>
+  );
+}
+
+async function CategoryContent({ params }: { params: PageProps<"/kategorie/[slug]">["params"] }) {
   const { slug } = await params;
   const category = getCategory(slug);
   if (!category) notFound();

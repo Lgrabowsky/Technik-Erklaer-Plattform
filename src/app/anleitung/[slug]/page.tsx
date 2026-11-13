@@ -23,7 +23,17 @@ export async function generateMetadata({ params }: PageProps<"/anleitung/[slug]"
   return { title: guide?.title, description: guide?.summary };
 }
 
-export default async function GuidePage({ params }: PageProps<"/anleitung/[slug]">) {
+// Die URL-Daten (params) werden hinter einer Suspense-Grenze gelesen, damit die
+// Navigation sofort reagiert (Next.js "Instant Navigation").
+export default function GuidePage({ params }: PageProps<"/anleitung/[slug]">) {
+  return (
+    <Suspense fallback={<p className="text-xl">Anleitung wird geladen …</p>}>
+      <GuideContent params={params} />
+    </Suspense>
+  );
+}
+
+async function GuideContent({ params }: { params: PageProps<"/anleitung/[slug]">["params"] }) {
   const { slug } = await params;
   const guide = getGuide(slug);
   if (!guide) notFound();
