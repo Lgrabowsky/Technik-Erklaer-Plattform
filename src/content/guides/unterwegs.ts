@@ -25,7 +25,7 @@ export const unterwegs: Guide[] = [
       },
       {
         title: "Auf „Route“ tippen",
-        text: "Unten erscheint das Ziel. Tippen Sie auf den blauen Knopf „Route“.",
+        text: "Unten erscheint das Ziel. Tippen Sie unten links auf den blauen Knopf „Route“.",
       },
       {
         title: "Bus & Bahn wählen",
@@ -34,7 +34,7 @@ export const unterwegs: Guide[] = [
       },
       {
         title: "Abfahrtszeit einstellen",
-        text: "Möchten Sie später fahren, tippen Sie auf „Jetzt abfahren“ und wählen Sie Tag und Uhrzeit. Tippen Sie auf „Fertig“.",
+        text: "Möchten Sie später fahren, tippen Sie oben auf die drei Punkte und dann auf „Start- und Ankunftszeit festlegen“. Wählen Sie „Abfahrt“, stellen Sie Tag und Uhrzeit ein und tippen Sie auf „Übernehmen“.",
       },
       {
         title: "Verbindung ansehen",
@@ -148,7 +148,7 @@ export const unterwegs: Guide[] = [
       {
         title: "Startmonat wählen",
         text: "Wählen Sie, ab welchem Monat das Ticket gelten soll. Sie können auch den laufenden Monat wählen – dann gilt das Ticket sofort.",
-        warning: "Auch wenn Sie mitten im Monat starten, zahlen Sie den vollen Monatspreis. Wer nach dem 10. bestellt, dem werden oft zwei Monate auf einmal abgebucht.",
+        warning: "Auch wenn Sie mitten im Monat starten, zahlen Sie den vollen Monatspreis. Bestellen Sie nach dem 10. des Monats, können Sie frühestens zum Ende des nächsten Monats kündigen – Sie zahlen also mindestens zwei volle Monate.",
       },
       {
         title: "Bezahlart eingeben",
@@ -160,18 +160,19 @@ export const unterwegs: Guide[] = [
       },
       {
         title: "Ticket finden und vorzeigen",
-        text: "Tippen Sie unten auf „Tickets“ und dann oben auf „Meine Tickets“. Dort steht Ihr Deutschland-Ticket. Bei einer Kontrolle öffnen Sie es und zeigen den Code zusammen mit Ihrem Ausweis.",
+        text: "Ihr Ticket kommt nicht sofort: Erst kommt eine Eingangs-E-Mail, danach eine Aktivierungs-E-Mail. Dann tippen Sie unten auf „Reisen“. Dort steht Ihr Deutschland-Ticket. Bei einer Kontrolle öffnen Sie es und zeigen den Code zusammen mit Ihrem Ausweis.",
         tip: "Öffnen Sie das Ticket einmal zu Hause im WLAN. Dann ist es auch unterwegs ohne Internet sichtbar. Und: Handy vor der Fahrt aufladen.",
       },
       {
         title: "Wichtig für bestehende Abos: Preis bis 30. November bestätigen",
-        text: "Haben Sie Ihr Abo vor dem 15. Oktober 2026 bestellt? Dann bittet die Bahn Sie, dem neuen Preis von 66,80 Euro ab Januar 2027 zuzustimmen. Sie bekommen dazu eine Nachricht im DB Navigator bzw. per E-Mail. Tippen Sie dort auf Zustimmen.",
-        warning: "Ohne Zustimmung bis zum 30. November 2026 endet Ihr Abo am 31. Dezember 2026. Sie können danach aber jederzeit neu bestellen.",
+        text: "Haben Sie Ihr Abo vor dem 15. Oktober 2026 bestellt? Dann müssen Sie dem neuen Preis von 66,80 Euro ab Januar 2027 zustimmen. So geht es: Tippen Sie unten auf „Reisen“ und öffnen Sie Ihr Deutschland-Ticket mit dem Code. Wischen Sie ganz nach unten und tippen Sie auf das Menü mit den drei Punkten. Wählen Sie „Vertragsänderungen zustimmen“ und stimmen Sie zu.",
+        tip: "Sie sehen den Punkt nicht? Wählen Sie im selben Menü „zum Abo-Portal“ – dort können Sie ebenfalls zustimmen. Zustimmen kann nur die Person, die das Abo bestellt hat.",
+        warning: "Ohne Zustimmung bis zum 30. November 2026 endet Ihr Abo am 31. Dezember 2026. Verpasst? Dann können Sie das Abo im DB Navigator oder im Abo-Portal über „Abo reaktivieren“ fortsetzen.",
       },
     ],
     takeaways: [
       "Tickets → Deutschland-Ticket → bestellen.",
-      "Ticket steht unter Tickets → Meine Tickets.",
+      "Ihr Ticket steht unten unter „Reisen“.",
     ],
     related: ["deutschlandticket-kuendigen"],
   },
@@ -206,12 +207,9 @@ export const unterwegs: Guide[] = [
         text: "Tippen Sie auf das rote Symbol mit den weißen Buchstaben „DB“. Sind Sie nicht angemeldet, melden Sie sich mit E-Mail und Passwort an.",
       },
       {
-        title: "Unten auf „Tickets“ tippen",
-        text: "Tippen Sie in der Leiste am unteren Bildschirmrand auf „Tickets“.",
-      },
-      {
-        title: "Oben „Meine Tickets“ wählen",
-        text: "Tippen Sie oben auf „Meine Tickets“. Sie sehen jetzt Ihre gekauften Tickets.",
+        title: "Unten auf „Reisen“ tippen",
+        text: "Tippen Sie in der Leiste am unteren Bildschirmrand auf „Reisen“. Sie sehen jetzt Ihre Tickets.",
+        tip: "Ihr Deutschland-Ticket fehlt dort? Tippen Sie oben rechts auf „+“ und geben Sie die Abonummer aus Ihrer Aktivierungs-E-Mail und Ihren Nachnamen ein.",
       },
       {
         title: "Ihr Deutschland-Ticket öffnen",
@@ -219,7 +217,7 @@ export const unterwegs: Guide[] = [
       },
       {
         title: "Nach unten wischen bis „Abo kündigen“",
-        text: "Legen Sie den Finger auf das Ticket und wischen Sie nach oben. Unter dem Ticket erscheint der Knopf „Abo kündigen“. Tippen Sie darauf.",
+        text: "Legen Sie den Finger auf das Ticket und wischen Sie nach oben. Unterhalb des Tickets finden Sie „Abo kündigen“. Tippen Sie darauf.",
         tip: "Sie sehen den Knopf nicht? Prüfen Sie, ob Sie mit demselben Konto angemeldet sind, mit dem Sie das Ticket gekauft haben.",
       },
       {
@@ -230,12 +228,12 @@ export const unterwegs: Guide[] = [
       {
         title: "Bestätigung aufheben",
         text: "Sie bekommen eine E-Mail von der Bahn mit der Kündigungsbestätigung. Heben Sie diese E-Mail auf. Ihr Ticket gilt noch bis zum letzten Tag – danach wird nichts mehr abgebucht.",
-        tip: "Kein Handy zur Hand? Kündigen geht auch am Computer auf bahn.de: oben anmelden, dann „Meine Abos“ und „Kündigung“.",
+        tip: "Kein Handy zur Hand? Kündigen geht auch am Computer im Abo-Portal der Bahn (abo.bahn.de): anmelden, unter „Meine Abos“ auf „Alle Services anzeigen“ und dann auf „Kündigung“ klicken.",
       },
     ],
     takeaways: [
       "Kündigen bis zum 10. → Abo endet am Monatsende.",
-      "Tickets → Meine Tickets → Deutschland-Ticket → „Abo kündigen“.",
+      "Reisen → Deutschland-Ticket → „Abo kündigen“.",
       "Bestätigungs-E-Mail aufheben.",
     ],
     related: ["deutschlandticket-kaufen"],
