@@ -90,7 +90,7 @@ export const gesundheit: Guide[] = [
       },
       {
         title: "Absagen, wenn Sie nicht können",
-        text: "Öffnen Sie die App, tippen Sie auf „Termine“ und wählen Sie den Termin aus. Tippen Sie auf „Termin absagen“. So bekommt jemand anderes den Platz.",
+        text: "Öffnen Sie die App, tippen Sie auf „Meine Termine“ und wählen Sie den Termin aus. Tippen Sie auf „Termin absagen“ und dann auf „Absage bestätigen“. So bekommt jemand anderes den Platz.",
       },
     ],
   },
@@ -128,17 +128,17 @@ export const gesundheit: Guide[] = [
         text: "Am einfachsten: Rufen Sie die 116117 an. Halten Sie Ihre Gesundheitskarte und den Vermittlungscode bereit. Oder öffnen Sie im Internet die Seite 116117-termine.de.",
       },
       {
-        title: "Online: „Termin buchen“ wählen",
-        text: "Tippen Sie auf der Seite auf „Termin buchen“. Geben Sie den Vermittlungscode ein, wenn Sie einen haben. Wählen Sie sonst die Fachrichtung aus.",
+        title: "Online: Postleitzahl und Code eingeben",
+        text: "Auf der Startseite ist „Termin buchen“ schon ausgewählt. Tippen Sie in das Feld „Suchgebiet (PLZ)“ und geben Sie Ihre Postleitzahl ein. Haben Sie einen Vermittlungscode, tippen Sie ihn in das Feld „Vermittlungscode (optional)“. Tippen Sie dann auf „Weiter“.",
       },
       {
-        title: "Ort und Termin auswählen",
-        text: "Geben Sie Ihre Postleitzahl ein. Sie sehen freie Termine in Ihrer Nähe. Tippen Sie auf einen passenden Termin und geben Sie Ihre Kontaktdaten ein.",
+        title: "Fachrichtung und Termin auswählen",
+        text: "Ohne Code sehen Sie die Liste „Ohne Überweisung online buchbar“ (z. B. Hausarzt, Augenarzt, Frauenarzt). Tippen Sie bei der passenden Fachrichtung auf „Termine anzeigen“. Tippen Sie auf einen freien Termin und geben Sie Ihre Kontaktdaten ein.",
         tip: "Die Terminservicestelle muss Ihnen bei dringenden Überweisungen innerhalb von 4 Wochen einen Termin anbieten – allerdings nicht unbedingt bei Ihrer Wunschpraxis.",
       },
       {
         title: "Bestätigung aufheben",
-        text: "Sie bekommen eine Bestätigung per E-Mail oder SMS. Notieren Sie sich den Code. Damit können Sie den Termin auf 116117-termine.de unter „Termin einsehen oder absagen“ wiederfinden.",
+        text: "Sie bekommen eine Bestätigung per E-Mail oder SMS. Notieren Sie sich den Code. Damit können Sie den Termin auf 116117-termine.de oben unter „Buchung verwalten“ einsehen oder absagen.",
       },
     ],
     takeaways: ["116117 = Termine und Bereitschaftsdienst, 112 = Notfall.", "Mit Vermittlungscode gibt es einen Facharzttermin innerhalb von 4 Wochen."],
