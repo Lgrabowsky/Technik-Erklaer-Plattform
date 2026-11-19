@@ -5,8 +5,18 @@ export function StepContent({ step }: { step: Step }) {
     <div className="space-y-5">
       <p className="text-[1.2rem] leading-relaxed sm:text-[1.35rem]">{step.text}</p>
       {step.image && (
-        // eslint-disable-next-line @next/next/no-img-element
-        <img src={step.image.src} alt={step.image.alt} className="max-h-[60vh] rounded-3xl" />
+        <figure className="space-y-2">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={step.image.src}
+            alt={step.image.alt}
+            loading="lazy"
+            className="max-h-[60vh] w-auto max-w-full rounded-2xl border border-ink/10 bg-white"
+          />
+          <figcaption className="text-base text-ink-soft">
+            {step.image.credit}. Rot markiert: hier tippen bzw. klicken.
+          </figcaption>
+        </figure>
       )}
       {step.tip && (
         <div className="flex gap-4 rounded-3xl bg-mint p-5 text-lg">
