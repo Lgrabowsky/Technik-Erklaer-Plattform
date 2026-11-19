@@ -26,7 +26,12 @@ export const bezahlen: Guide[] = [
       },
       {
         title: "Fake-Shop-Finder nutzen",
-        text: "Die Verbraucherzentrale bietet den kostenlosen „Fakeshop-Finder“. Suchen Sie im Internet nach „Fakeshop-Finder Verbraucherzentrale“ und geben Sie dort die Adresse des Shops ein.",
+        text: "Die Verbraucherzentrale bietet den kostenlosen „Fakeshop-Finder“. Suchen Sie im Internet nach „Fakeshop-Finder Verbraucherzentrale“. Tippen Sie die Adresse des Shops in das Feld „www.shop-url.de“ (1) und dann auf den roten Knopf „Shop-URL prüfen“ (2).",
+        image: {
+          src: "/screenshots/sicher-online-bezahlen/fakeshop-finder.webp",
+          alt: "Fakeshop-Finder der Verbraucherzentrale: Eingabefeld für die Shop-Adresse (1) und roter Knopf „Shop-URL prüfen“ (2), beide rot markiert.",
+          credit: "Screenshot: Fakeshop-Finder, verbraucherzentrale.de",
+        },
       },
       {
         title: "Sichere Bezahlart wählen",
@@ -66,8 +71,23 @@ export const bezahlen: Guide[] = [
     steps: [
       {
         title: "Registrieren",
-        text: "Öffnen Sie die PayPal-App oder paypal.com und tippen Sie auf „Neu anmelden“. Wählen Sie „Privat“ und tippen Sie auf „Jetzt starten“.",
+        text: "Öffnen Sie die PayPal-App oder paypal.com und tippen Sie oben rechts auf den schwarzen Knopf „Neu anmelden“.",
         warning: "Laden Sie PayPal nur aus dem App Store oder Play Store, oder tippen Sie paypal.com selbst ein. Folgen Sie nie Links aus E-Mails.",
+        image: {
+          src: "/screenshots/paypal-einrichten/neu-anmelden.webp",
+          alt: "Oberer Rand von paypal.com mit „Hilfe“, „Einloggen“ und dem rot markierten Knopf „Neu anmelden“.",
+          credit: "Screenshot: paypal.com (Ansicht am Computer), PayPal",
+        },
+      },
+      {
+        title: "„Privat“ wählen",
+        text: "Tippen Sie auf das Feld „Privat“ (1), sodass der Kreis davor blau gefüllt ist. Tippen Sie dann auf „Jetzt starten“ (2).",
+        tip: "„Business“ ist nur für Firmen und Händler. Für Sie ist „Privat“ richtig.",
+        image: {
+          src: "/screenshots/paypal-einrichten/privat-jetzt-starten.webp",
+          alt: "Auswahl bei PayPal: Feld „Privat“ (1) ist gewählt und rot markiert, darunter der rot markierte Knopf „Jetzt starten“ (2). Rechts daneben das Feld „Business“.",
+          credit: "Screenshot: paypal.com (Ansicht am Computer), PayPal",
+        },
       },
       {
         title: "Handynummer bestätigen",

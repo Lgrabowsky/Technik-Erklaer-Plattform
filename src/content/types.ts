@@ -13,8 +13,12 @@ export type Step = {
   tip?: string;
   /** Wichtiger Warnhinweis (z. B. Betrugsgefahr) */
   warning?: string;
-  /** Optionales Bild (Pfad unter /public). Wird später durch echte Screenshots ergänzt. */
-  image?: { src: string; alt: string };
+  /**
+   * Optionaler Screenshot (Pfad unter /public). Ausschnitt, rot markiertes Klickziel,
+   * keine persönlichen Daten. `credit` ist die Quellenangabe unter dem Bild,
+   * z. B. "Screenshot: 116117-termine.de, Kassenärztliche Bundesvereinigung".
+   */
+  image?: { src: string; alt: string; credit: string };
 };
 
 export type Guide = {
