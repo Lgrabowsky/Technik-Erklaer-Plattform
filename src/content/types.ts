@@ -55,6 +55,12 @@ export type Guide = {
   related?: string[];
   /** Zusammenfassung am Ende: "Das haben Sie gelernt" */
   takeaways?: string[];
+  /**
+   * Intern (nur Redaktion, wird Besuchern nicht angezeigt): Knopf-Namen dieser Anleitung
+   * konnten noch nicht in der echten App geprüft werden. `reviewNote` sagt, was zu prüfen ist.
+   */
+  unverified?: boolean;
+  reviewNote?: string;
 };
 
 /**
@@ -92,11 +98,12 @@ export type CategorySlug =
   | "gesundheit"
   | "unterwegs"
   | "bezahlen"
-  | "sicherheit";
+  | "sicherheit"
+  | "alltag";
 
 export type Category = {
   slug: CategorySlug;
   title: string;
   description: string;
-  icon: "phone" | "heart" | "train" | "card" | "shield";
+  icon: "phone" | "heart" | "train" | "card" | "shield" | "building";
 };

@@ -4,13 +4,14 @@ import { gesundheit } from "./gesundheit";
 import { unterwegs } from "./unterwegs";
 import { bezahlen } from "./bezahlen";
 import { sicherheit } from "./sicherheit";
+import { alltag } from "./alltag";
 
 /**
  * Alle Anleitungen. Je Thema eine Datei, damit die Redaktion übersichtlich bleibt.
  * Wichtig: App-Oberflächen ändern sich. Jede Anleitung hat ein "checked"-Datum
  * und sollte spätestens alle 6 Monate mit der echten App abgeglichen werden.
  */
-export const guides: Guide[] = [...grundlagen, ...gesundheit, ...unterwegs, ...bezahlen, ...sicherheit];
+export const guides: Guide[] = [...grundlagen, ...gesundheit, ...unterwegs, ...bezahlen, ...sicherheit, ...alltag];
 
 export function getGuide(slug: string) {
   return guides.find((g) => g.slug === slug);

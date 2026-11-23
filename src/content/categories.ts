@@ -31,6 +31,12 @@ export const categories: Category[] = [
     description: "Betrug, Phishing, Fälschungen und KI-Inhalte erkennen; sichere Passwörter.",
     icon: "shield",
   },
+  {
+    slug: "alltag",
+    title: "Ämter & Alltag",
+    description: "Online-Ausweis, Dokumente scannen und per E-Mail verschicken.",
+    icon: "building",
+  },
 ];
 
 export function getCategory(slug: string) {

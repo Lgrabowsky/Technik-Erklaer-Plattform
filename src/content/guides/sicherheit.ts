@@ -173,4 +173,403 @@ export const sicherheit: Guide[] = [
     ],
     takeaways: ["Starke Gefühle sind ein Warnzeichen.", "Quelle prüfen, Details ansehen.", "Familien-Codewort gegen gefälschte Stimmen."],
   },
+  {
+    slug: "whatsapp-zwei-schritt",
+    title: "WhatsApp gegen Diebstahl schützen (Bestätigung in zwei Schritten)",
+    summary: "Mit einer eigenen PIN kann niemand Ihr WhatsApp übernehmen – selbst wenn er Ihren SMS-Code ergaunert.",
+    category: "sicherheit",
+    app: "WhatsApp",
+    devices: ["android", "iphone"],
+    difficulty: "leicht",
+    minutes: 5,
+    access: "free",
+    checked: "2026-11",
+    keywords: ["WhatsApp", "PIN", "Zwei-Faktor", "Bestätigung in zwei Schritten", "Konto gehackt", "übernommen", "Sicherheit"],
+    needs: ["WhatsApp ist eingerichtet", "Eine sechsstellige Zahl, die Sie sich gut merken können (nicht Ihr Geburtsdatum)"],
+    unverified: true,
+    reviewNote: "Weg zu den Einstellungen prüfen: Android „⋮“ oben rechts → „Einstellungen“; iPhone unten rechts „Einstellungen“ (Tab wurde in manchen Versionen umbenannt). Danach „Account“ → „Bestätigung in zwei Schritten“ → „Aktivieren“.",
+    variants: [
+      {
+        device: "android",
+        unverified: true,
+        steps: [
+          {
+            title: "Einstellungen öffnen",
+            text: "Öffnen Sie WhatsApp. Tippen Sie oben rechts auf die drei Punkte (⋮) und dann auf „Einstellungen“.",
+          },
+          {
+            title: "„Account“ öffnen",
+            text: "Tippen Sie auf „Account“ und dann auf „Bestätigung in zwei Schritten“.",
+          },
+          {
+            title: "„Aktivieren“ antippen",
+            text: "Tippen Sie auf „Aktivieren“ bzw. „PIN erstellen“.",
+          },
+          {
+            title: "PIN zweimal eingeben",
+            text: "Tippen Sie eine sechsstellige Zahl ein und tippen Sie auf „Weiter“. Geben Sie sie zur Sicherheit noch einmal ein.",
+            tip: "Schreiben Sie die PIN in Ihr Passwortheft zu Hause.",
+          },
+          {
+            title: "E-Mail-Adresse hinterlegen",
+            text: "WhatsApp fragt nach Ihrer E-Mail-Adresse. Geben Sie sie ein – damit können Sie die PIN zurücksetzen, falls Sie sie vergessen. Bestätigen Sie den Code aus der E-Mail und tippen Sie zum Schluss auf „Fertig“.",
+          },
+        ],
+      },
+      {
+        device: "iphone",
+        unverified: true,
+        steps: [
+          {
+            title: "Einstellungen öffnen",
+            text: "Öffnen Sie WhatsApp und tippen Sie unten rechts auf „Einstellungen“ (Zahnrad).",
+          },
+          {
+            title: "„Account“ öffnen",
+            text: "Tippen Sie auf „Account“ und dann auf „Bestätigung in zwei Schritten“.",
+          },
+          {
+            title: "„Aktivieren“ antippen",
+            text: "Tippen Sie auf „Aktivieren“.",
+          },
+          {
+            title: "PIN zweimal eingeben",
+            text: "Tippen Sie eine sechsstellige Zahl ein und tippen Sie auf „Weiter“. Geben Sie sie noch einmal ein.",
+            tip: "Schreiben Sie die PIN in Ihr Passwortheft zu Hause.",
+          },
+          {
+            title: "E-Mail-Adresse hinterlegen",
+            text: "Geben Sie Ihre E-Mail-Adresse ein, damit Sie die PIN zurücksetzen können. Tippen Sie auf „Weiter“ und zum Schluss auf „Fertig“.",
+          },
+        ],
+      },
+    ],
+    takeaways: ["Mit PIN kann niemand Ihr WhatsApp auf ein anderes Handy holen.", "PIN und SMS-Code nie weitergeben."],
+    related: ["whatsapp-einrichten", "betrug-erkennen-sms-anrufe"],
+  },
+  {
+    slug: "handy-aktualisieren",
+    title: "Das Handy auf den neuesten Stand bringen (Updates)",
+    summary: "Updates schließen Sicherheitslücken. So prüfen Sie, ob Ihr Handy aktuell ist, und installieren Updates.",
+    category: "sicherheit",
+    devices: ["android", "iphone"],
+    difficulty: "leicht",
+    minutes: 10,
+    access: "free",
+    checked: "2026-11",
+    keywords: ["Update", "Softwareupdate", "aktualisieren", "Sicherheitsupdate", "System", "neueste Version"],
+    needs: ["WLAN", "Akku mindestens halb voll oder Ladekabel angesteckt"],
+    variants: [
+      {
+        device: "android",
+        unverified: true,
+        steps: [
+          {
+            title: "Einstellungen öffnen",
+            text: "Tippen Sie auf das Zahnrad-Symbol „Einstellungen“.",
+          },
+          {
+            title: "Update-Bereich öffnen",
+            text: "Samsung: Wischen Sie ganz nach unten und tippen Sie auf „Software-Update“. Andere Handys (z. B. Google Pixel): Tippen Sie auf „System“ und dann auf „Software-Updates“.",
+            tip: "Oben in den Einstellungen gibt es eine Lupe. Tippen Sie „Update“ ein.",
+          },
+          {
+            title: "Nach Updates suchen",
+            text: "Samsung: Tippen Sie auf „Herunterladen und installieren“. Pixel: Tippen Sie auf „Systemupdate“. Das Handy sucht jetzt nach neuen Versionen.",
+          },
+          {
+            title: "Update installieren",
+            text: "Gibt es ein Update, tippen Sie auf „Herunterladen“ bzw. „Jetzt installieren“. Das Handy startet dabei neu. Das kann 15 bis 30 Minuten dauern – lassen Sie es in Ruhe.",
+          },
+          {
+            title: "Auch Apps aktualisieren",
+            text: "Öffnen Sie den Play Store. Tippen Sie oben rechts auf Ihr Profilbild, dann auf „Apps und Gerät verwalten“ und auf „Alle aktualisieren“.",
+          },
+        ],
+      },
+      {
+        device: "iphone",
+        steps: [
+          {
+            title: "Einstellungen öffnen",
+            text: "Tippen Sie auf das graue Zahnrad-Symbol „Einstellungen“.",
+          },
+          {
+            title: "„Allgemein“ antippen",
+            text: "Wischen Sie etwas nach oben und tippen Sie auf „Allgemein“.",
+          },
+          {
+            title: "„Softwareupdate“ öffnen",
+            text: "Tippen Sie auf „Softwareupdate“. Das iPhone sucht nach neuen Versionen.",
+          },
+          {
+            title: "Update installieren",
+            text: "Gibt es ein Update, tippen Sie auf „Jetzt aktualisieren“ bzw. „Jetzt installieren“ und geben Sie Ihren Code ein. Das iPhone startet neu. Lassen Sie es in Ruhe, bis der Sperrbildschirm wieder erscheint.",
+          },
+          {
+            title: "Automatische Updates einschalten",
+            text: "Tippen Sie auf „Automatische Updates“ und schalten Sie alle Schalter ein (grün). Dann aktualisiert sich das iPhone nachts von selbst.",
+          },
+        ],
+      },
+    ],
+    takeaways: ["Updates schützen vor Betrügern.", "Am besten automatische Updates einschalten."],
+    reviewNote: "Android: Samsung- und Pixel-Menünamen prüfen; Play-Store-Weg „Apps und Gerät verwalten“ prüfen.",
+  },
+  {
+    slug: "nummer-blockieren",
+    title: "Lästige Anrufer und Nummern blockieren",
+    summary: "Werbung, Betrüger oder ständige Anrufe: So sperren Sie eine Nummer, damit sie Sie nicht mehr erreicht.",
+    category: "sicherheit",
+    app: "Telefon-App (Android: Google „Telefon“, iPhone: „Telefon“)",
+    devices: ["android", "iphone"],
+    difficulty: "leicht",
+    minutes: 3,
+    access: "free",
+    checked: "2026-11",
+    keywords: ["blockieren", "sperren", "Werbeanruf", "Spam", "unerwünschte Anrufe", "Nummer sperren"],
+    needs: ["Die Nummer steht in Ihrer Anrufliste"],
+    unverified: true,
+    reviewNote: "Android: Weg in Google „Telefon“ (Eintrag lange drücken → „Blockieren/Spam melden“) und Samsung „Telefon“ (anders!) prüfen – ggf. Samsung als eigene Variante. iPhone: Seit iOS 26 neues Layout der Telefon-App, Tab-Namen prüfen.",
+    variants: [
+      {
+        device: "android",
+        unverified: true,
+        steps: [
+          {
+            title: "Telefon-App öffnen",
+            text: "Tippen Sie auf das Symbol mit dem Telefonhörer.",
+          },
+          {
+            title: "Anrufliste öffnen",
+            text: "Tippen Sie unten auf „Anrufliste“ bzw. „Letzte“. Sie sehen die letzten Anrufe.",
+          },
+          {
+            title: "Nummer lange gedrückt halten",
+            text: "Legen Sie den Finger auf die Nummer, die Sie sperren möchten, und lassen Sie ihn kurz liegen. Es öffnet sich ein Menü.",
+          },
+          {
+            title: "„Blockieren“ wählen",
+            text: "Tippen Sie auf „Blockieren/Spam melden“ bzw. „Blockieren“. Bestätigen Sie mit „Blockieren“.",
+            tip: "Ein Haken bei „Als Spam melden“ hilft, andere Menschen vor dieser Nummer zu warnen.",
+          },
+        ],
+      },
+      {
+        device: "iphone",
+        unverified: true,
+        steps: [
+          {
+            title: "Telefon-App öffnen",
+            text: "Tippen Sie auf das grüne Symbol mit dem weißen Telefonhörer.",
+          },
+          {
+            title: "Anrufliste öffnen",
+            text: "Tippen Sie unten auf „Anrufliste“ bzw. „Anrufe“.",
+          },
+          {
+            title: "Infos zur Nummer öffnen",
+            text: "Tippen Sie rechts neben der Nummer auf das kleine „i“ im Kreis.",
+          },
+          {
+            title: "„Anrufer blockieren“",
+            text: "Wischen Sie ganz nach unten und tippen Sie auf „Anrufer blockieren“. Bestätigen Sie mit „Kontakt blockieren“.",
+            tip: "Gegen viele unbekannte Anrufe: Unter „Einstellungen“ → „Apps“ → „Telefon“ gibt es Optionen für unbekannte Anrufer.",
+          },
+        ],
+      },
+    ],
+    takeaways: ["Blockierte Nummern können Sie nicht mehr anrufen oder per SMS erreichen.", "Unerlaubte Werbeanrufe können Sie bei der Bundesnetzagentur melden."],
+    related: ["betrug-erkennen-sms-anrufe"],
+  },
+  {
+    slug: "app-abos-kuendigen",
+    title: "Abos in Apps finden und kündigen",
+    summary: "Monatlich wird Geld für eine App abgebucht? So sehen Sie alle Abos auf Ihrem Handy und kündigen sie.",
+    category: "sicherheit",
+    app: "Play Store (Android) bzw. Einstellungen (iPhone)",
+    devices: ["android", "iphone"],
+    difficulty: "leicht",
+    minutes: 5,
+    access: "free",
+    checked: "2026-11",
+    unverified: true,
+    keywords: ["Abo", "Abofalle", "kündigen", "Abonnement", "abgebucht", "App-Kosten", "Probeabo", "Testphase"],
+    needs: ["Ihr Handy"],
+    variants: [
+      {
+        device: "android",
+        steps: [
+          {
+            title: "Play Store öffnen",
+            text: "Tippen Sie auf das bunte Dreieck „Play Store“.",
+          },
+          {
+            title: "Profilbild antippen",
+            text: "Tippen Sie oben rechts auf Ihr Profilbild oder Ihren Anfangsbuchstaben.",
+          },
+          {
+            title: "„Zahlungen und Abos“ öffnen",
+            text: "Tippen Sie auf „Zahlungen und Abos“ und dann auf „Abos“. Sie sehen alle Abos, die über Google laufen.",
+          },
+          {
+            title: "Abo kündigen",
+            text: "Tippen Sie auf das Abo, das Sie beenden möchten, und dann auf „Abo kündigen“. Geben Sie einen Grund an und bestätigen Sie.",
+            tip: "Sie können das Abo bis zum Ende des bezahlten Zeitraums weiter nutzen.",
+          },
+        ],
+      },
+      {
+        device: "iphone",
+        steps: [
+          {
+            title: "Einstellungen öffnen",
+            text: "Tippen Sie auf das graue Zahnrad-Symbol „Einstellungen“.",
+          },
+          {
+            title: "Ihren Namen antippen",
+            text: "Tippen Sie ganz oben auf Ihren Namen.",
+          },
+          {
+            title: "„Abonnements“ öffnen",
+            text: "Tippen Sie auf „Abonnements“. Sie sehen alle aktiven und abgelaufenen Abos.",
+          },
+          {
+            title: "Abo kündigen",
+            text: "Tippen Sie auf das Abo und dann ganz unten auf „Abo kündigen“. Bestätigen Sie mit „Bestätigen“.",
+            tip: "Steht dort „Abgelaufen“, wird nichts mehr abgebucht.",
+          },
+        ],
+      },
+    ],
+    takeaways: ["Probeabos laufen oft automatisch weiter – rechtzeitig kündigen.", "Löschen einer App kündigt das Abo nicht!"],
+    reviewNote: "Android „Zahlungen und Abos“ (bzw. „Zahlungen & Abos“) und iPhone „Abonnements“ – Schreibweise prüfen.",
+  },
+  {
+    slug: "notruf-sos-einrichten",
+    title: "Notruf per Tastendruck einrichten (Notruf SOS)",
+    summary: "Im Notfall mehrmals die Seitentaste drücken – und das Handy ruft die 112. So schalten Sie die Funktion ein.",
+    category: "sicherheit",
+    devices: ["android", "iphone"],
+    difficulty: "leicht",
+    minutes: 5,
+    access: "free",
+    checked: "2026-11",
+    keywords: ["Notruf", "SOS", "112", "Notfall", "Hilfe", "Sturz", "Seitentaste"],
+    needs: ["Ihr Handy", "Optional: einen Notfallkontakt (siehe „Notfall-Infos im Handy hinterlegen“)"],
+    variants: [
+      {
+        device: "android",
+        unverified: true,
+        steps: [
+          {
+            title: "Einstellungen öffnen",
+            text: "Tippen Sie auf das Zahnrad-Symbol „Einstellungen“.",
+          },
+          {
+            title: "„Sicherheit und Notfall“ öffnen",
+            text: "Tippen Sie auf „Sicherheit und Notfall“ und dann auf „Notruf-SOS“.",
+          },
+          {
+            title: "Funktion einschalten",
+            text: "Schalten Sie den Schalter oben ein. Ab jetzt gilt: Drücken Sie fünfmal schnell die Seitentaste, ruft das Handy die 112 an.",
+          },
+          {
+            title: "Notfallkontakte informieren (optional)",
+            text: "Darunter können Sie einstellen, dass Ihre Notfallkontakte eine Nachricht mit Ihrem Standort bekommen.",
+            warning: "Probieren Sie die Funktion nicht aus – sonst ruft das Handy wirklich die 112. Bei einem versehentlichen Anruf: Nicht auflegen, sondern kurz sagen, dass es ein Versehen war.",
+          },
+        ],
+      },
+      {
+        device: "iphone",
+        steps: [
+          {
+            title: "Einstellungen öffnen",
+            text: "Tippen Sie auf das graue Zahnrad-Symbol „Einstellungen“.",
+          },
+          {
+            title: "„Notruf SOS“ öffnen",
+            text: "Wischen Sie nach oben und tippen Sie auf „Notruf SOS“ (rotes Symbol mit „SOS“).",
+          },
+          {
+            title: "Auslöser einstellen",
+            text: "Schalten Sie „Mit Halten und Loslassen anrufen“ ein. Möchten Sie lieber fünfmal drücken, schalten Sie „Mit 5x Drücken anrufen“ ein.",
+            tip: "„Halten und Loslassen“: Seitentaste und eine Lautstärketaste gleichzeitig gedrückt halten, bis der Countdown läuft.",
+          },
+          {
+            title: "Notfallkontakte prüfen",
+            text: "Unter „Notfallkontakte“ sehen Sie, wer nach einem Notruf eine Nachricht mit Ihrem Standort bekommt. Bearbeiten Sie die Kontakte in der App „Health“ im Notfallpass.",
+            warning: "Probieren Sie die Funktion nicht aus – sonst ruft das iPhone wirklich die 112. Bei einem versehentlichen Anruf: Nicht auflegen, sondern kurz sagen, dass es ein Versehen war.",
+          },
+        ],
+      },
+    ],
+    takeaways: ["Mehrmals Seitentaste drücken = Notruf 112.", "Nicht ausprobieren – der Anruf ist echt."],
+    reviewNote: "Android: Menüweg „Sicherheit und Notfall“ → „Notruf-SOS“ bei Samsung und Pixel prüfen.",
+    related: ["notfallpass-handy"],
+  },
+  {
+    slug: "bildschirmsperre-einrichten",
+    title: "Eine Bildschirmsperre einrichten (PIN oder Fingerabdruck)",
+    summary: "Verloren oder gestohlen: Mit einer Sperre kommt niemand an Ihre Fotos, Nachrichten und Ihr Konto.",
+    category: "sicherheit",
+    devices: ["android", "iphone"],
+    difficulty: "leicht",
+    minutes: 10,
+    access: "premium",
+    priceCents: 199,
+    checked: "2026-11",
+    keywords: ["Sperre", "PIN", "Code", "Fingerabdruck", "Face ID", "Gesichtserkennung", "Sperrbildschirm", "entsperren"],
+    needs: ["Ihr Handy", "Eine Zahl (mindestens 6 Ziffern), die Sie sich merken können – nicht Ihr Geburtsdatum"],
+    variants: [
+      {
+        device: "android",
+        unverified: true,
+        steps: [
+          {
+            title: "Einstellungen öffnen",
+            text: "Tippen Sie auf das Zahnrad-Symbol „Einstellungen“.",
+          },
+          {
+            title: "Sperrbildschirm-Bereich öffnen",
+            text: "Samsung: Tippen Sie auf „Sperrbildschirm und AOD“ und dann auf „Sperrbildschirmtyp“. Andere Handys (z. B. Google Pixel): Tippen Sie auf „Sicherheit und Datenschutz“ → „Entsperren des Geräts“ → „Displaysperre“.",
+            tip: "Schneller: Oben auf die Lupe tippen und „Sperre“ eingeben.",
+          },
+          {
+            title: "„PIN“ wählen",
+            text: "Tippen Sie auf „PIN“. Geben Sie mindestens sechs Ziffern ein, tippen Sie auf „Weiter“ und wiederholen Sie die PIN zur Bestätigung.",
+          },
+          {
+            title: "Fingerabdruck hinzufügen (optional)",
+            text: "Das Handy bietet danach „Fingerabdrücke“ an. Folgen Sie den Anweisungen und legen Sie den Finger mehrmals auf den Sensor, bis 100 Prozent erreicht sind.",
+          },
+        ],
+      },
+      {
+        device: "iphone",
+        steps: [
+          {
+            title: "Einstellungen öffnen",
+            text: "Tippen Sie auf das graue Zahnrad-Symbol „Einstellungen“.",
+          },
+          {
+            title: "„Face ID & Code“ öffnen",
+            text: "Tippen Sie auf „Face ID & Code“ (iPhone ohne Home-Taste) bzw. „Touch ID & Code“ (iPhone mit Home-Taste).",
+          },
+          {
+            title: "„Code aktivieren“",
+            text: "Tippen Sie auf „Code aktivieren“. Geben Sie einen sechsstelligen Code ein und wiederholen Sie ihn.",
+          },
+          {
+            title: "Gesicht oder Finger einrichten (optional)",
+            text: "Tippen Sie auf „Face ID konfigurieren“ bzw. „Fingerabdruck hinzufügen“ und folgen Sie den Anweisungen.",
+          },
+        ],
+      },
+    ],
+    takeaways: ["Ohne Sperre kann jeder Finder Ihr Handy benutzen.", "Code aufschreiben und sicher zu Hause aufbewahren."],
+    reviewNote: "Android: Samsung („Sperrbildschirm und AOD“) und Pixel-Menüweg prüfen.",
+    related: ["sichere-passwoerter"],
+  },
 ];
