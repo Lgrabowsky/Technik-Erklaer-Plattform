@@ -18,7 +18,7 @@ export type Step = {
    * keine persönlichen Daten. `credit` ist die Quellenangabe unter dem Bild,
    * z. B. "Screenshot: 116117-termine.de, Kassenärztliche Bundesvereinigung".
    */
-  image?: { src: string; alt: string; credit: string };
+  image?: { src: string; alt: string; credit?: string };
 };
 
 export type Guide = {

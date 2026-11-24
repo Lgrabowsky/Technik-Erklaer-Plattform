@@ -16,7 +16,7 @@ export function StepContent({ step }: { step: Step }) {
             />
           </a>
           <figcaption className="text-base text-ink-soft">
-            {step.image.credit}. Die hell umrandete Stelle ist die, auf die Sie tippen bzw. klicken. Antippen vergrößert das Bild.
+            {step.image.credit ? `${step.image.credit}. ` : ""}Die hell umrandete Stelle ist die, auf die Sie tippen bzw. klicken. Antippen vergrößert das Bild.
           </figcaption>
         </figure>
       )}

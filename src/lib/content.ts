@@ -42,7 +42,7 @@ function toStep(s: StepDoc): Step {
     text: s.text,
     tip: s.tip || undefined,
     warning: s.warning || undefined,
-    image: img?.url ? { src: img.sizes?.gross?.url || img.url, alt: img.alt } : undefined,
+    image: img?.url ? { src: img.url, alt: img.alt, credit: img.credit || undefined } : undefined,
   };
 }
 

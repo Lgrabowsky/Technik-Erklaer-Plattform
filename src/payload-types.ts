@@ -321,6 +321,10 @@ export interface Media {
    * Was ist auf dem Bild zu sehen? Wird vorgelesen, wenn jemand das Bild nicht sehen kann.
    */
   alt: string;
+  /**
+   * Pflicht bei Screenshots fremder Seiten oder Apps, z. B. „Screenshot: paypal.com, PayPal“. Wird unter dem Bild angezeigt.
+   */
+  credit?: string | null;
   updatedAt: string;
   createdAt: string;
   url?: string | null;
@@ -647,6 +651,7 @@ export interface SubtopicsSelect<T extends boolean = true> {
  */
 export interface MediaSelect<T extends boolean = true> {
   alt?: T;
+  credit?: T;
   updatedAt?: T;
   createdAt?: T;
   url?: T;
