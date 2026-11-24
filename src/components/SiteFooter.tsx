@@ -24,6 +24,9 @@ export function SiteFooter() {
           <li>AGB &amp; Widerrufsbelehrung (folgt)</li>
         </ul>
       </div>
+      <p className="mx-auto max-w-6xl px-4 pb-10 text-base text-white">
+        Unabhängiges Angebot, nicht mit den genannten Anbietern verbunden. Alle Marken gehören ihren Inhabern.
+      </p>
       {/* Platz für die feste Menüleiste am Handy */}
       <div className="h-[4.5rem] lg:hidden" aria-hidden="true" />
     </footer>

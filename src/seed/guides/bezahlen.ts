@@ -26,7 +26,12 @@ export const bezahlen: Guide[] = [
       },
       {
         title: "Fake-Shop-Finder nutzen",
-        text: "Die Verbraucherzentrale bietet den kostenlosen „Fakeshop-Finder“. Suchen Sie im Internet nach „Fakeshop-Finder Verbraucherzentrale“ und geben Sie dort die Adresse des Shops ein.",
+        text: "Die Verbraucherzentrale bietet den kostenlosen „Fakeshop-Finder“. Suchen Sie im Internet nach „Fakeshop-Finder Verbraucherzentrale“. Tippen Sie die Adresse des Shops in das Feld „www.shop-url.de“ (1) und dann auf den roten Knopf „Shop-URL prüfen“ (2).",
+        image: {
+          src: "/screenshots/sicher-online-bezahlen/fakeshop-finder.webp",
+          alt: "Fakeshop-Finder der Verbraucherzentrale: Eingabefeld für die Shop-Adresse (1) und roter Knopf „Shop-URL prüfen“ (2); beide markiert.",
+          credit: "Screenshot: Fakeshop-Finder, verbraucherzentrale.de",
+        },
       },
       {
         title: "Sichere Bezahlart wählen",
@@ -66,8 +71,23 @@ export const bezahlen: Guide[] = [
     steps: [
       {
         title: "Registrieren",
-        text: "Öffnen Sie die PayPal-App und tippen Sie auf „Registrieren“. Wählen Sie „Privatkonto“.",
+        text: "Öffnen Sie die PayPal-App oder paypal.com und tippen Sie oben rechts auf den schwarzen Knopf „Neu anmelden“.",
         warning: "Laden Sie PayPal nur aus dem App Store oder Play Store, oder tippen Sie paypal.com selbst ein. Folgen Sie nie Links aus E-Mails.",
+        image: {
+          src: "/screenshots/paypal-einrichten/neu-anmelden.webp",
+          alt: "Startseite von paypal.com. Oben rechts: „Hilfe“, „Einloggen“ und dem markierten Knopf „Neu anmelden“.",
+          credit: "Screenshot: paypal.com (Ansicht am Computer), PayPal",
+        },
+      },
+      {
+        title: "„Privat“ wählen",
+        text: "Tippen Sie auf das Feld „Privat“ (1), sodass der Kreis davor blau gefüllt ist. Tippen Sie dann auf „Jetzt starten“ (2).",
+        tip: "„Business“ ist nur für Firmen und Händler. Für Sie ist „Privat“ richtig.",
+        image: {
+          src: "/screenshots/paypal-einrichten/privat-jetzt-starten.webp",
+          alt: "Auswahl bei PayPal: Feld „Privat“ (1) ist gewählt und markiert, darunter der markierte Knopf „Jetzt starten“ (2). Rechts daneben das Feld „Business“.",
+          credit: "Screenshot: paypal.com (Ansicht am Computer), PayPal",
+        },
       },
       {
         title: "Handynummer bestätigen",
@@ -143,7 +163,7 @@ export const bezahlen: Guide[] = [
       },
       {
         title: "Ergebnis der Namensprüfung lesen",
-        text: "Die Sparkasse prüft jetzt in wenigen Sekunden, ob Name und IBAN zusammenpassen. Grün heißt: passt. Bei „nahezu übereinstimmend“ zeigt die App den richtigen Namen – prüfen Sie, ob das der gewünschte Empfänger ist.",
+        text: "Die Sparkasse prüft jetzt in wenigen Sekunden, ob Name und IBAN zusammenpassen. Grün heißt: passt. Bei „nahezu übereinstimmend“ zeigt die App den richtigen Namen und bietet an, ihn zu übernehmen – prüfen Sie vorher, ob das der gewünschte Empfänger ist.",
         warning: "Steht dort, dass Name und IBAN nicht übereinstimmen: Brechen Sie ab. Rufen Sie den Empfänger unter einer Ihnen bekannten Nummer an. Genau so arbeiten Betrüger mit gefälschten Rechnungen.",
       },
       {
@@ -152,7 +172,7 @@ export const bezahlen: Guide[] = [
       },
       {
         title: "In S-pushTAN freigeben",
-        text: "Eine Mitteilung von S-pushTAN erscheint – tippen Sie darauf (oder öffnen Sie die App S-pushTAN). Prüfen Sie dort noch einmal Empfänger und Betrag und tippen Sie auf „Freigeben“.",
+        text: "Eine Mitteilung von S-pushTAN erscheint – tippen Sie darauf (oder öffnen Sie die App S-pushTAN). Prüfen Sie dort noch einmal Empfänger und Betrag und tippen Sie auf „Auftrag freigeben“.",
         warning: "Geben Sie nur frei, was Sie selbst gerade eingegeben haben. Ruft Sie jemand an und bittet um eine Freigabe: auflegen.",
       },
       {
