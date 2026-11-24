@@ -20,5 +20,14 @@ export const Media: CollectionConfig = {
       required: true,
       admin: { description: "Was ist auf dem Bild zu sehen? Wird vorgelesen, wenn jemand das Bild nicht sehen kann." },
     },
+    {
+      name: "credit",
+      label: "Quellenangabe",
+      type: "text",
+      admin: {
+        description:
+          "Pflicht bei Screenshots fremder Seiten oder Apps, z. B. „Screenshot: paypal.com, PayPal“. Wird unter dem Bild angezeigt.",
+      },
+    },
   ],
 };

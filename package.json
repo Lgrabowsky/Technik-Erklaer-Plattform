@@ -12,6 +12,7 @@
     "generate:types": "cross-env NODE_OPTIONS=--no-deprecation payload generate:types",
     "generate:importmap": "cross-env NODE_OPTIONS=--no-deprecation payload generate:importmap",
     "seed": "cross-env NODE_OPTIONS=--no-deprecation payload run src/seed/run.ts",
+    "seed:aktualisieren": "cross-env NODE_OPTIONS=--no-deprecation payload run src/seed/aktualisieren.ts",
     "admin:anlegen": "cross-env NODE_OPTIONS=--no-deprecation payload run src/seed/create-admin.ts",
     "stripe:webhook": "stripe listen --forward-to localhost:3000/zahlung/webhook"
   },

@@ -293,7 +293,7 @@ export const epaPatientenakte: Guide = {
   checked: "2026-11",
   keywords: ["ePA", "Patientenakte", "GesundheitsID", "Befunde", "Widerspruch", "TK", "AOK", "BARMER", "DAK", "IKK", "KKH", "hkk"],
   needs: [
-    "Ein neueres Handy mit NFC (fast alle Handys ab etwa 2020)",
+    "Ein Handy mit NFC und mindestens Android 14 bzw. iOS 18 – ältere Versionen lassen die ePA-Apps nicht mehr zu (Einstellungen → „Über das Telefon“ bzw. „Allgemein“ → „Info“)",
     "Ihre Gesundheitskarte und die PIN dazu – oder Ihren Personalausweis mit Online-Funktion und PIN",
     "Etwa 30 Minuten Ruhe",
   ],
@@ -306,18 +306,18 @@ export const epaPatientenakte: Guide = {
       steps: [
         {
           title: "Zwei Apps laden: TK-App und TK-Ident",
-          text: "Bei der TK steckt die ePA in der normalen „TK-App“. Zum Ausweisen brauchen Sie einmalig zusätzlich die App „TK-Ident“. Laden Sie beide aus dem Play Store bzw. App Store.",
+          text: "Bei der TK heißt die ePA „TK-Safe“ und steckt in der normalen „TK-App“. Zum Ausweisen brauchen Sie zusätzlich die App „TK-Ident“. Laden Sie beide aus dem Play Store bzw. App Store.",
+          tip: "Melden Sie sich in der TK-App mit Ihren „Meine TK“-Zugangsdaten an. Beim ersten Mal kommt ein 8-stelliger Freischaltcode per Post.",
         },
         {
-          title: "TK-App öffnen und ePA starten",
-          text: "Öffnen Sie die TK-App und melden Sie sich an. Tippen Sie auf „TK-Safe“ bzw. „ePA“ und dann auf „Jetzt einrichten“.",
-          tip: suchTipp("ePA"),
-        },
-        {
-          title: "Mit TK-Ident ausweisen",
-          text: "Die TK-App schickt Sie zur App „TK-Ident“. Dort legen Sie Ihre GesundheitsID an.",
+          title: "TK-Ident einrichten",
+          text: "Öffnen Sie „TK-Ident“ und folgen Sie den Hinweisen. Sie legen dort einen 6-stelligen Sicherheitscode fest und weisen sich mit Ihrer Gesundheitskarte oder Ihrem Personalausweis aus.",
         },
         karteAnsHandy,
+        {
+          title: "TK-Safe in der TK-App öffnen",
+          text: "Öffnen Sie die TK-App und tippen Sie auf den Menüpunkt „TK-Safe Patientenakte“. Folgen Sie der Anleitung in der App.",
+        },
       ],
     }),
     epaVariante({

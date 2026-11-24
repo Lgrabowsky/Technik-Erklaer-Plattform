@@ -9,7 +9,7 @@ import config from "@payload-config";
 import { categories } from "./categories";
 import { guides } from "./guides";
 import { seedQuickLinks, seedSubtopics } from "./subtopics";
-import type { Step } from "../content/types";
+import { toStepData } from "./media";
 
 const payload = await getPayload({ config });
 
@@ -17,9 +17,6 @@ async function findId(collection: "categories" | "subtopics" | "guides", slug: s
   const r = await payload.find({ collection, where: { slug: { equals: slug } }, limit: 1, depth: 0, draft: true });
   return r.docs[0]?.id as number | undefined;
 }
-
-const toSteps = (steps: Step[] = []) =>
-  steps.map((s) => ({ title: s.title, text: s.text, tip: s.tip, warning: s.warning }));
 
 let created = 0;
 
@@ -72,15 +69,17 @@ for (const [i, g] of guides.entries()) {
         needs: g.needs.map((text) => ({ text })),
         takeaways: (g.takeaways ?? []).map((text) => ({ text })),
         mode: g.variants?.length ? "variants" : "steps",
-        steps: toSteps(g.steps),
+        steps: await toStepData(payload, g.steps),
         chooser: g.chooser,
-        variants: (g.variants ?? []).map((v) => ({
-          device: v.device,
-          label: v.label,
-          hint: v.hint,
-          unverified: v.unverified ?? false,
-          steps: toSteps(v.steps),
-        })),
+        variants: await Promise.all(
+          (g.variants ?? []).map(async (v) => ({
+            device: v.device,
+            label: v.label,
+            hint: v.hint,
+            unverified: v.unverified ?? false,
+            steps: await toStepData(payload, v.steps),
+          })),
+        ),
         keywords: g.keywords ?? [],
         checked: new Date(`${g.checked}-01T12:00:00Z`).toISOString(),
         order: (i + 1) * 10,
