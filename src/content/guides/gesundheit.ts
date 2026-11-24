@@ -65,7 +65,12 @@ export const gesundheit: Guide[] = [
       },
       {
         title: "Konto anlegen",
-        text: "Beim ersten Mal tippen Sie auf „Registrieren“ bzw. „Konto erstellen“. Geben Sie Ihre E-Mail-Adresse und ein Passwort ein. Schreiben Sie das Passwort an einem sicheren Ort auf.",
+        text: "Beim ersten Mal brauchen Sie ein Konto. Auf doctolib.de tippen Sie oben rechts auf „Einloggen“. Unter „Neu bei Doctolib?“ tippen Sie auf den blauen Knopf „Registrieren“. Geben Sie Ihre E-Mail-Adresse und ein Passwort ein. Schreiben Sie das Passwort an einem sicheren Ort auf.",
+        image: {
+          src: "/screenshots/arzttermin-online-buchen/registrieren.webp",
+          alt: "Doctolib-Seite „Neu bei Doctolib?“ mit dem markierten blauen Knopf „Registrieren“. Darunter „Haben Sie bereits ein Konto?“ mit „Einloggen“.",
+          credit: "Screenshot: doctolib.de (Ansicht am Computer), Doctolib",
+        },
       },
       {
         title: "Handynummer bestätigen",
@@ -73,7 +78,12 @@ export const gesundheit: Guide[] = [
       },
       {
         title: "Praxis suchen",
-        text: "Tippen Sie in das Suchfeld den Namen Ihrer Ärztin oder Ihres Arztes ein – oder die Fachrichtung (z. B. „Hausarzt“) und Ihren Ort. Tippen Sie in der Liste auf die richtige Praxis.",
+        text: "Tippen Sie in das linke Feld „Name, Fachgebiet, Einrichtung“ (1) den Namen Ihrer Ärztin oder Ihres Arztes ein – oder die Fachrichtung, z. B. „Hausarzt“. Tippen Sie in das Feld daneben (2) Ihren Ort oder Ihre Postleitzahl. Tippen Sie dann auf „Suchen“ (3) und in der Liste auf die richtige Praxis.",
+        image: {
+          src: "/screenshots/arzttermin-online-buchen/praxis-suchen.webp",
+          alt: "Suchleiste auf doctolib.de: Feld „Name, Fachgebiet, Einrichtung“ (1), Feld für Ort oder Postleitzahl (2) und Knopf „Suchen“ (3); alle markiert.",
+          credit: "Screenshot: doctolib.de (Ansicht am Computer), Doctolib",
+        },
       },
       {
         title: "Fragen zum Besuch beantworten",
@@ -129,16 +139,31 @@ export const gesundheit: Guide[] = [
       },
       {
         title: "Online: Postleitzahl und Code eingeben",
-        text: "Auf der Startseite ist „Termin buchen“ schon ausgewählt. Tippen Sie in das Feld „Suchgebiet (PLZ)“ und geben Sie Ihre Postleitzahl ein. Haben Sie einen Vermittlungscode, tippen Sie ihn in das Feld „Vermittlungscode (optional)“. Tippen Sie dann auf „Weiter“.",
+        text: "Auf der Startseite ist „Termin buchen“ schon ausgewählt. Tippen Sie in das Feld „Suchgebiet (PLZ)“ (1) und geben Sie Ihre Postleitzahl ein. Haben Sie einen Vermittlungscode, tippen Sie ihn in das Feld „Vermittlungscode (optional)“. Tippen Sie dann auf „Weiter“ (2).",
+        image: {
+          src: "/screenshots/termin-116117/plz-eingeben.webp",
+          alt: "Startseite von 116117-termine.de: Feld „Suchgebiet (PLZ)“ mit Beispiel-Postleitzahl (1) und Knopf „Weiter“ (2); beide markiert. Daneben das Feld „Vermittlungscode (optional)“.",
+          credit: "Screenshot: 116117-termine.de (Ansicht am Computer), Kassenärztliche Bundesvereinigung",
+        },
       },
       {
         title: "Fachrichtung und Termin auswählen",
         text: "Ohne Code sehen Sie die Liste „Ohne Überweisung online buchbar“ (z. B. Hausarzt, Augenarzt, Frauenarzt). Tippen Sie bei der passenden Fachrichtung auf „Termine anzeigen“. Tippen Sie auf einen freien Termin und geben Sie Ihre Kontaktdaten ein.",
+        image: {
+          src: "/screenshots/termin-116117/termine-anzeigen.webp",
+          alt: "Liste „Ohne Überweisung online buchbar“ mit Hausarzt, Augenarzt und Frauenarzt. Beim Hausarzt ist „Termine anzeigen“ markiert.",
+          credit: "Screenshot: 116117-termine.de (Ansicht am Computer), Kassenärztliche Bundesvereinigung",
+        },
         tip: "Die Terminservicestelle muss Ihnen bei dringenden Überweisungen innerhalb von 4 Wochen einen Termin anbieten – allerdings nicht unbedingt bei Ihrer Wunschpraxis.",
       },
       {
         title: "Bestätigung aufheben",
         text: "Sie bekommen eine Bestätigung per E-Mail oder SMS. Notieren Sie sich den Code. Damit können Sie den Termin auf 116117-termine.de oben unter „Buchung verwalten“ einsehen oder absagen.",
+        image: {
+          src: "/screenshots/termin-116117/buchung-verwalten.webp",
+          alt: "Oberer Bereich von 116117-termine.de mit den Reitern „Termin buchen“ und „Buchung verwalten“. „Buchung verwalten“ ist markiert.",
+          credit: "Screenshot: 116117-termine.de (Ansicht am Computer), Kassenärztliche Bundesvereinigung",
+        },
       },
     ],
     takeaways: ["116117 = Termine und Bereitschaftsdienst, 112 = Notfall.", "Mit Vermittlungscode gibt es einen Facharzttermin innerhalb von 4 Wochen."],
