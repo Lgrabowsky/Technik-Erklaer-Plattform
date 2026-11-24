@@ -14,11 +14,11 @@ export type Step = {
   /** Wichtiger Warnhinweis (z. B. Betrugsgefahr) */
   warning?: string;
   /**
-   * Optionaler Screenshot (Pfad unter /public). Ausschnitt, rot markiertes Klickziel,
+   * Optionaler Screenshot (Pfad unter /public). ganzer Bildschirm, Klickziel markiert im Plattform-Stil (Limette mit dunklem Rand),
    * keine persönlichen Daten. `credit` ist die Quellenangabe unter dem Bild,
    * z. B. "Screenshot: 116117-termine.de, Kassenärztliche Bundesvereinigung".
    */
-  image?: { src: string; alt: string; credit: string };
+  image?: { src: string; alt: string; credit?: string };
 };
 
 export type Guide = {
@@ -26,6 +26,8 @@ export type Guide = {
   title: string;
   summary: string;
   category: CategorySlug;
+  /** Unterthema (Slug), z. B. "deutschlandticket" */
+  subtopic?: string;
   /** Für welche App / Seite die Anleitung genau gilt, z. B. "DB Navigator" */
   app?: string;
   devices: Device[];
@@ -34,6 +36,8 @@ export type Guide = {
   access: Access;
   /** Preis für den Einzelkauf in Cent (nur bei premium) */
   priceCents?: number;
+  /** Datenbank-ID (für Käufe) */
+  id?: number;
   /** "Das brauchen Sie" – Vorbereitung vor dem Start */
   needs: string[];
   /**
@@ -93,17 +97,21 @@ export type Chooser = {
   icon?: "phone" | "heart";
 };
 
-export type CategorySlug =
-  | "grundlagen"
-  | "gesundheit"
-  | "unterwegs"
-  | "bezahlen"
-  | "sicherheit"
-  | "alltag";
+export type CategorySlug = string;
+
+export type CategoryIcon = "phone" | "heart" | "train" | "card" | "shield" | "building";
 
 export type Category = {
   slug: CategorySlug;
   title: string;
   description: string;
-  icon: "phone" | "heart" | "train" | "card" | "shield" | "building";
+  icon: CategoryIcon;
+};
+
+/** Unterpunkt innerhalb eines Themengebiets, z. B. Bus & Bahn → Deutschlandticket */
+export type Subtopic = {
+  slug: string;
+  title: string;
+  description?: string;
+  category: CategorySlug;
 };

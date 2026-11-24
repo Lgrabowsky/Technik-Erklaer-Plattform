@@ -1,0 +1,16 @@
+# Datenbank für die lokale Entwicklung.
+# Starten: docker compose up -d   (braucht Docker Desktop)
+services:
+  db:
+    image: postgres:17
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: plattform
+      POSTGRES_PASSWORD: plattform
+      POSTGRES_DB: plattform
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+volumes:
+  pgdata:
