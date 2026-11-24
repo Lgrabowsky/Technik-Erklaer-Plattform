@@ -6,15 +6,17 @@ export function StepContent({ step }: { step: Step }) {
       <p className="text-[1.2rem] leading-relaxed sm:text-[1.35rem]">{step.text}</p>
       {step.image && (
         <figure className="space-y-2">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={step.image.src}
-            alt={step.image.alt}
-            loading="lazy"
-            className="max-h-[60vh] w-auto max-w-full rounded-2xl border border-ink/10 bg-white"
-          />
+          <a href={step.image.src} target="_blank" rel="noopener" className="block" aria-label="Bild groß anzeigen (öffnet neues Fenster)">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={step.image.src}
+              alt={step.image.alt}
+              loading="lazy"
+              className="max-h-[75vh] w-auto max-w-full rounded-2xl bg-ink"
+            />
+          </a>
           <figcaption className="text-base text-ink-soft">
-            {step.image.credit}. Rot markiert: hier tippen bzw. klicken.
+            {step.image.credit}. Die hell umrandete Stelle ist die, auf die Sie tippen bzw. klicken. Antippen vergrößert das Bild.
           </figcaption>
         </figure>
       )}

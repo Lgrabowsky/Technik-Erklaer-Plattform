@@ -14,7 +14,7 @@ export type Step = {
   /** Wichtiger Warnhinweis (z. B. Betrugsgefahr) */
   warning?: string;
   /**
-   * Optionaler Screenshot (Pfad unter /public). Ausschnitt, rot markiertes Klickziel,
+   * Optionaler Screenshot (Pfad unter /public). ganzer Bildschirm, Klickziel markiert im Plattform-Stil (Limette mit dunklem Rand),
    * keine persönlichen Daten. `credit` ist die Quellenangabe unter dem Bild,
    * z. B. "Screenshot: 116117-termine.de, Kassenärztliche Bundesvereinigung".
    */

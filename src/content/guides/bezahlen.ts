@@ -29,7 +29,7 @@ export const bezahlen: Guide[] = [
         text: "Die Verbraucherzentrale bietet den kostenlosen „Fakeshop-Finder“. Suchen Sie im Internet nach „Fakeshop-Finder Verbraucherzentrale“. Tippen Sie die Adresse des Shops in das Feld „www.shop-url.de“ (1) und dann auf den roten Knopf „Shop-URL prüfen“ (2).",
         image: {
           src: "/screenshots/sicher-online-bezahlen/fakeshop-finder.webp",
-          alt: "Fakeshop-Finder der Verbraucherzentrale: Eingabefeld für die Shop-Adresse (1) und roter Knopf „Shop-URL prüfen“ (2), beide rot markiert.",
+          alt: "Fakeshop-Finder der Verbraucherzentrale: Eingabefeld für die Shop-Adresse (1) und roter Knopf „Shop-URL prüfen“ (2); beide markiert.",
           credit: "Screenshot: Fakeshop-Finder, verbraucherzentrale.de",
         },
       },
@@ -75,7 +75,7 @@ export const bezahlen: Guide[] = [
         warning: "Laden Sie PayPal nur aus dem App Store oder Play Store, oder tippen Sie paypal.com selbst ein. Folgen Sie nie Links aus E-Mails.",
         image: {
           src: "/screenshots/paypal-einrichten/neu-anmelden.webp",
-          alt: "Oberer Rand von paypal.com mit „Hilfe“, „Einloggen“ und dem rot markierten Knopf „Neu anmelden“.",
+          alt: "Startseite von paypal.com. Oben rechts: „Hilfe“, „Einloggen“ und dem markierten Knopf „Neu anmelden“.",
           credit: "Screenshot: paypal.com (Ansicht am Computer), PayPal",
         },
       },
@@ -85,7 +85,7 @@ export const bezahlen: Guide[] = [
         tip: "„Business“ ist nur für Firmen und Händler. Für Sie ist „Privat“ richtig.",
         image: {
           src: "/screenshots/paypal-einrichten/privat-jetzt-starten.webp",
-          alt: "Auswahl bei PayPal: Feld „Privat“ (1) ist gewählt und rot markiert, darunter der rot markierte Knopf „Jetzt starten“ (2). Rechts daneben das Feld „Business“.",
+          alt: "Auswahl bei PayPal: Feld „Privat“ (1) ist gewählt und markiert, darunter der markierte Knopf „Jetzt starten“ (2). Rechts daneben das Feld „Business“.",
           credit: "Screenshot: paypal.com (Ansicht am Computer), PayPal",
         },
       },
