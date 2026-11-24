@@ -45,6 +45,13 @@ async function attachImages(dbSteps: DbStep[] | null | undefined, seedSteps: Ste
   return { steps, changed, missing };
 }
 
+// Zuerst alle Bilder auffrischen (neue Fassung der Datei oder neue Quellenangabe)
+for (const g of guides) {
+  for (const st of [...(g.steps ?? []), ...(g.variants ?? []).flatMap((v) => v.steps)]) {
+    if (st.image) await ensureImage(payload, st.image);
+  }
+}
+
 for (const g of guides) {
   const found = await payload.find({ collection: "guides", where: { slug: { equals: g.slug } }, limit: 1, depth: 0, draft: true });
   const doc = found.docs[0];

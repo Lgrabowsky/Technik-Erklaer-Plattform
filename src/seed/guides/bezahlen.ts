@@ -30,7 +30,7 @@ export const bezahlen: Guide[] = [
         image: {
           src: "/screenshots/sicher-online-bezahlen/fakeshop-finder.webp",
           alt: "Fakeshop-Finder der Verbraucherzentrale: Eingabefeld für die Shop-Adresse (1) und roter Knopf „Shop-URL prüfen“ (2); beide markiert.",
-          credit: "Screenshot: Fakeshop-Finder, verbraucherzentrale.de",
+          credit: "verbraucherzentrale.de (Fakeshop-Finder)",
         },
       },
       {
@@ -76,7 +76,7 @@ export const bezahlen: Guide[] = [
         image: {
           src: "/screenshots/paypal-einrichten/neu-anmelden.webp",
           alt: "Startseite von paypal.com. Oben rechts: „Hilfe“, „Einloggen“ und dem markierten Knopf „Neu anmelden“.",
-          credit: "Screenshot: paypal.com (Ansicht am Computer), PayPal",
+          credit: "paypal.com",
         },
       },
       {
@@ -86,7 +86,7 @@ export const bezahlen: Guide[] = [
         image: {
           src: "/screenshots/paypal-einrichten/privat-jetzt-starten.webp",
           alt: "Auswahl bei PayPal: Feld „Privat“ (1) ist gewählt und markiert, darunter der markierte Knopf „Jetzt starten“ (2). Rechts daneben das Feld „Business“.",
-          credit: "Screenshot: paypal.com (Ansicht am Computer), PayPal",
+          credit: "paypal.com",
         },
       },
       {

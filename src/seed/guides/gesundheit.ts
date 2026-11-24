@@ -69,7 +69,7 @@ export const gesundheit: Guide[] = [
         image: {
           src: "/screenshots/arzttermin-online-buchen/registrieren.webp",
           alt: "Doctolib-Seite „Neu bei Doctolib?“ mit dem markierten blauen Knopf „Registrieren“. Darunter „Haben Sie bereits ein Konto?“ mit „Einloggen“.",
-          credit: "Screenshot: doctolib.de (Ansicht am Computer), Doctolib",
+          credit: "doctolib.de",
         },
       },
       {
@@ -82,7 +82,7 @@ export const gesundheit: Guide[] = [
         image: {
           src: "/screenshots/arzttermin-online-buchen/praxis-suchen.webp",
           alt: "Suchleiste auf doctolib.de: Feld „Name, Fachgebiet, Einrichtung“ (1), Feld für Ort oder Postleitzahl (2) und Knopf „Suchen“ (3); alle markiert.",
-          credit: "Screenshot: doctolib.de (Ansicht am Computer), Doctolib",
+          credit: "doctolib.de",
         },
       },
       {
@@ -143,7 +143,7 @@ export const gesundheit: Guide[] = [
         image: {
           src: "/screenshots/termin-116117/plz-eingeben.webp",
           alt: "Startseite von 116117-termine.de: Feld „Suchgebiet (PLZ)“ mit Beispiel-Postleitzahl (1) und Knopf „Weiter“ (2); beide markiert. Daneben das Feld „Vermittlungscode (optional)“.",
-          credit: "Screenshot: 116117-termine.de (Ansicht am Computer), Kassenärztliche Bundesvereinigung",
+          credit: "116117-termine.de",
         },
       },
       {
@@ -152,7 +152,7 @@ export const gesundheit: Guide[] = [
         image: {
           src: "/screenshots/termin-116117/termine-anzeigen.webp",
           alt: "Liste „Ohne Überweisung online buchbar“ mit Hausarzt, Augenarzt und Frauenarzt. Beim Hausarzt ist „Termine anzeigen“ markiert.",
-          credit: "Screenshot: 116117-termine.de (Ansicht am Computer), Kassenärztliche Bundesvereinigung",
+          credit: "116117-termine.de",
         },
         tip: "Die Terminservicestelle muss Ihnen bei dringenden Überweisungen innerhalb von 4 Wochen einen Termin anbieten – allerdings nicht unbedingt bei Ihrer Wunschpraxis.",
       },
@@ -162,7 +162,7 @@ export const gesundheit: Guide[] = [
         image: {
           src: "/screenshots/termin-116117/buchung-verwalten.webp",
           alt: "Oberer Bereich von 116117-termine.de mit den Reitern „Termin buchen“ und „Buchung verwalten“. „Buchung verwalten“ ist markiert.",
-          credit: "Screenshot: 116117-termine.de (Ansicht am Computer), Kassenärztliche Bundesvereinigung",
+          credit: "116117-termine.de",
         },
       },
     ],
