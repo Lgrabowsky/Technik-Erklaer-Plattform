@@ -1,3 +1,4 @@
+import fs from "node:fs";
 import path from "node:path";
 import type { Payload } from "payload";
 import type { Step } from "../content/types";
@@ -8,12 +9,21 @@ import type { Step } from "../content/types";
  * wird das vorhandene genommen.
  */
 export async function ensureImage(payload: Payload, image: NonNullable<Step["image"]>): Promise<number> {
+  const filePath = path.resolve(process.cwd(), "public", image.src.replace(/^\//, ""));
   const found = await payload.find({ collection: "media", where: { alt: { equals: image.alt } }, limit: 1, depth: 0 });
-  if (found.docs[0]) return found.docs[0].id as number;
+  const existing = found.docs[0];
+  if (existing) {
+    // Neue Fassung des Bildes oder neue Quellenangabe? Dann Datei und Angabe ersetzen.
+    const size = fs.statSync(filePath).size;
+    if (existing.filesize !== size || (existing.credit ?? "") !== (image.credit ?? "")) {
+      await payload.update({ collection: "media", id: existing.id, data: { credit: image.credit }, filePath, overwriteExistingFiles: true });
+    }
+    return existing.id as number;
+  }
   const doc = await payload.create({
     collection: "media",
     data: { alt: image.alt, credit: image.credit },
-    filePath: path.resolve(process.cwd(), "public", image.src.replace(/^\//, "")),
+    filePath,
   });
   return doc.id as number;
 }
