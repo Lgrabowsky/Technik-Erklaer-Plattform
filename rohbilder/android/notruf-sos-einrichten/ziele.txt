@@ -1,0 +1,48 @@
+Anleitung: Notruf SOS einrichten – Android-Rohscreenshots
+Gerät: Android-Studio-Emulator, Profil „Pixel 7“ (AVD Pixel_7_A16), Modellkennung sdk_gphone64_x86_64
+Android-Version: 16 (API 36), Google-Play-Image, x86_64, Sicherheitsupdate 5. Juli 2025
+Systemsprache: Deutsch (Deutschland), nicht angemeldet (kein Google-Konto)
+Alle Bilder: 1080 x 2400 Pixel. Koordinaten in Bildpixeln, Format [x1,y1][x2,y2]
+Menünamen auf diesem Gerät: „Notfälle & Sicherheit“ (nicht „Sicherheit und Notfall“), „Notfall-SOS“ (nicht „Notruf SOS“).
+
+01-einstellungen.png – Einstellungen, Hauptliste (nach unten gescrollt)
+  Ziel: „Notfälle & Sicherheit“ (Untertitel: „Notfall-SOS, medizinische Daten, Benachrichtigungen“)   bounds [0,1592][1080,1883]
+
+02-notfaelle-sicherheit.png – Seite „Notfälle & Sicherheit“
+  Ziel: „Notfall-SOS“ (Untertitel „An“)   bounds [0,1186][1080,1392]
+
+03-willkommen-persoenliche-sicherheit.png – was nach Tippen auf „Notfall-SOS“ kommt
+  Startseite der App „Persönliche Sicherheit“: „Willkommen bei den Persönliche Sicherheit“ (so im Original)
+  Knöpfe „Anmelden“ [330,1807][750,1933] und „Persönliche Sicherheit ohne Konto verwenden“ [42,1933][1038,2059]
+  Darunter: Hinweis, dass man beim Fortfahren den Google-Nutzungsbedingungen zustimmt.
+
+NACHTRAG (25.11.2026): Mit Zustimmung auf „Persönliche Sicherheit ohne Konto verwenden“ [42,1933][1038,2059] getippt
+(= Zustimmung zu den Google-Nutzungsbedingungen, nur im Test-Emulator). Nicht angemeldet, nichts ausgelöst, keine Schalter verändert.
+Danach öffnet sich direkt die Seite „Notfall-SOS“ (App „Persönliche Sicherheit“).
+
+WICHTIG: Auf diesem Gerät gibt es auf der Notfall-SOS-Seite KEINEN Hauptschalter „Notfall-SOS verwenden“.
+Notfall-SOS ist schon „An“ (Untertitel auf der Seite „Notfälle & Sicherheit“). Die Seite zeigt nur die Notfallaktionen mit Schaltern.
+
+04a-sos-seite-oben.png – Seite „Notfall-SOS“, oberer Teil (ungescrollt)
+  Abschnitt „Funktionsweise“:
+   1 „Drücke die Ein-/Aus-Taste 5-mal oder öfter kurz hintereinander“   [0,1516][1080,1656]
+   2 „Gedrückt halten, um Notfallaktionen aufzurufen“ (mit Zahnrad rechts)   Zeile [0,1656][1080,1965]
+  Knopf „Demo ausprobieren“   [42,1965][550,2091]
+  (Zahnrad führt zu „Notfallaktionen werden gestartet“: Auswahl „Zum Starten von Aktionen gedrückt halten“ (gewählt) /
+   „Aktionen automatisch starten“ – nur angesehen, nichts geändert, kein Bild.)
+
+04-sos-seite.png – Seite „Notfall-SOS“, nach unten gescrollt
+  Roter Hinweiskasten: „Melde dich in deinem Google-Konto an, um alle Aktionen nutzen zu können, wenn du die Funktion „Notfall-SOS“ startest“, Knopf „Anmelden“ [757,922][1038,1048]
+  Abschnitt „Notfallaktionen“   Überschrift [63,1159][330,1215]
+  Ziel: Schalter „Rettungsdienst anrufen“ (Untertitel „911“ – Emulator-Region, in DE wäre es 112)   Schalter [871,1299][1017,1425], AN
+        Text daneben [189,1296][747,1373]
+  Weitere Zeilen:
+   „Informationen mit Notfallkontakten teilen“  Schalter [871,1656][1017,1782], AUS, ausgegraut
+       Untertitel (rot): „Anmelden, um die Funktion „Senden von Notfallinformationen“ zu verwenden“
+   „Notfallvideo aufzeichnen“  Schalter [871,2059][1017,2185], AUS, ausgegraut
+       Untertitel (rot): „Anmelden, um die Funktion „Notfallaufzeichnung“ zu verwenden“
+
+05-notfallkontakte-teilen.png – gleiches Bild wie 04-sos-seite.png
+  Ziel: „Informationen mit Notfallkontakten teilen“ (teilt laut Google-Funktion Standort/Infos mit Notfallkontakten)
+        Titel [189,1542][784,1682], Schalter [871,1656][1017,1782]
+  Ohne Google-Konto nicht einschaltbar (ausgegraut). Nicht angetippt.
