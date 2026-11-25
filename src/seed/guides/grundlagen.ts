@@ -371,15 +371,30 @@ export const grundlagen: Guide[] = [
           {
             title: "„Netzwerk & Internet“ öffnen",
             text: "Tippen Sie auf „Netzwerk & Internet“ und dann auf „Internet“.",
+            image: {
+              src: "/screenshots/wlan-verbinden/android-netzwerk.webp",
+              alt: "Einstellungen auf einem Android-Handy. Der Eintrag „Netzwerk & Internet“ ist markiert.",
+              credit: "Android 16 (Pixel)",
+            },
             tip: "Oben in den Einstellungen gibt es eine Lupe. Tippen Sie dort „WLAN“ ein – so kommen Sie direkt hin.",
           },
           {
             title: "WLAN einschalten",
             text: "Neben „WLAN“ ist ein Schalter. Ist er grau, tippen Sie darauf. Er wird farbig – WLAN ist jetzt an.",
+            image: {
+              src: "/screenshots/wlan-verbinden/android-wlan-schalter.webp",
+              alt: "Seite „Internet“. Der Schalter neben „WLAN“ ist markiert.",
+              credit: "Android 16 (Pixel)",
+            },
           },
           {
             title: "Ihr WLAN auswählen",
             text: "Nach ein paar Sekunden erscheint eine Liste mit WLAN-Namen. Tippen Sie auf den Namen Ihres WLANs – den finden Sie auf dem Router.",
+            image: {
+              src: "/screenshots/wlan-verbinden/android-wlan-auswaehlen.webp",
+              alt: "Seite „Internet“ mit der Liste der WLANs. Ein WLAN-Name ist markiert.",
+              credit: "Android 16 (Pixel)",
+            },
             tip: "Sie sehen viele fremde Namen? Das sind die WLANs Ihrer Nachbarn. Nehmen Sie nur den Namen, der auf Ihrem Router steht.",
           },
           {
@@ -485,10 +500,20 @@ export const grundlagen: Guide[] = [
           {
             title: "„Taschenlampe“ antippen",
             text: "Tippen Sie auf den Knopf mit der kleinen Lampe. Darunter steht „Taschenlampe“. Die Lampe auf der Rückseite des Handys leuchtet jetzt.",
+            image: {
+              src: "/screenshots/taschenlampe-einschalten/android-taschenlampe.webp",
+              alt: "Schnelleinstellungen eines Android-Handys. Die Kachel „Taschenlampe“ (Aus) ist markiert.",
+              credit: "Android 16 (Pixel)",
+            },
           },
           {
             title: "Wieder ausschalten",
             text: "Wischen Sie wieder von oben nach unten und tippen Sie noch einmal auf „Taschenlampe“.",
+            image: {
+              src: "/screenshots/taschenlampe-einschalten/android-taschenlampe-an.webp",
+              alt: "Schnelleinstellungen. Die Kachel „Taschenlampe“ ist hell und zeigt „An“.",
+              credit: "Android 16 (Pixel)",
+            },
           },
         ],
       },
@@ -557,19 +582,39 @@ export const grundlagen: Guide[] = [
           {
             title: "Neuen Kontakt anlegen",
             text: "Tippen Sie unten rechts auf den Knopf mit dem Plus-Zeichen (+). Er heißt „Kontakt erstellen“.",
+            image: {
+              src: "/screenshots/kontakt-speichern/android-kontakt-erstellen.webp",
+              alt: "App „Kontakte“. Unten rechts ist der Knopf „Kontakt erstellen“ mit dem Plus markiert.",
+              credit: "Android 16 (Pixel)",
+            },
             tip: "Fragt das Handy, wo der Kontakt gespeichert werden soll, wählen Sie Ihr Google-Konto. Dann geht er bei einem neuen Handy nicht verloren.",
           },
           {
             title: "Namen eingeben",
             text: "Tippen Sie in das Feld „Vorname“ und schreiben Sie den Namen. Darunter tragen Sie den „Nachnamen“ ein.",
+            image: {
+              src: "/screenshots/kontakt-speichern/android-namen.webp",
+              alt: "Formular „Kontakt erstellen“. Die Felder „Vorname“ und „Nachname“ sind markiert.",
+              credit: "Android 16 (Pixel)",
+            },
           },
           {
             title: "Telefonnummer eingeben",
             text: "Tippen Sie in das Feld „Telefon“ und tippen Sie die Nummer ein. Für Handynummern können Sie sie ganz normal mit 0 am Anfang eingeben, zum Beispiel 0170 1234567.",
+            image: {
+              src: "/screenshots/kontakt-speichern/android-telefon.webp",
+              alt: "Formular mit Max Mustermann. Das Feld „Telefon“ mit 0170 1234567 ist markiert.",
+              credit: "Android 16 (Pixel)",
+            },
           },
           {
             title: "Speichern",
             text: "Tippen Sie oben rechts auf „Speichern“. Fertig – der Name erscheint jetzt, wenn diese Person anruft.",
+            image: {
+              src: "/screenshots/kontakt-speichern/android-speichern.webp",
+              alt: "Ausgefülltes Formular „Kontakt erstellen“. Oben rechts ist „Speichern“ markiert.",
+              credit: "Android 16 (Pixel)",
+            },
           },
         ],
       },

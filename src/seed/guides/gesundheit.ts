@@ -197,17 +197,32 @@ export const gesundheit: Guide[] = [
             text: "Tippen Sie auf das Zahnrad-Symbol „Einstellungen“.",
           },
           {
-            title: "„Sicherheit und Notfall“ öffnen",
-            text: "Wischen Sie nach unten und tippen Sie auf „Sicherheit und Notfall“.",
+            title: "„Notfälle & Sicherheit“ öffnen",
+            text: "Wischen Sie nach unten und tippen Sie auf „Notfälle & Sicherheit“.",
+            image: {
+              src: "/screenshots/notfallpass-handy/android-notfaelle-sicherheit.webp",
+              alt: "Einstellungen auf einem Android-Handy. Der Eintrag „Notfälle & Sicherheit“ ist markiert.",
+              credit: "Android 16 (Pixel)",
+            },
             tip: "Nicht gefunden? Tippen Sie oben auf die Lupe und geben Sie „Notfall“ ein.",
           },
           {
             title: "Medizinische Infos eintragen",
-            text: "Tippen Sie auf „Medizinische Informationen“. Tragen Sie Blutgruppe, Allergien, Medikamente und Erkrankungen ein. Tippen Sie auf „Speichern“.",
+            text: "Tippen Sie auf „Medizinische Daten“. Tragen Sie Blutgruppe, Allergien, Medikamente und Erkrankungen ein. Tippen Sie auf „Speichern“.",
+            image: {
+              src: "/screenshots/notfallpass-handy/android-medizinische-daten.webp",
+              alt: "Seite „Notfälle & Sicherheit“. Der Eintrag „Medizinische Daten“ ist markiert.",
+              credit: "Android 16 (Pixel)",
+            },
           },
           {
             title: "Notfallkontakt hinzufügen",
             text: "Gehen Sie zurück und tippen Sie auf „Notfallkontakte“. Tippen Sie auf „Kontakt hinzufügen“ und wählen Sie Ihren Angehörigen aus.",
+            image: {
+              src: "/screenshots/notfallpass-handy/android-notfallkontakte.webp",
+              alt: "Seite „Notfälle & Sicherheit“. Der Eintrag „Notfallkontakte“ ist markiert.",
+              credit: "Android 16 (Pixel)",
+            },
           },
           {
             title: "Auf dem Sperrbildschirm zeigen",

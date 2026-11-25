@@ -281,15 +281,30 @@ export const sicherheit: Guide[] = [
           {
             title: "„System“ öffnen",
             text: "Wischen Sie ganz nach unten und tippen Sie auf „System“ und dann auf „Softwareupdates“.",
+            image: {
+              src: "/screenshots/handy-aktualisieren/android-system.webp",
+              alt: "Einstellungen auf einem Android-Handy. Der Eintrag „System“ ist markiert.",
+              credit: "Android 16 (Pixel)",
+            },
             tip: "Oben in den Einstellungen gibt es eine Lupe. Tippen Sie „Update“ ein.",
           },
           {
             title: "Nach Updates suchen",
             text: "Tippen Sie auf „Systemupdate“. Das Handy sucht jetzt nach neuen Versionen.",
+            image: {
+              src: "/screenshots/handy-aktualisieren/android-systemupdate.webp",
+              alt: "Seite „Softwareupdates“. Der Eintrag „Systemupdate“ ist markiert.",
+              credit: "Android 16 (Pixel)",
+            },
           },
           {
             title: "Update installieren",
-            text: "Gibt es ein Update, tippen Sie auf „Herunterladen und installieren“. Danach tippen Sie auf „Jetzt neu starten“. Das Handy startet dabei neu. Das kann 15 bis 30 Minuten dauern – lassen Sie es in Ruhe.",
+            text: "Steht dort „Dein System ist auf dem neuesten Stand“, ist alles in Ordnung. Sie können zur Sicherheit auf „Nach Updates suchen“ tippen. Gibt es ein Update, tippen Sie auf „Herunterladen und installieren“. Danach tippen Sie auf „Jetzt neu starten“. Das Handy startet dabei neu. Das kann 15 bis 30 Minuten dauern – lassen Sie es in Ruhe.",
+            image: {
+              src: "/screenshots/handy-aktualisieren/android-nach-updates-suchen.webp",
+              alt: "Seite „Dein System ist auf dem neuesten Stand“. Unten rechts ist „Nach Updates suchen“ markiert.",
+              credit: "Android 16 (Pixel)",
+            },
           },
           {
             title: "Auch Apps aktualisieren",
@@ -380,15 +395,30 @@ export const sicherheit: Guide[] = [
           },
           {
             title: "Anrufliste öffnen",
-            text: "Tippen Sie unten auf „Startseite“. Dort sehen Sie die letzten Anrufe.",
+            text: "Tippen Sie unten auf „Anrufliste“. Dort sehen Sie die letzten Anrufe.",
+            image: {
+              src: "/screenshots/nummer-blockieren/android-anrufliste.webp",
+              alt: "Telefon-App. Unten ist der Reiter „Anrufliste“ markiert.",
+              credit: "Android 16 (Pixel)",
+            },
           },
           {
             title: "Nummer lange gedrückt halten",
             text: "Legen Sie den Finger auf die Nummer, die Sie sperren möchten, und lassen Sie ihn kurz liegen. Es öffnet sich ein Menü.",
+            image: {
+              src: "/screenshots/nummer-blockieren/android-eintrag.webp",
+              alt: "Anrufliste mit einem Anruf von 03012345678. Der Eintrag ist markiert.",
+              credit: "Android 16 (Pixel)",
+            },
           },
           {
             title: "„Blockieren“ wählen",
             text: "Tippen Sie auf „Blockieren/Spam melden“. Bestätigen Sie mit „Blockieren“.",
+            image: {
+              src: "/screenshots/nummer-blockieren/android-blockieren.webp",
+              alt: "Menü nach langem Drücken. „Blockieren/Spam melden“ ist markiert.",
+              credit: "Android 16 (Pixel)",
+            },
             tip: "Ein Haken bei „Als Spam melden“ hilft, andere Menschen vor dieser Nummer zu warnen.",
           },
         ],
@@ -528,8 +558,13 @@ export const sicherheit: Guide[] = [
             text: "Tippen Sie auf das Zahnrad-Symbol „Einstellungen“.",
           },
           {
-            title: "„Sicherheit und Notfall“ öffnen",
-            text: "Wischen Sie nach unten und tippen Sie auf „Sicherheit und Notfall“ und dann auf „Notfall-SOS“.",
+            title: "„Notfälle & Sicherheit“ öffnen",
+            text: "Wischen Sie nach unten und tippen Sie auf „Notfälle & Sicherheit“ und dann auf „Notfall-SOS“.",
+            image: {
+              src: "/screenshots/notruf-sos-einrichten/android-notfall-sos.webp",
+              alt: "Seite „Notfälle & Sicherheit“. Der Eintrag „Notfall-SOS“ ist markiert.",
+              credit: "Android 16 (Pixel)",
+            },
           },
           {
             title: "Funktion einschalten",
@@ -617,13 +652,23 @@ export const sicherheit: Guide[] = [
             text: "Tippen Sie auf das Zahnrad-Symbol „Einstellungen“.",
           },
           {
-            title: "„Sicherheit und Datenschutz“ öffnen",
-            text: "Tippen Sie auf „Sicherheit und Datenschutz“, dann auf „Geräteentsperrung“ und auf „Displaysperre“.",
+            title: "„Datenschutz & Sicherheit“ öffnen",
+            text: "Tippen Sie auf „Datenschutz & Sicherheit“, dann auf „Geräteentsperrung“ und auf „Displaysperre“.",
+            image: {
+              src: "/screenshots/bildschirmsperre-einrichten/android-datenschutz.webp",
+              alt: "Einstellungen auf einem Android-Handy. Der Eintrag „Datenschutz & Sicherheit“ ist markiert.",
+              credit: "Android 16 (Pixel)",
+            },
             tip: "Schneller: Oben auf die Lupe tippen und „Sperre“ eingeben.",
           },
           {
             title: "„PIN“ wählen",
             text: "Tippen Sie auf „PIN“. Geben Sie mindestens sechs Ziffern ein, tippen Sie auf „Weiter“ und wiederholen Sie die PIN zur Bestätigung.",
+            image: {
+              src: "/screenshots/bildschirmsperre-einrichten/android-pin.webp",
+              alt: "Seite „Displaysperre auswählen“. Der Eintrag „PIN“ ist markiert.",
+              credit: "Android 16 (Pixel)",
+            },
           },
           {
             title: "Fingerabdruck hinzufügen (optional)",
