@@ -104,21 +104,41 @@ export const grundlagen: Guide[] = [
         steps: [
           {
             title: "Einstellungen öffnen",
-            text: "Tippen Sie auf das Zahnrad-Symbol „Einstellungen“.",
+            text: "Wischen Sie auf dem Startbildschirm von unten nach oben. Jetzt sehen Sie alle Apps. Tippen Sie auf das Zahnrad „Einstellungen“.",
+            image: {
+              src: "/screenshots/schrift-vergroessern/android-einstellungen.webp",
+              alt: "Übersicht aller Apps auf einem Android-Handy. Das Zahnrad „Einstellungen“ ist markiert.",
+              credit: "Android 16 (Pixel)",
+            },
           },
           {
-            title: "„Anzeige“ wählen",
-            text: "Tippen Sie auf „Anzeige“. Bei manchen Handys heißt es „Display“ oder „Anzeige und Helligkeit“.",
-            tip: "Oben in den Einstellungen gibt es eine Lupe. Tippen Sie dort „Schrift“ ein – so kommen Sie direkt hin.",
+            title: "„Display & Touchbedienung“ wählen",
+            text: "Wischen Sie etwas nach oben und tippen Sie auf „Display & Touchbedienung“. Bei Samsung-Handys heißt dieser Punkt „Anzeige“.",
+            tip: "Oben in den Einstellungen gibt es die Lupe „In Einstellungen suchen“. Tippen Sie dort „Schrift“ ein – so kommen Sie direkt hin.",
+            image: {
+              src: "/screenshots/schrift-vergroessern/android-display.webp",
+              alt: "Einstellungen auf einem Android-Handy. Der Eintrag „Display & Touchbedienung“ ist markiert.",
+              credit: "Android 16 (Pixel)",
+            },
           },
           {
-            title: "Schriftgröße öffnen",
-            text: "Tippen Sie auf „Schriftgröße und -stil“ (Samsung) oder „Schriftgröße“ bzw. „Anzeigegröße und Text“ (andere Handys).",
+            title: "„Anzeigegröße und Text“ öffnen",
+            text: "Tippen Sie auf „Anzeigegröße und Text“. Bei Samsung-Handys heißt es „Schriftgröße und -stil“.",
+            image: {
+              src: "/screenshots/schrift-vergroessern/android-anzeigegroesse.webp",
+              alt: "Seite „Display & Touchbedienung“. Der Eintrag „Anzeigegröße und Text“ ist markiert.",
+              credit: "Android 16 (Pixel)",
+            },
           },
           {
-            title: "Schieberegler bewegen",
-            text: "Legen Sie den Finger auf den Punkt des Schiebereglers und schieben Sie ihn nach rechts. Oben sehen Sie, wie groß die Schrift wird.",
-            tip: "Gleich darunter gibt es oft auch „Anzeigegröße“ oder „Bildschirmzoom“. Damit werden auch Knöpfe und Symbole größer.",
+            title: "Schrift größer stellen",
+            text: "Unter „Schriftgröße“ schieben Sie den Punkt nach rechts. Oder Sie tippen rechts daneben mehrmals auf „+“. Oben in der „Vorschau“ sehen Sie, wie groß die Schrift wird.",
+            tip: "Beim ersten Mal erscheint der Hinweis „Schriftgröße wurde zu den Schnelleinstellungen hinzugefügt“. Tippen Sie einfach daneben. Mit „Anzeigegröße“ darunter werden auch Knöpfe und Symbole größer.",
+            image: {
+              src: "/screenshots/schrift-vergroessern/android-schieberegler.webp",
+              alt: "Seite „Anzeigegröße und Text“. Der Schieberegler „Schriftgröße“ mit der Plus-Taste ist markiert.",
+              credit: "Android 16 (Pixel)",
+            },
           },
           {
             title: "Fertig",
