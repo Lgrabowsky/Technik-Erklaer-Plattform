@@ -224,6 +224,18 @@ export const Guides: CollectionConfig = {
         description: "Leer lassen = aktueller Monat. Spätestens alle 6 Monate neu prüfen.",
       },
     },
+    {
+      name: "unverified",
+      label: "Knopf-Namen noch nicht in der echten App geprüft",
+      type: "checkbox",
+      admin: { position: "sidebar", description: "Nur intern – Besucher sehen das nicht." },
+    },
+    {
+      name: "reviewNote",
+      label: "Was noch zu prüfen ist",
+      type: "textarea",
+      admin: { position: "sidebar", description: "Nur intern – Besucher sehen das nicht." },
+    },
     orderField,
   ],
 };

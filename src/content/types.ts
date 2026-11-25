@@ -59,6 +59,12 @@ export type Guide = {
   related?: string[];
   /** Zusammenfassung am Ende: "Das haben Sie gelernt" */
   takeaways?: string[];
+  /**
+   * Intern (nur Redaktion, wird Besuchern nicht angezeigt): Knopf-Namen dieser Anleitung
+   * konnten noch nicht in der echten App geprüft werden. `reviewNote` sagt, was zu prüfen ist.
+   */
+  unverified?: boolean;
+  reviewNote?: string;
 };
 
 /**
@@ -93,7 +99,7 @@ export type Chooser = {
 
 export type CategorySlug = string;
 
-export type CategoryIcon = "phone" | "heart" | "train" | "card" | "shield";
+export type CategoryIcon = "phone" | "heart" | "train" | "card" | "shield" | "building";
 
 export type Category = {
   slug: CategorySlug;

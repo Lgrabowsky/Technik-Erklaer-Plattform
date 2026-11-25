@@ -30,6 +30,7 @@ export const Categories: CollectionConfig = {
         { label: "Zug", value: "train" },
         { label: "Bankkarte", value: "card" },
         { label: "Schild (Sicherheit)", value: "shield" },
+        { label: "Gebäude (Ämter & Alltag)", value: "building" },
       ],
     },
     slugField(),

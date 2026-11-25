@@ -170,4 +170,218 @@ export const gesundheit: Guide[] = [
   },
   rechnungEinreichen,
   epaPatientenakte,
+  {
+    slug: "notfallpass-handy",
+    title: "Notfall-Infos im Handy hinterlegen",
+    summary: "Im Notfall sehen Helfer Ihre Vorerkrankungen, Medikamente und einen Angehörigen – auch ohne Ihr Handy zu entsperren.",
+    category: "gesundheit",
+    app: "Health (iPhone) bzw. Einstellungen (Android)",
+    devices: ["android", "iphone"],
+    difficulty: "leicht",
+    minutes: 10,
+    access: "free",
+    checked: "2026-11",
+    keywords: ["Notfallpass", "Notfall", "Notfallkontakt", "Medikamente", "Allergien", "Blutgruppe", "Rettungsdienst", "medizinische Informationen"],
+    needs: [
+      "Ihr Handy",
+      "Ihre Medikamentenliste und wichtige Erkrankungen oder Allergien",
+      "Telefonnummer eines Angehörigen (als Kontakt gespeichert)",
+    ],
+    variants: [
+      {
+        device: "android",
+        unverified: true,
+        steps: [
+          {
+            title: "Einstellungen öffnen",
+            text: "Tippen Sie auf das Zahnrad-Symbol „Einstellungen“.",
+          },
+          {
+            title: "„Sicherheit und Notfall“ öffnen",
+            text: "Wischen Sie nach unten und tippen Sie auf „Sicherheit und Notfall“.",
+            tip: "Nicht gefunden? Tippen Sie oben auf die Lupe und geben Sie „Notfall“ ein.",
+          },
+          {
+            title: "Medizinische Infos eintragen",
+            text: "Tippen Sie auf „Medizinische Infos“ (Samsung) bzw. „Medizinische Informationen“ (z. B. Google Pixel). Tragen Sie Blutgruppe, Allergien, Medikamente und Erkrankungen ein. Tippen Sie auf „Speichern“.",
+          },
+          {
+            title: "Notfallkontakt hinzufügen",
+            text: "Gehen Sie zurück und tippen Sie auf „Notfallkontakte“. Tippen Sie auf „Mitglied hinzufügen“ bzw. „Kontakt hinzufügen“ und wählen Sie Ihren Angehörigen aus.",
+          },
+          {
+            title: "Auf dem Sperrbildschirm zeigen",
+            text: "Schalten Sie „Auf Sperrbildschirm anzeigen“ ein, falls es angeboten wird. Dann sehen Helfer die Infos über den Knopf „Notfall“ auf dem Sperrbildschirm.",
+          },
+        ],
+      },
+      {
+        device: "iphone",
+        steps: [
+          {
+            title: "App „Health“ öffnen",
+            text: "Tippen Sie auf das weiße Symbol mit dem roten Herz. Es heißt „Health“.",
+          },
+          {
+            title: "Ihr Profilbild antippen",
+            text: "Tippen Sie oben rechts auf Ihr Profilbild oder Ihre Initialen.",
+          },
+          {
+            title: "„Notfallpass“ öffnen",
+            text: "Tippen Sie auf „Notfallpass“ und dann auf „Los geht’s“ bzw. oben rechts auf „Bearbeiten“, wenn schon etwas eingetragen ist.",
+          },
+          {
+            title: "Angaben eintragen",
+            text: "Tragen Sie Erkrankungen, Allergien, Medikamente und Blutgruppe ein. Unter „Notfallkontakte“ tippen Sie auf das grüne Plus und wählen einen Angehörigen aus.",
+          },
+          {
+            title: "Im Sperrzustand zeigen",
+            text: "Schalten Sie „Im Sperrzustand zeigen“ ein (Schalter grün). Tippen Sie oben rechts auf „Fertig“.",
+            tip: "So sehen Helfer den Notfallpass: Auf dem Sperrbildschirm „Notfall“ antippen, dann „Notfallpass“.",
+          },
+        ],
+      },
+    ],
+    takeaways: ["Notfall-Infos helfen Rettungskräften, ohne dass Ihr Handy entsperrt werden muss.", "Angaben einmal im Jahr aktualisieren."],
+    reviewNote: "Android: Menünamen bei Samsung („Sicherheit und Notfall“ → „Medizinische Infos“) und Pixel (Notfallinfos ggf. in App „Persönliche Sicherheit“) auf aktuellem Gerät prüfen.",
+    related: ["notruf-sos-einrichten"],
+  },
+  {
+    slug: "doctolib-termin-absagen",
+    title: "Einen Arzttermin bei Doctolib absagen oder verschieben",
+    summary: "Termin passt nicht mehr? So sagen Sie ihn in der Doctolib-App rechtzeitig ab – damit ein anderer Patient den Platz bekommt.",
+    category: "gesundheit",
+    app: "Doctolib (App)",
+    devices: ["android", "iphone"],
+    difficulty: "leicht",
+    minutes: 5,
+    access: "free",
+    checked: "2026-11",
+    keywords: ["Doctolib", "Termin absagen", "stornieren", "verschieben", "Arzttermin", "Praxis"],
+    needs: ["Die App „Doctolib“, mit der Sie den Termin gebucht haben"],
+    unverified: true,
+    reviewNote: "Tab-Name („Termine“) und Knöpfe („Termin absagen“, „Termin verschieben“) in aktueller Doctolib-App prüfen. Ob Verschieben bei jeder Praxis angeboten wird, hängt von der Praxis ab.",
+    steps: [
+      {
+        title: "Doctolib öffnen",
+        text: "Tippen Sie auf das blaue Doctolib-Symbol. Melden Sie sich an, falls die App danach fragt.",
+      },
+      {
+        title: "Ihre Termine öffnen",
+        text: "Tippen Sie unten auf „Termine“. Sie sehen Ihre kommenden Termine.",
+      },
+      {
+        title: "Den Termin antippen",
+        text: "Tippen Sie auf den Termin, den Sie absagen oder verschieben möchten.",
+      },
+      {
+        title: "Verschieben oder absagen",
+        text: "Wischen Sie nach unten. Möchten Sie einen anderen Tag? Tippen Sie auf „Termin verschieben“ und wählen Sie eine neue Zeit. Möchten Sie gar nicht kommen? Tippen Sie auf „Termin absagen“.",
+        tip: "Fehlt der Knopf, erlaubt die Praxis keine Online-Absage so kurz vor dem Termin. Rufen Sie dann in der Praxis an.",
+      },
+      {
+        title: "Bestätigen",
+        text: "Bestätigen Sie die Absage. Sie bekommen eine E-Mail. Der Termin verschwindet aus Ihrer Liste.",
+        warning: "Sagen Sie möglichst mindestens 24 Stunden vorher ab. Manche Praxen berechnen sonst ein Ausfallhonorar.",
+      },
+    ],
+    related: ["arzttermin-online-buchen"],
+  },
+  {
+    slug: "medikamente-erinnerung-iphone",
+    title: "An Medikamente erinnern lassen (iPhone)",
+    summary: "Das iPhone erinnert Sie zur richtigen Uhrzeit an Ihre Tabletten – und Sie haken ab, was Sie genommen haben.",
+    category: "gesundheit",
+    app: "Health (iPhone)",
+    devices: ["iphone"],
+    difficulty: "mittel",
+    minutes: 10,
+    access: "premium",
+    priceCents: 199,
+    checked: "2026-11",
+    keywords: ["Medikamente", "Tabletten", "Erinnerung", "Einnahme", "Wecker", "Health", "Medikamentenplan"],
+    needs: ["Ein iPhone", "Ihr Medikamentenplan oder die Packungen"],
+    unverified: true,
+    reviewNote: "Menüweg in Health („Durchsuchen“ → „Medikamente“ → „Medikament hinzufügen“) und Knopfnamen im Assistenten auf aktuellem iOS prüfen.",
+    steps: [
+      {
+        title: "App „Health“ öffnen",
+        text: "Tippen Sie auf das weiße Symbol mit dem roten Herz.",
+      },
+      {
+        title: "„Medikamente“ finden",
+        text: "Tippen Sie unten rechts auf „Durchsuchen“ und dann auf „Medikamente“.",
+      },
+      {
+        title: "Medikament hinzufügen",
+        text: "Tippen Sie auf „Medikament hinzufügen“. Tippen Sie den Namen ein, zum Beispiel „Ramipril“, und wählen Sie ihn aus der Liste. Tippen Sie auf „Weiter“.",
+        tip: "Sie können die Packung auch mit der Kamera erfassen: Tippen Sie dafür auf das Kamera-Symbol neben dem Suchfeld.",
+      },
+      {
+        title: "Form und Stärke wählen",
+        text: "Wählen Sie, ob es eine Tablette, Kapsel oder etwas anderes ist, und die Stärke (z. B. 5 mg). Tippen Sie jeweils auf „Weiter“.",
+      },
+      {
+        title: "Uhrzeiten festlegen",
+        text: "Wählen Sie „Jeden Tag“ und tippen Sie auf „Zeit hinzufügen“. Stellen Sie die Uhrzeit ein, zu der Sie erinnert werden möchten. Tippen Sie auf „Weiter“, bis die Einrichtung fertig ist.",
+      },
+      {
+        title: "Einnahme abhaken",
+        text: "Zur eingestellten Zeit erscheint eine Mitteilung. Tippen Sie darauf und dann auf „Eingenommen“. So wissen Sie später sicher, ob Sie die Tablette schon hatten.",
+        warning: "Die App ersetzt keinen ärztlichen Rat. Ändern Sie Ihre Medikamente nur nach Absprache mit Ihrer Ärztin oder Ihrem Arzt.",
+      },
+    ],
+    related: ["notfallpass-handy"],
+  },
+  {
+    slug: "e-rezept-app-gematik",
+    title: "E-Rezepte mit der App „Das E-Rezept“ ansehen",
+    summary: "Sehen Sie auf dem Handy, welche Rezepte Ihre Praxis ausgestellt hat – und ob eine Apotheke sie schon eingelöst hat.",
+    category: "gesundheit",
+    app: "Das E-Rezept (App der gematik)",
+    devices: ["android", "iphone"],
+    difficulty: "anspruchsvoll",
+    minutes: 20,
+    access: "premium",
+    priceCents: 299,
+    checked: "2026-11",
+    keywords: ["E-Rezept", "Rezept", "gematik", "Apotheke", "Gesundheitskarte", "NFC", "PIN"],
+    needs: [
+      "Ein Handy mit NFC (fast alle neueren Handys, iPhone ab iPhone 8)",
+      "Ihre Gesundheitskarte mit sechsstelliger Nummer (CAN) neben dem Foto",
+      "Die PIN zur Gesundheitskarte – bekommen Sie auf Anfrage von Ihrer Krankenkasse per Brief",
+    ],
+    unverified: true,
+    reviewNote: "Einrichtungs-Ablauf und Knopfnamen der gematik-App („Anmelden“, „Mit Gesundheitskarte“, „Karte jetzt verbinden“) auf aktueller Version prüfen. Alternativ bieten viele Kassen die Anmeldung über ihre eigene App (GesundheitsID) an.",
+    steps: [
+      {
+        title: "Brauche ich das überhaupt?",
+        text: "Nein. Sie können E-Rezepte immer mit der Gesundheitskarte in der Apotheke einlösen. Die App ist praktisch, wenn Sie Rezepte vorher sehen oder bei einer Online-Apotheke bestellen möchten.",
+      },
+      {
+        title: "App „Das E-Rezept“ installieren",
+        text: "Laden Sie die App „Das E-Rezept“ aus dem Play Store bzw. App Store. Der Anbieter heißt „gematik GmbH“.",
+        warning: "Achten Sie auf den Anbieter „gematik GmbH“. Andere Apps mit ähnlichem Namen sind Apotheken-Apps.",
+      },
+      {
+        title: "App öffnen und Einführung durchgehen",
+        text: "Tippen Sie sich durch die Einführung und legen Sie den Schutz für die App fest (z. B. Fingerabdruck oder ein Passwort).",
+      },
+      {
+        title: "Anmelden mit Gesundheitskarte",
+        text: "Tippen Sie auf „Anmelden“ und wählen Sie die Anmeldung mit Ihrer Gesundheitskarte. Geben Sie die sechsstellige Nummer (CAN) ein, die oben rechts neben Ihrem Foto auf der Karte steht. Geben Sie dann Ihre PIN ein.",
+      },
+      {
+        title: "Karte ans Handy halten",
+        text: "Halten Sie die Gesundheitskarte flach an die Rückseite des Handys – beim iPhone oben, bei Android meist in der Mitte. Bewegen Sie die Karte nicht, bis die App „Erfolgreich“ meldet.",
+        tip: "Klappt es nicht? Nehmen Sie die Handyhülle ab und versuchen Sie es langsam an verschiedenen Stellen.",
+      },
+      {
+        title: "Rezepte ansehen",
+        text: "Auf der Startseite sehen Sie jetzt Ihre E-Rezepte. Sie sehen, ob ein Rezept noch offen oder schon eingelöst ist und bis wann es gilt.",
+      },
+    ],
+    takeaways: ["Die App ist freiwillig – die Gesundheitskarte reicht in der Apotheke.", "Für die App brauchen Sie Karte, CAN und PIN."],
+    related: ["e-rezept-einloesen"],
+  },
 ];
