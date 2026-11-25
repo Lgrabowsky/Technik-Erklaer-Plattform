@@ -252,6 +252,14 @@ export interface Guide {
    */
   checked?: string | null;
   /**
+   * Nur intern – Besucher sehen das nicht.
+   */
+  unverified?: boolean | null;
+  /**
+   * Nur intern – Besucher sehen das nicht.
+   */
+  reviewNote?: string | null;
+  /**
    * Kleinere Zahl = weiter vorne.
    */
   order?: number | null;
@@ -269,7 +277,7 @@ export interface Category {
   id: number;
   title: string;
   description: string;
-  icon: 'phone' | 'heart' | 'train' | 'card' | 'shield';
+  icon: 'phone' | 'heart' | 'train' | 'card' | 'shield' | 'building';
   /**
    * Wird automatisch aus dem Titel erzeugt. Nur Kleinbuchstaben, Zahlen und Bindestriche. Nach dem Veröffentlichen möglichst nicht mehr ändern – sonst funktionieren alte Links nicht mehr.
    */
@@ -613,6 +621,8 @@ export interface GuidesSelect<T extends boolean = true> {
   access?: T;
   price?: T;
   checked?: T;
+  unverified?: T;
+  reviewNote?: T;
   order?: T;
   updatedAt?: T;
   createdAt?: T;

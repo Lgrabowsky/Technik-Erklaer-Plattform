@@ -1,0 +1,203 @@
+import type { Guide } from "../../content/types";
+
+export const alltag: Guide[] = [
+  {
+    slug: "online-ausweis-pin",
+    title: "Den Online-Ausweis einrichten: eigene PIN festlegen",
+    summary: "Mit dem Personalausweis und dem Handy können Sie sich bei Ämtern, der Rentenversicherung oder der Krankenkasse ausweisen. Zuerst legen Sie Ihre eigene PIN fest.",
+    category: "alltag",
+    app: "AusweisApp (offizielle App des Bundes)",
+    devices: ["android", "iphone"],
+    difficulty: "anspruchsvoll",
+    minutes: 15,
+    access: "premium",
+    priceCents: 299,
+    checked: "2026-11",
+    keywords: ["Personalausweis", "Online-Ausweis", "eID", "AusweisApp", "PIN", "Transport-PIN", "Behörde", "Amt", "BundID", "Rente"],
+    needs: [
+      "Ihren Personalausweis",
+      "Den Brief mit der fünfstelligen Transport-PIN, den Sie mit dem Ausweis bekommen haben – oder Ihre bisherige sechsstellige PIN",
+      "Ein Handy mit NFC (fast alle neueren Handys, iPhone ab iPhone 8)",
+    ],
+    unverified: true,
+    reviewNote: "Startseite der AusweisApp (Kachelnamen „PIN ändern“, Auswahl „Fünfstellige Transport-PIN“ / „Sechsstellige PIN“) auf aktueller Version prüfen. Fakten (bitte gegen ausweisapp.bund.de gegenprüfen): Transport-PIN 5-stellig, eigene PIN 6-stellig, 3 Fehlversuche (beim 3. Versuch Zugangsnummer CAN), danach PUK; neuer PIN-Brief über das Bürgeramt (Online-Rücksetzdienst wurde eingestellt) – prüfen, ob Gebühr anfällt.",
+    steps: [
+      {
+        title: "Wofür ist das gut?",
+        text: "Mit dem Online-Ausweis weisen Sie sich im Internet sicher aus – zum Beispiel für das Rentenkonto, Anträge beim Bürgeramt oder die Steuer. Vorher müssen Sie einmal Ihre eigene, sechsstellige PIN festlegen.",
+      },
+      {
+        title: "AusweisApp installieren",
+        text: "Laden Sie die App „AusweisApp“ aus dem Play Store bzw. App Store. Die App ist kostenlos und vom Bund. Der Anbieter ist die „Governikus GmbH & Co. KG“.",
+        warning: "Achten Sie auf den Anbieter. Geben Sie Ihre Ausweis-PIN niemals in einer anderen App oder auf einer Webseite ein.",
+      },
+      {
+        title: "„PIN ändern“ wählen",
+        text: "Öffnen Sie die AusweisApp. Tippen Sie auf der Startseite auf „PIN ändern“.",
+      },
+      {
+        title: "Welche PIN haben Sie?",
+        text: "Haben Sie nur den Brief mit der fünfstelligen Transport-PIN? Dann wählen Sie „Fünfstellige Transport-PIN“. Haben Sie schon einmal eine eigene sechsstellige PIN festgelegt, wählen Sie „Sechsstellige PIN“.",
+      },
+      {
+        title: "Ausweis ans Handy halten",
+        text: "Legen Sie den Ausweis flach auf den Tisch und das Handy mit der Rückseite darauf. Beim iPhone liegt der Ausweis oben an der Kamera-Seite, bei Android meist in der Mitte. Bewegen Sie beides nicht.",
+        tip: "Klappt es nicht? Nehmen Sie die Handyhülle ab und verschieben Sie das Handy langsam.",
+      },
+      {
+        title: "Alte PIN eingeben",
+        text: "Geben Sie die Transport-PIN aus dem Brief bzw. Ihre bisherige PIN ein.",
+        warning: "Sie haben nur drei Versuche. Vor dem dritten Versuch fragt die App nach der Zugangsnummer (CAN) – sie steht vorne rechts unten auf dem Ausweis. Danach brauchen Sie die PUK aus dem Brief.",
+      },
+      {
+        title: "Neue sechsstellige PIN festlegen",
+        text: "Denken Sie sich eine sechsstellige Zahl aus und geben Sie sie zweimal ein. Die App meldet, dass die PIN geändert wurde. Ihr Online-Ausweis ist jetzt bereit.",
+        tip: "PIN vergessen? Eine neue PIN können Sie beim Bürgeramt festlegen lassen.",
+      },
+    ],
+    takeaways: ["Transport-PIN (5 Ziffern) einmal gegen eigene PIN (6 Ziffern) tauschen.", "Die PIN nur in der AusweisApp eingeben.", "Drei Versuche – dann CAN, dann PUK."],
+  },
+  {
+    slug: "dokument-scannen-iphone",
+    title: "Ein Dokument mit dem iPhone scannen",
+    summary: "Brief vom Amt, Rechnung, Rezept: So machen Sie aus Papier eine saubere PDF-Datei – ohne Scanner.",
+    category: "alltag",
+    app: "Notizen (iPhone)",
+    devices: ["iphone"],
+    difficulty: "leicht",
+    minutes: 5,
+    access: "free",
+    checked: "2026-11",
+    keywords: ["scannen", "Scanner", "PDF", "Dokument", "Brief", "Rechnung", "Notizen", "kopieren"],
+    needs: ["Ein iPhone", "Das Dokument auf einem dunklen Tisch, bei gutem Licht"],
+    unverified: true,
+    reviewNote: "Ob „Dokumente scannen“ in Notizen unter der Büroklammer (iOS 18+) oder dem Kamera-Symbol (ältere iOS) liegt, auf aktuellem iOS prüfen.",
+    steps: [
+      {
+        title: "Notizen öffnen",
+        text: "Tippen Sie auf das gelb-weiße Symbol „Notizen“.",
+      },
+      {
+        title: "Neue Notiz anlegen",
+        text: "Tippen Sie unten rechts auf das Symbol mit dem Stift und dem Blatt. Eine leere Notiz öffnet sich.",
+      },
+      {
+        title: "„Dokumente scannen“ wählen",
+        text: "Tippen Sie unten auf die Büroklammer (bei älteren iPhones: das Kamera-Symbol) und dann auf „Dokumente scannen“.",
+      },
+      {
+        title: "Dokument fotografieren",
+        text: "Halten Sie das iPhone gerade über das Blatt. Ein gelber Rahmen erscheint und das iPhone fotografiert von selbst. Sonst tippen Sie auf den runden Auslöser.",
+        tip: "Mehrere Seiten? Legen Sie einfach das nächste Blatt hin – das iPhone scannt weiter.",
+      },
+      {
+        title: "Sichern",
+        text: "Tippen Sie unten rechts auf „Sichern“. Der Scan liegt jetzt in Ihrer Notiz.",
+      },
+      {
+        title: "Verschicken",
+        text: "Tippen Sie auf den Scan und dann auf das Teilen-Symbol (Quadrat mit Pfeil nach oben). Wählen Sie „Mail“ oder WhatsApp und die Person, die das Dokument bekommen soll.",
+        warning: "Prüfen Sie vor dem Senden, ob wirklich nur die gewünschten Seiten dabei sind. Schicken Sie Ausweis-Kopien nur, wenn es wirklich nötig ist.",
+      },
+    ],
+    takeaways: ["Notizen → Büroklammer → „Dokumente scannen“.", "Gutes Licht und dunkler Untergrund machen den Scan schärfer."],
+    related: ["dokument-scannen-android", "email-mit-anhang"],
+  },
+  {
+    slug: "dokument-scannen-android",
+    title: "Ein Dokument mit dem Android-Handy scannen",
+    summary: "Brief vom Amt, Rechnung, Rezept: So machen Sie mit der App „Google Drive“ eine saubere PDF-Datei – ohne Scanner.",
+    category: "alltag",
+    app: "Google Drive (Android)",
+    devices: ["android"],
+    difficulty: "leicht",
+    minutes: 5,
+    access: "free",
+    checked: "2026-11",
+    keywords: ["scannen", "Scanner", "PDF", "Dokument", "Brief", "Rechnung", "Google Drive", "kopieren"],
+    needs: ["Die App „Google Drive“ (auf den meisten Android-Handys schon da)", "Das Dokument auf einem dunklen Tisch, bei gutem Licht"],
+    unverified: true,
+    reviewNote: "Knöpfe in Google Drive („Neu“/„+“ → „Scannen“, Kamera-Scan-Ansicht, „Speichern“) auf aktueller Version prüfen. Seit 2025 auch Scan-Knopf direkt unten rechts möglich.",
+    steps: [
+      {
+        title: "Google Drive öffnen",
+        text: "Tippen Sie auf das Symbol mit dem bunten Dreieck (gelb, grün, blau). Es heißt „Drive“.",
+      },
+      {
+        title: "„Scannen“ wählen",
+        text: "Tippen Sie unten rechts auf das Kamera-Symbol oder auf „+ Neu“ und dann auf „Scannen“.",
+      },
+      {
+        title: "Dokument fotografieren",
+        text: "Halten Sie das Handy gerade über das Blatt. Das Handy erkennt die Ränder und fotografiert von selbst, oder Sie tippen auf den runden Auslöser.",
+      },
+      {
+        title: "Weitere Seiten hinzufügen",
+        text: "Für weitere Seiten tippen Sie auf „Seite hinzufügen“ bzw. das Plus-Zeichen. Sonst tippen Sie auf „Fertig“.",
+      },
+      {
+        title: "Speichern",
+        text: "Geben Sie der Datei einen Namen, zum Beispiel „Brief Rentenversicherung“, und tippen Sie auf „Speichern“. Das PDF liegt jetzt in Google Drive.",
+      },
+      {
+        title: "Verschicken",
+        text: "Tippen Sie bei der Datei auf die drei Punkte (⋮) und dann auf „Teilen“ bzw. „Senden“. Wählen Sie E-Mail oder WhatsApp.",
+        warning: "Schicken Sie Ausweis-Kopien nur, wenn es wirklich nötig ist.",
+      },
+    ],
+    takeaways: ["Drive → „Scannen“ → fotografieren → „Speichern“."],
+    related: ["dokument-scannen-iphone", "email-mit-anhang"],
+  },
+  {
+    slug: "email-mit-anhang",
+    title: "Eine E-Mail mit Anhang am Computer verschicken (Gmail)",
+    summary: "Ein Dokument ans Amt, Fotos an die Familie: So hängen Sie eine Datei an eine E-Mail an.",
+    category: "alltag",
+    app: "Gmail (gmail.com im Browser)",
+    devices: ["computer"],
+    difficulty: "mittel",
+    minutes: 10,
+    access: "premium",
+    priceCents: 199,
+    checked: "2026-11",
+    keywords: ["E-Mail", "Mail", "Anhang", "Datei anhängen", "PDF", "Gmail", "Büroklammer", "verschicken"],
+    needs: ["Ein Gmail-Konto", "Die Datei liegt auf Ihrem Computer (z. B. im Ordner „Downloads“ oder „Dokumente“)", "Die E-Mail-Adresse des Empfängers"],
+    unverified: true,
+    reviewNote: "Gmail-Weboberfläche („Schreiben“, „An“, „Betreff“, Büroklammer „Dateien anhängen“, „Senden“) prüfen. Ggf. Varianten für GMX/WEB.DE/T-Online ergänzen – in Deutschland bei Senioren häufiger als Gmail.",
+    steps: [
+      {
+        title: "Gmail öffnen",
+        text: "Öffnen Sie Ihren Browser und tippen Sie oben „gmail.com“ ein. Sind Sie nicht angemeldet, klicken Sie oben rechts auf „Anmelden“.",
+        image: {
+          src: "/screenshots/email-mit-anhang/gmail-anmelden.webp",
+          alt: "Gmail-Startseite. Oben rechts ist der Knopf „Anmelden“ markiert.",
+          credit: "gmail.com",
+        },
+      },
+      {
+        title: "„Schreiben“ klicken",
+        text: "Klicken Sie oben links auf den Knopf „Schreiben“ mit dem Stift. Unten rechts öffnet sich ein Fenster für die neue E-Mail.",
+      },
+      {
+        title: "Empfänger und Betreff",
+        text: "Klicken Sie in das Feld „An“ und geben Sie die E-Mail-Adresse ein. Klicken Sie in „Betreff“ und schreiben Sie kurz, worum es geht, zum Beispiel „Unterlagen zu meinem Antrag“.",
+      },
+      {
+        title: "Text schreiben",
+        text: "Klicken Sie in das große Feld darunter und schreiben Sie Ihre Nachricht.",
+      },
+      {
+        title: "Datei anhängen",
+        text: "Klicken Sie unten auf die Büroklammer („Dateien anhängen“). Ein Fenster zeigt die Ordner Ihres Computers. Klicken Sie auf die Datei und dann auf „Öffnen“. Die Datei erscheint unten in der E-Mail.",
+        tip: "Gescannte Dokumente vom Handy liegen meist nicht auf dem Computer. Schicken Sie sie dann direkt vom Handy (siehe „Dokument scannen“).",
+      },
+      {
+        title: "Senden",
+        text: "Prüfen Sie Adresse, Betreff und Anhang. Klicken Sie auf den blauen Knopf „Senden“.",
+        warning: "Öffnen Sie selbst nie Anhänge aus E-Mails, die Sie nicht erwartet haben – besonders keine ZIP-Dateien.",
+      },
+    ],
+    takeaways: ["„Schreiben“ → Adresse → Betreff → Text → Büroklammer → „Senden“."],
+    related: ["phishing-mails-erkennen"],
+  },
+];

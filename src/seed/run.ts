@@ -82,6 +82,8 @@ for (const [i, g] of guides.entries()) {
         ),
         keywords: g.keywords ?? [],
         checked: new Date(`${g.checked}-01T12:00:00Z`).toISOString(),
+        unverified: g.unverified ?? false,
+        reviewNote: g.reviewNote,
         order: (i + 1) * 10,
       },
     });

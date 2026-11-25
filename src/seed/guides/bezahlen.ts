@@ -22,7 +22,12 @@ export const bezahlen: Guide[] = [
       },
       {
         title: "Impressum prüfen",
-        text: "Ein seriöser Shop hat ganz unten ein „Impressum“ mit Firmenname, Adresse in Deutschland oder der EU und Telefonnummer.",
+        text: "Ein seriöser Shop hat ganz unten ein „Impressum“ mit Firmenname, Adresse in Deutschland oder der EU und Telefonnummer. Scrollen Sie ganz nach unten und klicken Sie auf „Impressum“.",
+        image: {
+          src: "/screenshots/sicher-online-bezahlen/impressum.webp",
+          alt: "Unteres Ende der Seite von otto.de. Der Link „Impressum“ ist markiert.",
+          credit: "otto.de",
+        },
       },
       {
         title: "Fake-Shop-Finder nutzen",
@@ -185,5 +190,226 @@ export const bezahlen: Guide[] = [
       "Name passt nicht zur IBAN = nicht überweisen.",
       "In S-pushTAN nur freigeben, was Sie selbst gestartet haben.",
     ],
+  },
+  {
+    slug: "karte-sperren-116116",
+    title: "Bankkarte sofort sperren lassen (Sperr-Notruf 116 116)",
+    summary: "Portemonnaie weg oder Daten verraten? So lassen Sie Ihre Bankkarte und Ihr Online-Banking rund um die Uhr sperren.",
+    category: "bezahlen",
+    app: "Telefon – Sperr-Notruf 116 116",
+    devices: ["android", "iphone", "computer"],
+    difficulty: "leicht",
+    minutes: 5,
+    access: "free",
+    checked: "2026-11",
+    keywords: ["Karte sperren", "116 116", "Sperr-Notruf", "girocard", "EC-Karte", "Kreditkarte", "verloren", "gestohlen", "Diebstahl"],
+    needs: [
+      "Ein Telefon",
+      "Am besten Ihre IBAN (steht im Kontoauszug – schreiben Sie sie jetzt schon in Ihr Notfallheft)",
+    ],
+    steps: [
+      {
+        title: "Wann sperren?",
+        text: "Sperren Sie sofort, wenn Ihre Karte verloren oder gestohlen wurde, wenn ein Automat sie eingezogen hat oder wenn Sie Kartendaten, PIN oder TAN an Fremde gegeben haben.",
+        warning: "Warten Sie nicht bis zum nächsten Tag. Jede Stunde zählt.",
+      },
+      {
+        title: "116 116 anrufen",
+        text: "Wählen Sie 116 116. Der Anruf ist kostenlos und rund um die Uhr erreichbar – auch nachts, am Wochenende und an Feiertagen.",
+        tip: "Aus dem Ausland wählen Sie +49 116 116. Klappt das nicht, gibt es die Ersatznummer +49 30 4050 4050.",
+      },
+      {
+        title: "Angaben machen",
+        text: "Sagen Sie Ihren Namen, den Namen Ihrer Bank und Ihre IBAN oder Kontonummer. Die Mitarbeiterin oder der Mitarbeiter leitet die Sperre ein.",
+      },
+      {
+        title: "Online-Banking sperren lassen",
+        text: "Haben Sie Zugangsdaten oder eine TAN verraten? Sagen Sie das ausdrücklich. Dann wird auch Ihr Online-Banking gesperrt.",
+      },
+      {
+        title: "Bei Diebstahl: Anzeige erstatten",
+        text: "Erstatten Sie bei der Polizei Anzeige. Lassen Sie bei der Polizei auch die „KUNO-Sperre“ veranlassen – dann funktioniert die Karte auch nicht mehr beim Bezahlen mit Unterschrift.",
+      },
+      {
+        title: "Neue Karte bestellen",
+        text: "Rufen Sie am nächsten Werktag Ihre Bank an oder gehen Sie in die Filiale. Dort bekommen Sie eine neue Karte.",
+      },
+    ],
+    takeaways: ["Sperr-Notruf: 116 116 – kostenlos, rund um die Uhr.", "IBAN vorher notieren.", "Bei Diebstahl zusätzlich Anzeige und KUNO-Sperre."],
+    related: ["betrug-erkennen-sms-anrufe", "phishing-mails-erkennen"],
+  },
+  {
+    slug: "mit-dem-handy-bezahlen",
+    title: "An der Kasse mit dem Handy bezahlen",
+    summary: "Handy ans Kartenlesegerät halten – fertig. So legen Sie Ihre Bankkarte im Handy an.",
+    category: "bezahlen",
+    app: "Google Wallet (Android) bzw. Wallet (iPhone)",
+    devices: ["android", "iphone"],
+    difficulty: "mittel",
+    minutes: 15,
+    access: "premium",
+    priceCents: 299,
+    checked: "2026-11",
+    keywords: ["Apple Pay", "Google Pay", "Google Wallet", "Wallet", "kontaktlos", "bezahlen", "Kasse", "NFC", "Handy bezahlen"],
+    needs: [
+      "Eine Debit- oder Kreditkarte Ihrer Bank, die Apple Pay bzw. Google Pay unterstützt (fragen Sie bei Ihrer Bank nach)",
+      "Eine Bildschirmsperre am Handy (PIN, Fingerabdruck oder Gesichtserkennung)",
+    ],
+    unverified: true,
+    reviewNote: "Knöpfe in Google Wallet („Zu Wallet hinzufügen“ → „Zahlungskarte“) und Apple Wallet („+“ → „Debit- oder Kreditkarte“) prüfen. Hinweis: Sparkassen-girocard wird bei Android über die Sparkasse-App hinzugefügt, nicht über Google Wallet – evtl. eigene Anleitung.",
+    variants: [
+      {
+        device: "android",
+        unverified: true,
+        steps: [
+          {
+            title: "Google Wallet öffnen",
+            text: "Öffnen Sie die App „Google Wallet“ (Symbol: bunte Geldbörse). Fehlt sie, laden Sie sie aus dem Play Store. Anbieter: „Google LLC“.",
+          },
+          {
+            title: "Karte hinzufügen",
+            text: "Tippen Sie auf „Zu Wallet hinzufügen“ und dann auf „Zahlungskarte“. Wählen Sie „Neue Kredit- oder Debitkarte“.",
+          },
+          {
+            title: "Karte fotografieren",
+            text: "Halten Sie Ihre Bankkarte vor die Kamera. Die Nummer wird automatisch erkannt. Prüfen Sie die Angaben und tippen Sie auf „Speichern“ bzw. „Weiter“.",
+          },
+          {
+            title: "Bedingungen annehmen und bestätigen",
+            text: "Tippen Sie auf „Akzeptieren“. Ihre Bank schickt Ihnen einen Code per SMS oder fragt eine Bestätigung in der Banking-App ab. Folgen Sie den Anweisungen.",
+          },
+          {
+            title: "An der Kasse bezahlen",
+            text: "Entsperren Sie das Handy und halten Sie die Rückseite an das Kartenlesegerät. Ein Haken oder Ton zeigt: bezahlt. Die App muss dafür nicht geöffnet sein.",
+          },
+        ],
+      },
+      {
+        device: "iphone",
+        steps: [
+          {
+            title: "Wallet öffnen",
+            text: "Tippen Sie auf das schwarze Symbol mit den bunten Karten. Es heißt „Wallet“.",
+          },
+          {
+            title: "Plus antippen",
+            text: "Tippen Sie oben rechts auf das Plus-Zeichen (+) und dann auf „Debit- oder Kreditkarte“. Tippen Sie auf „Fortfahren“.",
+          },
+          {
+            title: "Karte erfassen",
+            text: "Halten Sie Ihre Bankkarte in den Rahmen auf dem Bildschirm. Die Nummer wird erkannt. Prüfen Sie Name und Ablaufdatum und tippen Sie auf „Weiter“.",
+          },
+          {
+            title: "Bedingungen annehmen und bestätigen",
+            text: "Tippen Sie auf „Akzeptieren“. Ihre Bank bestätigt die Karte, oft per SMS-Code oder in der Banking-App.",
+          },
+          {
+            title: "An der Kasse bezahlen",
+            text: "iPhone ohne Home-Taste: Drücken Sie zweimal schnell die Seitentaste und schauen Sie aufs iPhone. iPhone mit Home-Taste: Legen Sie den Finger auf die Home-Taste. Halten Sie das iPhone dann oben an das Kartenlesegerät.",
+          },
+        ],
+      },
+    ],
+    takeaways: ["Bezahlen mit dem Handy ist sicher – die echte Kartennummer wird nicht weitergegeben.", "Ohne entsperrtes Handy kann niemand damit bezahlen."],
+    related: ["karte-sperren-116116"],
+  },
+  {
+    slug: "paypal-geld-senden",
+    title: "Mit PayPal Geld an Familie und Freunde schicken",
+    summary: "Das Geld fürs Geburtstagsgeschenk oder die geteilte Rechnung: So schicken Sie Geld an Bekannte – und so nicht an Betrüger.",
+    category: "bezahlen",
+    app: "PayPal (App)",
+    devices: ["android", "iphone"],
+    difficulty: "mittel",
+    minutes: 5,
+    access: "premium",
+    priceCents: 199,
+    checked: "2026-11",
+    keywords: ["PayPal", "Geld senden", "schicken", "überweisen", "Freunde", "Familie"],
+    needs: ["Ihr PayPal-Konto (siehe „PayPal einrichten“)", "Die E-Mail-Adresse oder Handynummer der Person"],
+    unverified: true,
+    reviewNote: "Knöpfe in der PayPal-App („Senden“, „Weiter“, Auswahl „Für Freunde und Familie“) auf aktueller Version prüfen – PayPal hat die App 2025 umgestaltet.",
+    steps: [
+      {
+        title: "PayPal-App öffnen",
+        text: "Öffnen Sie die App „PayPal“ und melden Sie sich an.",
+      },
+      {
+        title: "„Senden“ antippen",
+        text: "Tippen Sie auf der Startseite auf „Senden“.",
+      },
+      {
+        title: "Empfänger eingeben",
+        text: "Tippen Sie den Namen, die E-Mail-Adresse oder die Handynummer der Person ein. Tippen Sie auf den richtigen Eintrag.",
+        warning: "Prüfen Sie Name und Bild genau, bevor Sie weitermachen. Geld an die falsche Person bekommen Sie nur schwer zurück.",
+      },
+      {
+        title: "Betrag eingeben",
+        text: "Tippen Sie den Betrag ein, zum Beispiel 20. Darunter können Sie eine kurze Nachricht schreiben, zum Beispiel „Für das Geschenk“. Tippen Sie auf „Weiter“.",
+      },
+      {
+        title: "„Für Freunde und Familie“ nur bei Bekannten",
+        text: "Fragt PayPal, wofür das Geld ist, wählen Sie „Für Freunde und Familie“ – aber nur, wenn Sie die Person wirklich kennen.",
+        warning: "Für Freunde und Familie gibt es keinen Käuferschutz. Verlangt ein Verkäufer bei Kleinanzeigen diese Zahlart, ist das fast immer Betrug.",
+      },
+      {
+        title: "Senden",
+        text: "Prüfen Sie Empfänger und Betrag. Tippen Sie auf „Jetzt senden“ bzw. „Senden“. Sie bekommen eine Bestätigung per E-Mail.",
+      },
+    ],
+    takeaways: ["„Freunde und Familie“ nur für Menschen, die Sie wirklich kennen.", "Beim Einkaufen immer mit Käuferschutz bezahlen."],
+    related: ["paypal-einrichten", "sicher-online-bezahlen"],
+  },
+  {
+    slug: "paypal-kaeuferschutz",
+    title: "Ware nicht angekommen? PayPal-Käuferschutz nutzen",
+    summary: "Bestellt, bezahlt, aber nichts bekommen? So melden Sie das Problem bei PayPal und bekommen Ihr Geld zurück.",
+    category: "bezahlen",
+    app: "PayPal (paypal.com am Computer)",
+    devices: ["computer"],
+    difficulty: "mittel",
+    minutes: 15,
+    access: "premium",
+    priceCents: 299,
+    checked: "2026-11",
+    keywords: ["PayPal", "Käuferschutz", "Konflikt", "Problem melden", "Ware nicht erhalten", "Geld zurück", "Betrug", "Fakeshop"],
+    needs: ["Ihr PayPal-Konto", "Die Bestellung (Datum, Betrag, Händler)", "Am besten den Computer – die Formulare sind dort übersichtlicher"],
+    unverified: true,
+    reviewNote: "Menüweg auf paypal.com („Konfliktlösungen“ bzw. „Problem melden“ in der Transaktion) und Fristen (180 Tage) prüfen; ggf. mit markierten Screenshots ergänzen (ohne eigene Kontodaten).",
+    steps: [
+      {
+        title: "Zuerst beim Händler melden",
+        text: "Schreiben Sie dem Händler eine kurze Nachricht: Die Ware ist nicht angekommen oder ist falsch. Warten Sie ein paar Tage auf eine Antwort.",
+        tip: "Ist der Shop nicht erreichbar oder wirkt er gefälscht, melden Sie das Problem sofort bei PayPal.",
+      },
+      {
+        title: "Bei PayPal anmelden",
+        text: "Tippen Sie am Computer selbst „paypal.com“ in die Adresszeile. Klicken Sie oben rechts auf „Einloggen“ und melden Sie sich an.",
+        image: {
+          src: "/screenshots/paypal-kaeuferschutz/einloggen.webp",
+          alt: "Startseite von paypal.com. Oben rechts ist der Knopf „Einloggen“ markiert.",
+          credit: "paypal.com",
+        },
+        warning: "Nicht über einen Link in einer E-Mail anmelden – auch wenn die Mail echt aussieht.",
+      },
+      {
+        title: "Die Zahlung öffnen",
+        text: "Klicken Sie oben auf „Aktivitäten“. Suchen Sie die Zahlung an den Händler und klicken Sie darauf.",
+      },
+      {
+        title: "„Problem melden“ klicken",
+        text: "Klicken Sie in der Zahlung auf „Problem melden“. Wählen Sie den Grund, zum Beispiel „Ich habe meinen Artikel nicht erhalten“.",
+      },
+      {
+        title: "Angaben machen und absenden",
+        text: "Beschreiben Sie kurz, was passiert ist. Klicken Sie auf „Weiter“ und senden Sie die Meldung ab. PayPal informiert den Händler.",
+      },
+      {
+        title: "Fristen beachten",
+        text: "Sie haben 180 Tage nach der Zahlung Zeit. Antwortet der Händler nicht oder einigen Sie sich nicht, können Sie den Fall an PayPal zur Entscheidung weitergeben. Achten Sie auf E-Mails von PayPal.",
+      },
+    ],
+    takeaways: ["Erst Händler kontaktieren, dann „Problem melden“.", "180 Tage Frist.", "Zahlungen „Für Freunde und Familie“ sind nicht geschützt."],
+    related: ["paypal-einrichten", "sicher-online-bezahlen"],
   },
 ];
