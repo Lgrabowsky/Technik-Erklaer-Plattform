@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>iPhone-Nachbildung für Anleitungsbilder</title>
+  <link rel="stylesheet" href="stil.css">
+</head>
+<body>
+  <!--
+    Nachgestellte iPhone-Ansicht (deutsch) für Anleitungsbilder.
+    Kein Apple-Produkt, keine Apple-Grafiken: Symbole und Hintergrund sind selbst gezeichnet,
+    Schrift ist Inter (OFL). Alle Beschriftungen stehen mit Quelle in texte.js.
+    Bedienung: siehe LIESMICH.md
+  -->
+  <main id="buehne">
+    <div id="rahmen">
+      <div id="bildschirm" aria-label="Nachgestellter iPhone-Bildschirm"></div>
+      <div id="streifen" hidden>
+        <span class="marke" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#d4ff3a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19h5v-5h5V9h5V4"/></svg>
+        </span>
+        <span id="streifen-text"></span>
+      </div>
+    </div>
+    <aside id="steuerung">
+      <p><strong>iPhone-Nachbildung</strong> – tippen wie auf dem Handy. Unten über den Strich nach oben ziehen oder darauf tippen = Home-Bildschirm.</p>
+      <label>iOS-Version
+        <select id="wahl-ios">
+          <option value="27">iOS 27</option>
+          <option value="26">iOS 26</option>
+        </select>
+      </label>
+      <p class="hinweis">Für fertige Anleitungsbilder: <code>node werkzeuge/iphone-nachbildung/aufnehmen.mjs</code></p>
+    </aside>
+  </main>
+  <script src="texte.js"></script>
+  <script src="symbole.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

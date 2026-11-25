@@ -1,0 +1,148 @@
+@font-face { font-family: "Inter"; font-weight: 400; src: url("schrift/Inter-Regular.otf"); }
+@font-face { font-family: "Inter"; font-weight: 500; src: url("schrift/Inter-Medium.otf"); }
+@font-face { font-family: "Inter"; font-weight: 600; src: url("schrift/Inter-SemiBold.otf"); }
+@font-face { font-family: "Inter"; font-weight: 700; src: url("schrift/Inter-Bold.otf"); }
+
+:root {
+  --ink: #0d0f14;
+  --signal: #d4ff3a;
+  --grund: #f2f2f7;
+  --karte: #ffffff;
+  --text: #000000;
+  --grau: #8a8a8e;
+  --linie: #e3e3e8;
+  --blau: #0a7cff;
+  --gruen: #34c759;
+  --b: 393px;   /* logische Breite (iPhone 16/17) */
+  --h: 852px;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; background: #2a2c31; font-family: "Inter", system-ui, sans-serif; }
+#buehne { display: flex; gap: 32px; align-items: flex-start; justify-content: center; padding: 24px 16px; flex-wrap: wrap; }
+
+#rahmen { background: var(--ink); padding: 12px; border-radius: 64px; box-shadow: 0 20px 60px rgba(0,0,0,.45); }
+#bildschirm {
+  position: relative; width: var(--b); height: var(--h); overflow: hidden;
+  border-radius: 54px; background: var(--grund); color: var(--text);
+  -webkit-font-smoothing: antialiased; user-select: none; letter-spacing: -0.022em;
+}
+
+#steuerung { color: #eee; max-width: 280px; font-size: 15px; line-height: 1.45; }
+#steuerung select { font: inherit; margin-left: 8px; }
+#steuerung code { background: #111; padding: 2px 5px; border-radius: 4px; font-size: 12px; }
+.hinweis { opacity: .7; font-size: 13px; }
+
+/* ---------- Aufnahme-Modus: Bildschirm + Streifen, ohne Gehäuse ---------- */
+body.aufnahme { background: var(--ink); }
+body.aufnahme #buehne { padding: 0; display: block; }
+body.aufnahme #steuerung { display: none; }
+body.aufnahme #rahmen { padding: 14px 14px 0; border-radius: 0; box-shadow: none; display: inline-block; }
+body.aufnahme #bildschirm { border-radius: 46px; }
+body.aufnahme * { transition: none !important; animation: none !important; }
+#streifen { display: flex; align-items: center; gap: 10px; height: 52px; color: #fff; font-size: 14px; font-weight: 600; padding: 0 4px; }
+#streifen[hidden] { display: none; }
+#streifen .marke { width: 30px; height: 30px; border-radius: 9px; border: 2px solid var(--signal); display: grid; place-items: center; flex-shrink: 0; }
+#streifen .marke svg { width: 18px; height: 18px; }
+#streifen-text { margin-left: auto; text-align: right; }
+
+/* ---------- Statusleiste & Dynamic Island ---------- */
+.status { position: absolute; top: 0; left: 0; right: 0; height: 54px; z-index: 50; display: flex; align-items: center; justify-content: space-between; padding: 6px 30px 0 52px; font-weight: 600; font-size: 17px; pointer-events: none; }
+.status.hell { color: #fff; }
+.status .rechts { display: flex; gap: 6px; align-items: center; }
+.status .rechts svg { height: 12px; width: auto; }
+.status .rechts svg:last-child { height: 13px; }
+.insel { position: absolute; top: 11px; left: 50%; transform: translateX(-50%); width: 124px; height: 36px; background: #000; border-radius: 20px; z-index: 60; }
+.home-strich { position: absolute; bottom: 8px; left: 50%; transform: translateX(-50%); width: 140px; height: 5px; border-radius: 3px; background: #000; z-index: 60; cursor: pointer; }
+.home-strich.hell { background: #fff; }
+
+/* ---------- Seiten & Übergänge ---------- */
+.seite { position: absolute; inset: 0; background: var(--grund); overflow-y: auto; overflow-x: hidden; scrollbar-width: none; transition: transform .38s cubic-bezier(.2,.8,.2,1), filter .38s; }
+.seite::-webkit-scrollbar { display: none; }
+.seite.rein { transform: translateX(100%); }
+.seite.hinten { transform: translateX(-28%); filter: brightness(.92); visibility: hidden; transition: transform .38s cubic-bezier(.2,.8,.2,1), filter .38s, visibility 0s .38s; }
+.app-oeffnen { animation: aufgehen .35s cubic-bezier(.2,.8,.2,1); }
+@keyframes aufgehen { from { transform: scale(.25); opacity: 0; border-radius: 40px; } to { transform: scale(1); opacity: 1; } }
+
+/* ---------- Home-Bildschirm ---------- */
+.home { background: radial-gradient(120% 80% at 20% 10%, #ff9a7a 0%, transparent 55%), radial-gradient(110% 70% at 90% 40%, #7b7cff 0%, transparent 60%), radial-gradient(120% 90% at 30% 100%, #2bc4b4 0%, transparent 60%), #3c3f8f; }
+.home-raster { display: grid; grid-template-columns: repeat(4, 1fr); row-gap: 26px; padding: 76px 24px 0; }
+.app { display: flex; flex-direction: column; align-items: center; gap: 6px; cursor: pointer; }
+.app .kachel { width: 64px; height: 64px; border-radius: 15px; display: grid; place-items: center; color: #fff; box-shadow: 0 2px 6px rgba(0,0,0,.15); }
+.app .kachel svg { width: 38px; height: 38px; }
+.app span { color: #fff; font-size: 12px; font-weight: 500; text-shadow: 0 1px 2px rgba(0,0,0,.3); letter-spacing: 0; }
+.kal { background: #fff !important; color: #000 !important; display: flex !important; flex-direction: column; align-items: center; justify-content: center; line-height: 1; }
+.kal small { color: #ff3b30; font-size: 10px; font-weight: 600; margin-bottom: 2px; }
+.kal b { font-size: 30px; font-weight: 400; }
+.suchpille { position: absolute; left: 50%; transform: translateX(-50%); bottom: 128px; background: rgba(255,255,255,.28); backdrop-filter: blur(20px); color: #fff; border-radius: 20px; padding: 7px 14px; font-size: 14px; font-weight: 600; display: flex; gap: 6px; align-items: center; }
+.suchpille svg { width: 14px; height: 14px; }
+.dock { position: absolute; left: 12px; right: 12px; bottom: 16px; height: 96px; border-radius: 38px; background: rgba(255,255,255,.3); backdrop-filter: blur(24px); display: flex; justify-content: space-around; align-items: center; padding: 0 12px; }
+.dock .app span { display: none; }
+
+/* ---------- Einstellungen ---------- */
+.navleiste { position: sticky; top: 0; z-index: 20; height: 104px; padding: 54px 16px 0; display: flex; align-items: center; background: linear-gradient(rgba(242,242,247,.97) 82%, rgba(242,242,247,0)); backdrop-filter: blur(10px); }
+.navleiste h1 { position: absolute; left: 0; right: 0; text-align: center; font-size: 17px; font-weight: 600; margin: 0; pointer-events: none; }
+.zurueck { width: 44px; height: 44px; border-radius: 50%; background: rgba(255,255,255,.85); box-shadow: 0 1px 4px rgba(0,0,0,.08), inset 0 0 0 .5px rgba(0,0,0,.06); display: grid; place-items: center; cursor: pointer; position: relative; z-index: 1; }
+.zurueck svg { width: 20px; height: 20px; }
+.grosstitel { font-size: 34px; font-weight: 700; letter-spacing: -0.02em; margin: 58px 20px 10px; }
+.suchfeld { margin: 0 16px 18px; height: 38px; border-radius: 19px; background: #e3e3e8; display: flex; align-items: center; gap: 6px; padding: 0 12px; color: var(--grau); font-size: 17px; }
+.suchfeld svg { width: 17px; height: 17px; }
+
+.gruppe { background: var(--karte); border-radius: 26px; margin: 0 16px 20px; overflow: hidden; }
+.zeile { display: flex; align-items: center; min-height: 52px; padding: 0 16px; gap: 14px; position: relative; cursor: pointer; font-size: 17px; }
+.zeile:active { background: #e5e5ea; }
+.zeile + .zeile::before { content: ""; position: absolute; top: 0; right: 0; left: var(--einzug, 60px); height: .5px; background: var(--linie); }
+.zeile.ohne-symbol { --einzug: 16px; }
+.zeile .symbol { width: 30px; height: 30px; border-radius: 8px; display: grid; place-items: center; color: #fff; flex-shrink: 0; }
+.zeile .symbol svg { width: 20px; height: 20px; }
+.zeile .titel { flex: 1; padding: 15px 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; letter-spacing: -0.03em; }
+.zeile .wert { color: var(--grau); }
+.zeile .pfeil { width: 9px; height: 15px; color: #c4c4c7; flex-shrink: 0; }
+.profil { min-height: 76px; }
+.profil .bild { width: 52px; height: 52px; border-radius: 50%; background: #c7c7cc; display: grid; place-items: center; color: #fff; }
+.profil .bild svg { width: 32px; height: 32px; }
+.profil .unscharf { flex: 1; display: flex; flex-direction: column; gap: 8px; }
+.profil .unscharf i { display: block; height: 12px; border-radius: 6px; background: #d1d1d6; filter: blur(2.5px); }
+
+.schalter { width: 63px; height: 28px; border-radius: 14px; background: #e9e9eb; position: relative; transition: background .2s; flex-shrink: 0; }
+.schalter::after { content: ""; position: absolute; top: 2px; left: 2px; width: 38px; height: 24px; border-radius: 12px; background: #fff; box-shadow: 0 2px 4px rgba(0,0,0,.15); transition: left .2s; }
+.schalter.an { background: var(--gruen); }
+.schalter.an::after { left: 23px; }
+
+.fussnote { color: var(--grau); font-size: 13px; line-height: 1.35; margin: -12px 32px 22px; }
+.kopf { color: var(--grau); font-size: 13px; margin: 0 32px 7px; text-transform: uppercase; letter-spacing: .02em; }
+
+/* Hell / Dunkel */
+.modi { display: flex; justify-content: space-around; padding: 20px 26px 14px; }
+.modus { display: flex; flex-direction: column; align-items: center; gap: 8px; cursor: pointer; font-size: 15px; }
+.modus .vorschau { width: 72px; height: 150px; border-radius: 14px; border: 1px solid #d1d1d6; position: relative; overflow: hidden; }
+.modus .vorschau::before { content: "10:24"; position: absolute; top: 18px; left: 0; right: 0; text-align: center; font-weight: 600; font-size: 15px; }
+.modus.hellm .vorschau { background: linear-gradient(160deg, #a3d8ff, #6b8cff); color: #fff; }
+.modus.dunkelm .vorschau { background: linear-gradient(160deg, #1d2a5a, #0b0f24); color: #fff; }
+.kreis { width: 22px; height: 22px; border-radius: 50%; border: 1.5px solid #c7c7cc; display: grid; place-items: center; }
+.kreis.an { background: var(--blau); border-color: var(--blau); }
+.kreis.an::after { content: ""; width: 8px; height: 5px; border: 2px solid #fff; border-top: 0; border-right: 0; transform: rotate(-45deg) translate(1px,-1px); }
+
+/* Regler (Helligkeit, Textgröße) */
+.regler-zeile { display: flex; align-items: center; gap: 14px; padding: 14px 16px; }
+.regler-zeile svg.klein { width: 16px; height: 16px; color: var(--grau); }
+.regler-zeile svg.gross { width: 24px; height: 24px; color: var(--grau); }
+.regler { flex: 1; height: 6px; border-radius: 3px; background: #e3e3e8; position: relative; cursor: pointer; touch-action: none; }
+.regler .fuellung { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 3px; background: var(--blau); }
+.regler .knopf { position: absolute; top: 50%; width: 38px; height: 24px; margin: -12px 0 0 -19px; border-radius: 12px; background: #fff; box-shadow: 0 1px 6px rgba(0,0,0,.25); }
+.regler.stufen { background: transparent; height: 28px; }
+.regler.stufen::before { content: ""; position: absolute; left: 0; right: 0; top: 50%; height: 2px; margin-top: -1px; background: #c7c7cc; }
+.regler.stufen .strich { position: absolute; top: 50%; width: 2px; height: 10px; margin: -5px 0 0 -1px; background: #c7c7cc; }
+.textgroesse-beispiel { padding: 22px 22px 24px; line-height: 1.3; text-align: center; color: var(--text); }
+.textgroesse-unten { position: absolute; left: 0; right: 0; bottom: 34px; }
+.textgroesse-unten .gruppe { margin-bottom: 0; }
+.textgroesse-unten .regler-zeile { padding: 18px 18px; }
+.textgroesse-unten .klein-a { font-size: 13px; font-weight: 500; }
+.textgroesse-unten .gross-a { font-size: 24px; font-weight: 500; }
+
+/* ---------- Markierung (Plattform-Stil) ---------- */
+.markierung { position: absolute; z-index: 90; border-radius: 18px; pointer-events: none;
+  box-shadow: 0 0 0 3px var(--ink), 0 0 0 7px var(--signal), 0 0 0 10px var(--ink), 0 0 0 2000px rgba(13,15,20,.42); }
+.markierung.rund { border-radius: 22px; }
+.nummer { position: absolute; z-index: 91; width: 40px; height: 40px; border-radius: 50%; background: var(--signal); color: var(--ink); border: 3px solid var(--ink); display: grid; place-items: center; font-weight: 700; font-size: 20px; pointer-events: none; }
+.finger { position: absolute; z-index: 91; width: 34px; height: 34px; border-radius: 50%; background: rgba(212,255,58,.55); border: 3px solid var(--ink); pointer-events: none; transform: translate(-50%, -50%); }
