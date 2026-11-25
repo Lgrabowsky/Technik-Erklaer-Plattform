@@ -78,7 +78,12 @@ export const sicherheit: Guide[] = [
       },
       {
         title: "Mail löschen oder melden",
-        text: "Löschen Sie die Mail. Viele Postfächer haben auch einen Knopf „Spam“ oder „Phishing melden“. Die Verbraucherzentrale sammelt Phishing-Mails im „Phishing-Radar“.",
+        text: "Löschen Sie die Mail. Viele Postfächer haben auch einen Knopf „Spam“ oder „Phishing melden“. Die Verbraucherzentrale sammelt Phishing-Mails im „Phishing-Radar“: Leiten Sie die Mail an die grün markierte Adresse weiter.",
+        image: {
+          src: "/screenshots/phishing-mails-erkennen/phishing-radar.webp",
+          alt: "Seite „Phishing-Radar“ der Verbraucherzentrale. Die E-Mail-Adresse phishing@verbraucherzentrale.nrw ist markiert.",
+          credit: "verbraucherzentrale.de",
+        },
       },
       {
         title: "Doch geklickt?",
@@ -168,7 +173,12 @@ export const sicherheit: Guide[] = [
       },
       {
         title: "Faktenchecks nutzen",
-        text: "Seiten wie „correctiv.org/faktencheck“ oder der „ARD-Faktenfinder“ prüfen bekannte Falschmeldungen. Suchen Sie dort nach dem Thema.",
+        text: "Seiten wie „correctiv.org/faktencheck“ oder der „ARD-Faktenfinder“ prüfen bekannte Falschmeldungen. Klicken Sie oben rechts auf die Lupe und suchen Sie nach dem Thema.",
+        image: {
+          src: "/screenshots/fakes-und-ki-erkennen/faktencheck-suchen.webp",
+          alt: "Faktencheck-Seite von Correctiv. Oben rechts ist die Lupe für die Suche markiert.",
+          credit: "correctiv.org",
+        },
       },
     ],
     takeaways: ["Starke Gefühle sind ein Warnzeichen.", "Quelle prüfen, Details ansehen.", "Familien-Codewort gegen gefälschte Stimmen."],
