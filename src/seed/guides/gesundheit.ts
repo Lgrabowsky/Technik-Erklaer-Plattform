@@ -208,10 +208,10 @@ export const gesundheit: Guide[] = [
           },
           {
             title: "Medizinische Infos eintragen",
-            text: "Tippen Sie auf „Medizinische Daten“. Tragen Sie Blutgruppe, Allergien, Medikamente und Erkrankungen ein. Tippen Sie auf „Speichern“.",
+            text: "Tippen Sie auf „Medizinische Daten“. Tippen Sie auf „Mehr“, damit alle Felder erscheinen. Tippen Sie nacheinander auf „Blutgruppe“ (1), „Allergien“ (2), „Medikamente“ und „Medizinische Informationen“ und tragen Sie Ihre Angaben ein.",
             image: {
-              src: "/screenshots/notfallpass-handy/android-medizinische-daten.webp",
-              alt: "Seite „Notfälle & Sicherheit“. Der Eintrag „Medizinische Daten“ ist markiert.",
+              src: "/screenshots/notfallpass-handy/android-medizinische-felder.webp",
+              alt: "Seite „Medizinische Daten“. Die Felder „Blutgruppe“ (1) und „Allergien“ (2) sind markiert.",
               credit: "Android 16 (Pixel)",
             },
           },
@@ -220,13 +220,18 @@ export const gesundheit: Guide[] = [
             text: "Gehen Sie zurück und tippen Sie auf „Notfallkontakte“. Tippen Sie auf „Kontakt hinzufügen“ und wählen Sie Ihren Angehörigen aus.",
             image: {
               src: "/screenshots/notfallpass-handy/android-notfallkontakte.webp",
-              alt: "Seite „Notfälle & Sicherheit“. Der Eintrag „Notfallkontakte“ ist markiert.",
+              alt: "Seite „Notfallkontakte“. Der Eintrag „Kontakt hinzufügen“ ist markiert.",
               credit: "Android 16 (Pixel)",
             },
           },
           {
             title: "Auf dem Sperrbildschirm zeigen",
-            text: "Schalten Sie „Auf Sperrbildschirm anzeigen“ ein, falls dieser Schalter erscheint. Helfer finden Ihre Infos dann auf dem Sperrbildschirm über „Notruf“ und „Notfallinformationen“.",
+            text: "Tippen Sie unten auf „Einstellung ändern“. Prüfen Sie, dass „Anzeigen, wenn gesperrt“ eingeschaltet ist. Helfer finden Ihre Infos dann auf dem Sperrbildschirm über „Notruf“ und „Notfallinformationen“.",
+            image: {
+              src: "/screenshots/notfallpass-handy/android-sperrbildschirm.webp",
+              alt: "Seite „Zugriff auf Notfallinformationen“. Der Schalter „Anzeigen, wenn gesperrt“ ist markiert.",
+              credit: "Android 16 (Pixel)",
+            },
           },
         ],
       },

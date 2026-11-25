@@ -568,11 +568,21 @@ export const sicherheit: Guide[] = [
           },
           {
             title: "Funktion einschalten",
-            text: "Schalten Sie „Notfall-SOS verwenden“ ein. Ab jetzt gilt: Drücken Sie fünfmal schnell die Ein/Aus-Taste, ruft das Handy die 112 an.",
+            text: "Bei „Notfall-SOS“ steht meist schon „An“. Auf der Seite „Notfall-SOS“ prüfen Sie unter „Notfallaktionen“, dass der Schalter „Rettungsdienst anrufen“ eingeschaltet ist. Ab jetzt gilt: Drücken Sie fünfmal oder öfter schnell die Ein/Aus-Taste, ruft das Handy die 112 an.",
+            image: {
+              src: "/screenshots/notruf-sos-einrichten/android-rettungsdienst.webp",
+              alt: "Seite „Notfall-SOS“. Unter „Notfallaktionen“ ist der Schalter „Rettungsdienst anrufen“ markiert.",
+              credit: "Android 16 (Pixel)",
+            },
           },
           {
             title: "Notfallkontakte informieren (optional)",
-            text: "Darunter können Sie einstellen, dass Ihre Notfallkontakte eine Nachricht mit Ihrem Standort bekommen.",
+            text: "Darunter können Sie „Informationen mit Notfallkontakten teilen“ einschalten. Dann bekommen Ihre Notfallkontakte eine Nachricht mit Ihrem Standort. Dafür müssen Sie mit Ihrem Google-Konto angemeldet sein.",
+            image: {
+              src: "/screenshots/notruf-sos-einrichten/android-kontakte-teilen.webp",
+              alt: "Seite „Notfall-SOS“. Die Einstellung „Informationen mit Notfallkontakten teilen“ ist markiert.",
+              credit: "Android 16 (Pixel)",
+            },
             warning: "Probieren Sie die Funktion nicht aus – sonst ruft das Handy wirklich die 112. Bei einem versehentlichen Anruf: Nicht auflegen, sondern kurz sagen, dass es ein Versehen war.",
           },
         ],
