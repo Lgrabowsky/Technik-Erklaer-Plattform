@@ -1,0 +1,25 @@
+Anleitung: Eine Nummer blockieren – Android-Rohscreenshots
+Gerät: Android-Studio-Emulator, Profil „Pixel 7“ (AVD Pixel_7_A16), Modellkennung sdk_gphone64_x86_64
+Android-Version: 16 (API 36), Google-Play-Image, x86_64, Sicherheitsupdate 5. Juli 2025
+Systemsprache: Deutsch (Deutschland), nicht angemeldet (kein Google-Konto)
+Alle Bilder: 1080 x 2400 Pixel. Koordinaten in Bildpixeln, Format [x1,y1][x2,y2]
+App: „Telefon“ (Google Telefon). Anruf von 03012345678 per Emulator simuliert und wieder beendet (verpasster Anruf).
+
+01-telefon-app.png – Telefon-App, Tab „Favoriten“ (leer)
+  Ziel: Tab „Anrufliste“ (unten, 2. von links)   bounds [270,2126][540,2337]
+
+02-anrufliste.png – Tab „Anrufliste“, Abschnitt „Heute“
+  Ziel: Eintrag „03012345678“ (verpasster Anruf, „Gerade eben“) – lange drücken   bounds [0,430][1080,736]
+  Hinweis: Unter dem Eintrag gibt es auch direkt die Knöpfe „Hinzufügen“ [189,610][513,736] und „Als Spam melden“ [534,610][955,736]
+
+03-menue-langer-druck.png – Menü nach langem Druck (Kopfzeile „03012345678“)
+  Ziel: „Blockieren/Spam melden“   bounds [388,911][1080,1037]
+  Weitere: „Nummer kopieren“, „Vor Anruf Nummer bearbeiten“, „Löschen“
+
+04-bestaetigung-blockieren.png – Dialog „03012345678 blockieren?“
+  Text: „Du erhältst von dieser Nummer keine Anrufe oder Nachrichten mehr.“
+  Kästchen „Anruf als Spam melden“ (angehakt)   bounds [143,1233][926,1359]
+  Ziel: „Blockieren“   bounds [749,1359][989,1485]
+  „Abbrechen“   bounds [499,1359][749,1485]  – damit beendet, NICHT blockiert.
+
+Anrufliste danach geleert, keine Nummer blockiert, Benachrichtigung „Entgangener Anruf“ gelöscht.

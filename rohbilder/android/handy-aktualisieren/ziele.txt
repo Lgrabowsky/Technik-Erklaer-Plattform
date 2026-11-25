@@ -1,0 +1,21 @@
+Anleitung: Das Handy aktualisieren – Android-Rohscreenshots
+Gerät: Android-Studio-Emulator, Profil „Pixel 7“ (AVD Pixel_7_A16), Modellkennung sdk_gphone64_x86_64
+Android-Version: 16 (API 36), Google-Play-Image, x86_64, Sicherheitsupdate 5. Juli 2025
+Systemsprache: Deutsch (Deutschland), nicht angemeldet (kein Google-Konto)
+Alle Bilder: 1080 x 2400 Pixel. Koordinaten in Bildpixeln, Format [x1,y1][x2,y2]
+
+01-einstellungen.png – Einstellungen, Hauptliste (weit nach unten gescrollt)
+  Ziel: „System“ (Untertitel: „Sprachen, Gesten, Zeit, Sicherung“)   bounds [0,934][1080,1140]
+
+02-system.png – Seite „System“ (ganz nach unten gescrollt)
+  Ziel: „Softwareupdates“ (Untertitel: „Dein Pixel ist auf dem neuesten Stand“)   bounds [0,1571][1080,1770]
+
+03-softwareupdates.png – Seite „Softwareupdates“ („Dein Pixel ist auf dem neuesten Stand“)
+  Ziel: „Systemupdate“ (Untertitel: „Aktualisiert auf 5. Juli 2025“)   bounds [42,1281][1038,1460]
+  Weitere: „App-Updates“ / „Nach Updates suchen“   bounds [42,1466][1038,1645]
+
+04-systemupdate.png – Seite Systemupdate: „Dein System ist auf dem neuesten Stand“
+  Text: Android-Version 16, Android-Sicherheitsupdate 5. Juli 2025, letzte Suche nach Updates 10:02
+  Knopf „Nach Updates suchen“   bounds [585,2179][1027,2305]  (nicht angetippt)
+
+Nichts installiert.
