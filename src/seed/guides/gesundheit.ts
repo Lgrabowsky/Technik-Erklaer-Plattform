@@ -203,15 +203,15 @@ export const gesundheit: Guide[] = [
           },
           {
             title: "Medizinische Infos eintragen",
-            text: "Tippen Sie auf „Medizinische Infos“ (Samsung) bzw. „Medizinische Informationen“ (z. B. Google Pixel). Tragen Sie Blutgruppe, Allergien, Medikamente und Erkrankungen ein. Tippen Sie auf „Speichern“.",
+            text: "Tippen Sie auf „Medizinische Informationen“. Tragen Sie Blutgruppe, Allergien, Medikamente und Erkrankungen ein. Tippen Sie auf „Speichern“.",
           },
           {
             title: "Notfallkontakt hinzufügen",
-            text: "Gehen Sie zurück und tippen Sie auf „Notfallkontakte“. Tippen Sie auf „Mitglied hinzufügen“ bzw. „Kontakt hinzufügen“ und wählen Sie Ihren Angehörigen aus.",
+            text: "Gehen Sie zurück und tippen Sie auf „Notfallkontakte“. Tippen Sie auf „Kontakt hinzufügen“ und wählen Sie Ihren Angehörigen aus.",
           },
           {
             title: "Auf dem Sperrbildschirm zeigen",
-            text: "Schalten Sie „Auf Sperrbildschirm anzeigen“ ein, falls es angeboten wird. Dann sehen Helfer die Infos über den Knopf „Notfall“ auf dem Sperrbildschirm.",
+            text: "Schalten Sie „Auf Sperrbildschirm anzeigen“ ein, falls dieser Schalter erscheint. Helfer finden Ihre Infos dann auf dem Sperrbildschirm über „Notruf“ und „Notfallinformationen“.",
           },
         ],
       },
@@ -241,9 +241,36 @@ export const gesundheit: Guide[] = [
           },
         ],
       },
+      {
+        device: "samsung",
+        unverified: true,
+        steps: [
+          {
+            title: "Einstellungen öffnen",
+            text: "Tippen Sie auf das Zahnrad-Symbol „Einstellungen“.",
+          },
+          {
+            title: "„Sicherheit und Notfall“ öffnen",
+            text: "Wischen Sie nach unten und tippen Sie auf „Sicherheit und Notfall“.",
+            tip: "Nicht gefunden? Tippen Sie oben auf die Lupe und geben Sie „Notfall“ ein.",
+          },
+          {
+            title: "Medizinische Infos eintragen",
+            text: "Tippen Sie auf „Medizinische Infos“. Tragen Sie Blutgruppe, Allergien, Medikamente und Erkrankungen ein. Tippen Sie auf „Speichern“.",
+          },
+          {
+            title: "Notfallkontakt hinzufügen",
+            text: "Gehen Sie zurück und tippen Sie auf „Notfallkontakte“ und dann auf „Mitglied hinzufügen“. Wählen Sie Ihren Angehörigen aus.",
+          },
+          {
+            title: "Auf dem Sperrbildschirm zeigen",
+            text: "Schalten Sie „Auf Sperrbildschirm anzeigen“ ein. Dann sehen Helfer die Infos über den Knopf „Notruf“ auf dem Sperrbildschirm.",
+          },
+        ],
+      },
     ],
     takeaways: ["Notfall-Infos helfen Rettungskräften, ohne dass Ihr Handy entsperrt werden muss.", "Angaben einmal im Jahr aktualisieren."],
-    reviewNote: "Android: Menünamen bei Samsung („Sicherheit und Notfall“ → „Medizinische Infos“) und Pixel (Notfallinfos ggf. in App „Persönliche Sicherheit“) auf aktuellem Gerät prüfen.",
+    reviewNote: "Samsung: „Sicherheit und Notfall“ → „Medizinische Infos“, „Notfallkontakte“ → „Mitglied hinzufügen“, Schalter „Auf Sperrbildschirm anzeigen“ prüfen. Pixel: „Medizinische Informationen“ (öffnet ggf. App „Persönliche Sicherheit“), „Kontakt hinzufügen“ und Sperrbildschirm-Einstellung prüfen.",
     related: ["notruf-sos-einrichten"],
   },
   {
