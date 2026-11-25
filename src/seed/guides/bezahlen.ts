@@ -22,7 +22,12 @@ export const bezahlen: Guide[] = [
       },
       {
         title: "Impressum prüfen",
-        text: "Ein seriöser Shop hat ganz unten ein „Impressum“ mit Firmenname, Adresse in Deutschland oder der EU und Telefonnummer.",
+        text: "Ein seriöser Shop hat ganz unten ein „Impressum“ mit Firmenname, Adresse in Deutschland oder der EU und Telefonnummer. Scrollen Sie ganz nach unten und klicken Sie auf „Impressum“.",
+        image: {
+          src: "/screenshots/sicher-online-bezahlen/impressum.webp",
+          alt: "Unteres Ende der Seite von otto.de. Der Link „Impressum“ ist markiert.",
+          credit: "otto.de",
+        },
       },
       {
         title: "Fake-Shop-Finder nutzen",
@@ -379,7 +384,12 @@ export const bezahlen: Guide[] = [
       },
       {
         title: "Bei PayPal anmelden",
-        text: "Tippen Sie am Computer selbst „paypal.com“ in die Adresszeile und melden Sie sich an.",
+        text: "Tippen Sie am Computer selbst „paypal.com“ in die Adresszeile. Klicken Sie oben rechts auf „Einloggen“ und melden Sie sich an.",
+        image: {
+          src: "/screenshots/paypal-kaeuferschutz/einloggen.webp",
+          alt: "Startseite von paypal.com. Oben rechts ist der Knopf „Einloggen“ markiert.",
+          credit: "paypal.com",
+        },
         warning: "Nicht über einen Link in einer E-Mail anmelden – auch wenn die Mail echt aussieht.",
       },
       {

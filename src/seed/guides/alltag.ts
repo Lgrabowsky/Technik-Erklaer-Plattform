@@ -167,7 +167,12 @@ export const alltag: Guide[] = [
     steps: [
       {
         title: "Gmail öffnen",
-        text: "Öffnen Sie Ihren Browser und tippen Sie oben „gmail.com“ ein. Melden Sie sich an, falls nötig.",
+        text: "Öffnen Sie Ihren Browser und tippen Sie oben „gmail.com“ ein. Sind Sie nicht angemeldet, klicken Sie oben rechts auf „Anmelden“.",
+        image: {
+          src: "/screenshots/email-mit-anhang/gmail-anmelden.webp",
+          alt: "Gmail-Startseite. Oben rechts ist der Knopf „Anmelden“ markiert.",
+          credit: "gmail.com",
+        },
       },
       {
         title: "„Schreiben“ klicken",
