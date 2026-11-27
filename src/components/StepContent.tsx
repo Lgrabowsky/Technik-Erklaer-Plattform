@@ -5,7 +5,7 @@ export function StepContent({ step }: { step: Step }) {
     <div className="space-y-5">
       <p className="text-[1.2rem] leading-relaxed sm:text-[1.35rem]">{step.text}</p>
       {step.image && (
-        <figure className="space-y-2">
+        <figure className="space-y-3">
           <a href={step.image.src} target="_blank" rel="noopener" className="block" aria-label="Bild groß anzeigen (öffnet neues Fenster)">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
@@ -15,8 +15,17 @@ export function StepContent({ step }: { step: Step }) {
               className="max-h-[75vh] w-auto max-w-full rounded-2xl bg-ink"
             />
           </a>
-          <figcaption className="text-base text-ink-soft">
-            {step.image.credit}. Die hell umrandete Stelle ist die, auf die Sie tippen bzw. klicken. Antippen vergrößert das Bild.
+          <figcaption className="space-y-2">
+            <p className="flex items-center gap-3 text-lg font-semibold">
+              <span className="h-6 w-6 shrink-0 rounded-md border-[3px] border-signal outline outline-2 outline-ink" aria-hidden="true" />
+              Hier tippen: grün umrandet
+            </p>
+            <p className="flex flex-wrap items-center gap-x-4 gap-y-1 text-base text-ink-soft">
+              <a href={step.image.src} target="_blank" rel="noopener" className="font-semibold text-ink underline">
+                Bild vergrößern
+              </a>
+              {step.image.credit && <span>Quelle: {step.image.credit}</span>}
+            </p>
           </figcaption>
         </figure>
       )}

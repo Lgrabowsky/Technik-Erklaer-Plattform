@@ -1,4 +1,11 @@
-export type Device = "android" | "iphone" | "computer";
+/**
+ * Geräte. "android" = Google Pixel und alle anderen Android-Hersteller (Xiaomi, Motorola …),
+ * "samsung" = Samsung-Galaxy-Handys (eigene Menünamen, nur als Variante einer Anleitung).
+ */
+export type Device = "android" | "samsung" | "iphone" | "computer";
+
+/** Geräte in der Übersicht einer Anleitung ("android" umfasst dort auch Samsung) */
+export type GuideDevice = Exclude<Device, "samsung">;
 
 export type Difficulty = "leicht" | "mittel" | "anspruchsvoll";
 
@@ -18,7 +25,7 @@ export type Step = {
    * keine persönlichen Daten. `credit` ist die Quellenangabe unter dem Bild,
    * z. B. "Screenshot: 116117-termine.de, Kassenärztliche Bundesvereinigung".
    */
-  image?: { src: string; alt: string; credit: string };
+  image?: { src: string; alt: string; credit?: string };
 };
 
 export type Guide = {
@@ -26,14 +33,18 @@ export type Guide = {
   title: string;
   summary: string;
   category: CategorySlug;
+  /** Unterthema (Slug), z. B. "deutschlandticket" */
+  subtopic?: string;
   /** Für welche App / Seite die Anleitung genau gilt, z. B. "DB Navigator" */
   app?: string;
-  devices: Device[];
+  devices: GuideDevice[];
   difficulty: Difficulty;
   minutes: number;
   access: Access;
   /** Preis für den Einzelkauf in Cent (nur bei premium) */
   priceCents?: number;
+  /** Datenbank-ID (für Käufe) */
+  id?: number;
   /** "Das brauchen Sie" – Vorbereitung vor dem Start */
   needs: string[];
   /**
@@ -55,6 +66,12 @@ export type Guide = {
   related?: string[];
   /** Zusammenfassung am Ende: "Das haben Sie gelernt" */
   takeaways?: string[];
+  /**
+   * Intern (nur Redaktion, wird Besuchern nicht angezeigt): Knopf-Namen dieser Anleitung
+   * konnten noch nicht in der echten App geprüft werden. `reviewNote` sagt, was zu prüfen ist.
+   */
+  unverified?: boolean;
+  reviewNote?: string;
 };
 
 /**
@@ -87,16 +104,21 @@ export type Chooser = {
   icon?: "phone" | "heart";
 };
 
-export type CategorySlug =
-  | "grundlagen"
-  | "gesundheit"
-  | "unterwegs"
-  | "bezahlen"
-  | "sicherheit";
+export type CategorySlug = string;
+
+export type CategoryIcon = "phone" | "heart" | "train" | "card" | "shield" | "building";
 
 export type Category = {
   slug: CategorySlug;
   title: string;
   description: string;
-  icon: "phone" | "heart" | "train" | "card" | "shield";
+  icon: CategoryIcon;
+};
+
+/** Unterpunkt innerhalb eines Themengebiets, z. B. Bus & Bahn → Deutschlandticket */
+export type Subtopic = {
+  slug: string;
+  title: string;
+  description?: string;
+  category: CategorySlug;
 };

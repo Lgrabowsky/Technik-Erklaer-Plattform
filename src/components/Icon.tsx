@@ -8,6 +8,7 @@ const paths: Record<Category["icon"] | Extra, string> = {
   train: "M6 3h12a2 2 0 0 1 2 2v10a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V5a2 2 0 0 1 2-2zm-2 8h16M8 15h.01M16 15h.01M8 18l-2 3M16 18l2 3",
   card: "M3 6h18a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1zm-1 4h20M6 15h4",
   shield: "M12 2l8 3v6c0 5-3.5 9-8 11-4.5-2-8-6-8-11V5l8-3zm-3 10l2 2 4-4",
+  building: "M3 21h18M5 21V10l7-5 7 5v11M9 21v-6h6v6M9 11h.01M15 11h.01",
   lock: "M6 10h12a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1v-9a1 1 0 0 1 1-1zm2 0V7a4 4 0 0 1 8 0v3",
   check: "M4 12l5 5L20 6",
   search: "M11 4a7 7 0 1 1 0 14 7 7 0 0 1 0-14zm5 12l5 5",
