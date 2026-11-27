@@ -103,7 +103,10 @@ for (const g of guides) {
   let missing = main.missing;
   const variants = [];
   for (const [i, v] of (doc.variants ?? []).entries()) {
-    const r = await attachImages(v.steps as DbStep[], g.variants?.[i]?.steps);
+    // Passende Seed-Variante über Gerät bzw. Knopf-Namen finden (Reihenfolge kann sich geändert haben)
+    const seedVariant =
+      g.variants?.find((sv) => (v.device && sv.device === v.device) || (v.label && sv.label === v.label)) ?? g.variants?.[i];
+    const r = await attachImages(v.steps as DbStep[], seedVariant?.steps);
     changed += r.changed;
     missing += r.missing;
     variants.push({ ...v, steps: r.steps });
@@ -116,6 +119,11 @@ for (const g of guides) {
       data: { _status: "published", steps: main.steps, variants } as never,
     });
     report.push(`✓ ${g.slug}: im Admin bearbeitet – Texte bleiben, ${changed} Bild(er) ergänzt`);
+  }
+  const seedHasSamsung = g.variants?.some((v) => v.device === "samsung");
+  const dbHasSamsung = (doc.variants ?? []).some((v) => v.device === "samsung");
+  if (seedHasSamsung && !dbHasSamsung) {
+    report.push(`! ${g.slug}: im Admin bearbeitet – neue Samsung-Variante nicht übernommen (Samsung-Nutzer sehen bis dahin „Google Pixel und andere“)`);
   }
   if (missing) {
     report.push(`! ${g.slug}: ${missing} Bild(er) ohne passenden Schritt – bitte im Admin selbst zuordnen (Bilder liegen unter „Bilder“)`);

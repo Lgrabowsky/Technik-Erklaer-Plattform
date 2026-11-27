@@ -197,21 +197,41 @@ export const gesundheit: Guide[] = [
             text: "Tippen Sie auf das Zahnrad-Symbol „Einstellungen“.",
           },
           {
-            title: "„Sicherheit und Notfall“ öffnen",
-            text: "Wischen Sie nach unten und tippen Sie auf „Sicherheit und Notfall“.",
+            title: "„Notfälle & Sicherheit“ öffnen",
+            text: "Wischen Sie nach unten und tippen Sie auf „Notfälle & Sicherheit“.",
+            image: {
+              src: "/screenshots/notfallpass-handy/android-notfaelle-sicherheit.webp",
+              alt: "Einstellungen auf einem Android-Handy. Der Eintrag „Notfälle & Sicherheit“ ist markiert.",
+              credit: "Android 16 (Pixel)",
+            },
             tip: "Nicht gefunden? Tippen Sie oben auf die Lupe und geben Sie „Notfall“ ein.",
           },
           {
             title: "Medizinische Infos eintragen",
-            text: "Tippen Sie auf „Medizinische Infos“ (Samsung) bzw. „Medizinische Informationen“ (z. B. Google Pixel). Tragen Sie Blutgruppe, Allergien, Medikamente und Erkrankungen ein. Tippen Sie auf „Speichern“.",
+            text: "Tippen Sie auf „Medizinische Daten“. Tippen Sie auf „Mehr“, damit alle Felder erscheinen. Tippen Sie nacheinander auf „Blutgruppe“ (1), „Allergien“ (2), „Medikamente“ und „Medizinische Informationen“ und tragen Sie Ihre Angaben ein.",
+            image: {
+              src: "/screenshots/notfallpass-handy/android-medizinische-felder.webp",
+              alt: "Seite „Medizinische Daten“. Die Felder „Blutgruppe“ (1) und „Allergien“ (2) sind markiert.",
+              credit: "Android 16 (Pixel)",
+            },
           },
           {
             title: "Notfallkontakt hinzufügen",
-            text: "Gehen Sie zurück und tippen Sie auf „Notfallkontakte“. Tippen Sie auf „Mitglied hinzufügen“ bzw. „Kontakt hinzufügen“ und wählen Sie Ihren Angehörigen aus.",
+            text: "Gehen Sie zurück und tippen Sie auf „Notfallkontakte“. Tippen Sie auf „Kontakt hinzufügen“ und wählen Sie Ihren Angehörigen aus.",
+            image: {
+              src: "/screenshots/notfallpass-handy/android-notfallkontakte.webp",
+              alt: "Seite „Notfallkontakte“. Der Eintrag „Kontakt hinzufügen“ ist markiert.",
+              credit: "Android 16 (Pixel)",
+            },
           },
           {
             title: "Auf dem Sperrbildschirm zeigen",
-            text: "Schalten Sie „Auf Sperrbildschirm anzeigen“ ein, falls es angeboten wird. Dann sehen Helfer die Infos über den Knopf „Notfall“ auf dem Sperrbildschirm.",
+            text: "Tippen Sie unten auf „Einstellung ändern“. Prüfen Sie, dass „Anzeigen, wenn gesperrt“ eingeschaltet ist. Helfer finden Ihre Infos dann auf dem Sperrbildschirm über „Notruf“ und „Notfallinformationen“.",
+            image: {
+              src: "/screenshots/notfallpass-handy/android-sperrbildschirm.webp",
+              alt: "Seite „Zugriff auf Notfallinformationen“. Der Schalter „Anzeigen, wenn gesperrt“ ist markiert.",
+              credit: "Android 16 (Pixel)",
+            },
           },
         ],
       },
@@ -241,9 +261,36 @@ export const gesundheit: Guide[] = [
           },
         ],
       },
+      {
+        device: "samsung",
+        unverified: true,
+        steps: [
+          {
+            title: "Einstellungen öffnen",
+            text: "Tippen Sie auf das Zahnrad-Symbol „Einstellungen“.",
+          },
+          {
+            title: "„Sicherheit und Notfall“ öffnen",
+            text: "Wischen Sie nach unten und tippen Sie auf „Sicherheit und Notfall“.",
+            tip: "Nicht gefunden? Tippen Sie oben auf die Lupe und geben Sie „Notfall“ ein.",
+          },
+          {
+            title: "Medizinische Infos eintragen",
+            text: "Tippen Sie auf „Medizinische Infos“. Tragen Sie Blutgruppe, Allergien, Medikamente und Erkrankungen ein. Tippen Sie auf „Speichern“.",
+          },
+          {
+            title: "Notfallkontakt hinzufügen",
+            text: "Gehen Sie zurück und tippen Sie auf „Notfallkontakte“ und dann auf „Mitglied hinzufügen“. Wählen Sie Ihren Angehörigen aus.",
+          },
+          {
+            title: "Auf dem Sperrbildschirm zeigen",
+            text: "Schalten Sie „Auf Sperrbildschirm anzeigen“ ein. Dann sehen Helfer die Infos über den Knopf „Notruf“ auf dem Sperrbildschirm.",
+          },
+        ],
+      },
     ],
     takeaways: ["Notfall-Infos helfen Rettungskräften, ohne dass Ihr Handy entsperrt werden muss.", "Angaben einmal im Jahr aktualisieren."],
-    reviewNote: "Android: Menünamen bei Samsung („Sicherheit und Notfall“ → „Medizinische Infos“) und Pixel (Notfallinfos ggf. in App „Persönliche Sicherheit“) auf aktuellem Gerät prüfen.",
+    reviewNote: "Samsung: „Sicherheit und Notfall“ → „Medizinische Infos“, „Notfallkontakte“ → „Mitglied hinzufügen“, Schalter „Auf Sperrbildschirm anzeigen“ prüfen. Pixel: „Medizinische Informationen“ (öffnet ggf. App „Persönliche Sicherheit“), „Kontakt hinzufügen“ und Sperrbildschirm-Einstellung prüfen.",
     related: ["notruf-sos-einrichten"],
   },
   {

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useSyncExternalStore } from "react";
 import Link from "next/link";
 import type { Chooser, Device, Flow } from "@/content/types";
 import { Icon } from "./Icon";
@@ -15,77 +15,144 @@ const pad = (n: number) => String(n).padStart(2, "0");
  * große "Zurück"/"Weiter"-Knöpfe, Fortschritt als Segmente und Vorlesefunktion.
  */
 const deviceChoices: Record<Device, { label: string; hint: string }> = {
-  android: { label: "Android-Handy", hint: "z. B. Samsung, Xiaomi, Motorola, Google Pixel" },
   iphone: { label: "iPhone", hint: "von Apple – hinten ist ein Apfel abgebildet" },
+  samsung: { label: "Samsung", hint: "Galaxy-Handys – hinten steht „Samsung“" },
+  android: { label: "Google Pixel und andere", hint: "alle anderen Android-Handys, z. B. Xiaomi, Motorola, Honor, Oppo" },
   computer: { label: "Computer", hint: "Laptop oder PC" },
 };
 
+/** Reihenfolge der Knöpfe bei der Geräte-Frage */
+const deviceOrder: Device[] = ["iphone", "samsung", "android", "computer"];
+
+/** Merkt sich das gewählte Gerät (nur im Browser, für die nächste Anleitung) */
+const DEVICE_KEY = "gewaehltes-geraet";
+
+function readSavedDevice(): string | null {
+  try {
+    return window.localStorage.getItem(DEVICE_KEY);
+  } catch {
+    return null;
+  }
+}
+
+function subscribeSavedDevice(onChange: () => void) {
+  window.addEventListener("storage", onChange);
+  return () => window.removeEventListener("storage", onChange);
+}
+
 const deviceChooser: Chooser = {
   question: "Welches Gerät haben Sie?",
-  hint: "Die Schritte sind je nach Gerät etwas anders. Tippen Sie auf Ihr Gerät.",
+  hint: "Die Schritte sind je nach Gerät etwas anders. Tippen Sie auf Ihr Gerät. Den Hersteller sehen Sie auf der Rückseite oder beim Einschalten.",
   switchLabel: "Anderes Gerät wählen",
   icon: "phone",
 };
 
-function flowLabel(f: Flow) {
-  return f.label ?? deviceChoices[f.device ?? "android"].label;
-}
+/** Ein Knopf bei der Auswahl. Mehrere Knöpfe können denselben Ablauf zeigen. */
+type Choice = { flow: number; device?: Device; label: string; hint?: string };
 
-function flowHint(f: Flow) {
-  return f.hint ?? (f.device ? deviceChoices[f.device].hint : undefined);
+/**
+ * Knöpfe für die Auswahl. Bei Geräte-Varianten: Android wird in „Samsung“ und
+ * „Google Pixel und andere“ aufgeteilt. Gibt es keine eigene Samsung-Variante,
+ * zeigt der Samsung-Knopf die Android-Schritte (z. B. bei Apps, die überall gleich aussehen).
+ */
+function buildChoices(flows: Flow[], byDevice: boolean): Choice[] {
+  if (!byDevice) {
+    return flows.map((f, i) => ({
+      flow: i,
+      device: f.device,
+      label: f.label ?? (f.device ? deviceChoices[f.device].label : `Variante ${i + 1}`),
+      hint: f.hint ?? (f.device ? deviceChoices[f.device].hint : undefined),
+    }));
+  }
+  const choices: Choice[] = [];
+  for (const device of deviceOrder) {
+    let flow = flows.findIndex((f) => f.device === device);
+    if (flow < 0 && device === "samsung") flow = flows.findIndex((f) => f.device === "android");
+    if (flow < 0) continue;
+    const f = flows[flow];
+    const own = f.device === device;
+    choices.push({
+      flow,
+      device,
+      label: (own && f.label) || deviceChoices[device].label,
+      hint: (own && f.hint) || deviceChoices[device].hint,
+    });
+  }
+  return choices;
 }
 
 export function StepViewer({
   flows,
   takeaways,
-  chooser = deviceChooser,
+  chooser,
 }: {
   flows: Flow[];
   takeaways?: string[];
   chooser?: Chooser;
 }) {
-  // Bei mehreren Abläufen (Android / iPhone) zuerst fragen, welches Gerät man hat.
-  const [flowIndex, setFlowIndex] = useState<number | null>(flows.length > 1 ? null : 0);
+  // Geräte-Auswahl, wenn keine eigene Frage (z. B. Krankenkasse) gesetzt ist und alle Abläufe ein Gerät haben.
+  const byDevice = !chooser && flows.length > 1 && flows.every((f) => f.device);
+  const ask = chooser ?? deviceChooser;
+  const choices = buildChoices(flows, byDevice);
+  // Bei mehreren Abläufen (iPhone / Samsung / Pixel) zuerst fragen, welches Gerät man hat.
+  // undefined = noch nichts gewählt: dann gilt das Gerät aus einer früheren Anleitung (falls vorhanden).
+  const [chosen, setChosen] = useState<number | null | undefined>(choices.length > 1 ? undefined : 0);
+  const savedDevice = useSyncExternalStore(subscribeSavedDevice, readSavedDevice, () => null);
+  const savedIndex = byDevice ? choices.findIndex((c) => c.device === savedDevice) : -1;
+  const choiceIndex = chosen !== undefined ? chosen : savedIndex >= 0 ? savedIndex : null;
+  const flowIndex = choiceIndex === null ? null : (choices[choiceIndex]?.flow ?? 0);
   const [index, setIndex] = useState(0);
   const [allAtOnce, setAllAtOnce] = useState(false);
   const headingRef = useRef<HTMLHeadingElement>(null);
-  const firstRender = useRef(true);
+  const lastView = useRef<string | null>(null);
+
   const steps = flowIndex === null ? [] : flows[flowIndex].steps;
   const done = flowIndex !== null && index >= steps.length;
 
+  function choose(i: number) {
+    setChosen(i);
+    setIndex(0);
+    const device = choices[i]?.device;
+    if (byDevice && device) {
+      try {
+        window.localStorage.setItem(DEVICE_KEY, device);
+      } catch {}
+    }
+  }
+
   useEffect(() => {
-    if (firstRender.current) {
-      firstRender.current = false;
+    // Nur springen, wenn sich Schritt oder Auswahl wirklich geändert hat (nicht beim Laden der Seite)
+    const key = `${index}:${chosen}`;
+    if (lastView.current === null || lastView.current === key) {
+      lastView.current = key;
       return;
     }
+    lastView.current = key;
     // Fokus auf die neue Überschrift: Bildschirmleser lesen sie vor, die Seite springt zum Schritt.
     headingRef.current?.focus({ preventScroll: true });
     document.getElementById("schritt-start")?.scrollIntoView({ block: "start" });
-  }, [index, flowIndex]);
+  }, [index, chosen]);
 
-  if (flowIndex === null) {
+  if (choiceIndex === null) {
     return (
       <section aria-labelledby="geraet-frage" id="schritt-start" className="scroll-mt-28">
         <div className={panel}>
-          <h2 id="geraet-frage" className="mb-2 text-[1.8rem] font-bold sm:text-4xl">{chooser.question}</h2>
-          <p className="mb-6 text-lg text-ink-soft">{chooser.hint}</p>
-          <ul className={`grid gap-3 ${flows.length > 2 ? "sm:grid-cols-2 lg:grid-cols-3" : "sm:grid-cols-2"}`}>
-            {flows.map((f, i) => (
+          <h2 id="geraet-frage" className="mb-2 text-[1.8rem] font-bold sm:text-4xl">{ask.question}</h2>
+          <p className="mb-6 text-lg text-ink-soft">{ask.hint}</p>
+          <ul className={`grid gap-3 ${choices.length > 2 ? "sm:grid-cols-2 lg:grid-cols-3" : "sm:grid-cols-2"}`}>
+            {choices.map((c, i) => (
               <li key={i}>
                 <button
                   type="button"
-                  onClick={() => {
-                    setFlowIndex(i);
-                    setIndex(0);
-                  }}
+                  onClick={() => choose(i)}
                   className="flex h-full min-h-16 w-full items-center gap-4 rounded-3xl border-[3px] border-ink bg-surface p-4 text-left hover:bg-signal sm:p-5"
                 >
-                  <span className={`h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-ink text-signal ${flows.length > 2 ? "hidden sm:flex" : "flex"}`}>
-                    <Icon name={chooser.icon ?? "phone"} className="h-8 w-8" />
+                  <span className={`h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-ink text-signal ${choices.length > 2 ? "hidden sm:flex" : "flex"}`}>
+                    <Icon name={ask.icon ?? "phone"} className="h-8 w-8" />
                   </span>
                   <span>
-                    <span className="block text-xl font-bold">{flowLabel(f)}</span>
-                    {flowHint(f) && <span className="block text-base text-ink-soft">{flowHint(f)}</span>}
+                    <span className="block text-xl font-bold">{c.label}</span>
+                    {c.hint && <span className="block text-base text-ink-soft">{c.hint}</span>}
                   </span>
                 </button>
               </li>
@@ -96,14 +163,14 @@ export function StepViewer({
     );
   }
 
-  const deviceLabel = flows.length > 1 ? flowLabel(flows[flowIndex]) : null;
+  const deviceLabel = choices.length > 1 ? choices[choiceIndex].label : null;
   const switchDevice = deviceLabel && (
     <p className="no-print mb-4 flex flex-wrap items-center gap-x-3 text-lg">
       <span>
         Anleitung für: <strong>{deviceLabel}</strong>
       </span>
-      <button type="button" className="min-h-12 font-semibold underline underline-offset-4" onClick={() => setFlowIndex(null)}>
-        {chooser.switchLabel}
+      <button type="button" className="min-h-12 font-semibold underline underline-offset-4" onClick={() => setChosen(null)}>
+        {ask.switchLabel}
       </button>
     </p>
   );

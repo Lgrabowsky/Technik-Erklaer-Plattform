@@ -9,6 +9,15 @@ const deviceOptions = [
   { label: "Computer", value: "computer" },
 ];
 
+// Bei Varianten wird Android aufgeteilt: Samsung hat eigene Menünamen.
+// Reihenfolge = Reihenfolge in der Datenbank (Migration 20261125_103000_samsung_variante).
+const variantDeviceOptions = [
+  { label: "Google Pixel und andere Android", value: "android" },
+  { label: "iPhone / iPad", value: "iphone" },
+  { label: "Computer", value: "computer" },
+  { label: "Samsung", value: "samsung" },
+];
+
 export const Guides: CollectionConfig = {
   slug: "guides",
   labels: { singular: "Anleitung", plural: "Anleitungen" },
@@ -99,7 +108,7 @@ export const Guides: CollectionConfig = {
         {
           label: "Schritte",
           description:
-            "Gleicher Ablauf auf allen Geräten → „Ein Ablauf für alle“. Unterschiedlicher Ablauf (z. B. Android/iPhone oder je Krankenkasse) → „Mehrere Varianten“.",
+            "Gleicher Ablauf auf allen Geräten → „Ein Ablauf für alle“. Unterschiedlicher Ablauf (z. B. iPhone / Samsung / Google Pixel und andere, oder je Krankenkasse) → „Mehrere Varianten“.",
           fields: [
             {
               name: "mode",
@@ -149,7 +158,16 @@ export const Guides: CollectionConfig = {
                 {
                   type: "row",
                   fields: [
-                    { name: "device", label: "Gerät (bei Geräte-Varianten)", type: "select", options: deviceOptions },
+                    {
+                      name: "device",
+                      label: "Gerät (bei Geräte-Varianten)",
+                      type: "select",
+                      options: variantDeviceOptions,
+                      admin: {
+                        description:
+                          "Fehlt die Samsung-Variante, sehen Samsung-Nutzer die Variante „Google Pixel und andere“.",
+                      },
+                    },
                     { name: "label", label: "Name auf dem Knopf (sonst Gerätename)", type: "text" },
                     { name: "hint", label: "Zusatz unter dem Namen", type: "text", admin: { placeholder: "App: TK-App" } },
                   ],

@@ -2,6 +2,7 @@ import type { Access, Device, Difficulty } from "@/content/types";
 
 const deviceNames: Record<Device, string> = {
   android: "Android",
+  samsung: "Samsung",
   iphone: "iPhone",
   computer: "Computer",
 };
