@@ -1,4 +1,11 @@
-export type Device = "android" | "iphone" | "computer";
+/**
+ * Geräte. "android" = Google Pixel und alle anderen Android-Hersteller (Xiaomi, Motorola …),
+ * "samsung" = Samsung-Galaxy-Handys (eigene Menünamen, nur als Variante einer Anleitung).
+ */
+export type Device = "android" | "samsung" | "iphone" | "computer";
+
+/** Geräte in der Übersicht einer Anleitung ("android" umfasst dort auch Samsung) */
+export type GuideDevice = Exclude<Device, "samsung">;
 
 export type Difficulty = "leicht" | "mittel" | "anspruchsvoll";
 
@@ -30,7 +37,7 @@ export type Guide = {
   subtopic?: string;
   /** Für welche App / Seite die Anleitung genau gilt, z. B. "DB Navigator" */
   app?: string;
-  devices: Device[];
+  devices: GuideDevice[];
   difficulty: Difficulty;
   minutes: number;
   access: Access;

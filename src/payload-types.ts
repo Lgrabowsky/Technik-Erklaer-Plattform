@@ -204,7 +204,10 @@ export interface Guide {
   };
   variants?:
     | {
-        device?: ('android' | 'iphone' | 'computer') | null;
+        /**
+         * Fehlt die Samsung-Variante, sehen Samsung-Nutzer die Variante „Google Pixel und andere“.
+         */
+        device?: ('android' | 'iphone' | 'computer' | 'samsung') | null;
         label?: string | null;
         hint?: string | null;
         /**

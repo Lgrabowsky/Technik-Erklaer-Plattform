@@ -101,27 +101,48 @@ export const grundlagen: Guide[] = [
     checked: "2026-11",
     keywords: ["Textgröße", "größer", "lesen", "Brille", "Sehen"],
     needs: ["Ihr Handy"],
+    reviewNote: "Samsung-Variante: „Anzeige“ → „Schriftgröße und -stil“ und „Bildschirmzoom“ auf aktuellem Samsung (One UI 8) prüfen. Google-Pixel-Variante ist im Emulator geprüft.",
     variants: [
       {
         device: "android",
         steps: [
           {
             title: "Einstellungen öffnen",
-            text: "Tippen Sie auf das Zahnrad-Symbol „Einstellungen“.",
+            text: "Wischen Sie auf dem Startbildschirm von unten nach oben. Jetzt sehen Sie alle Apps. Tippen Sie auf das Zahnrad „Einstellungen“.",
+            image: {
+              src: "/screenshots/schrift-vergroessern/android-einstellungen.webp",
+              alt: "Übersicht aller Apps auf einem Android-Handy. Das Zahnrad „Einstellungen“ ist markiert.",
+              credit: "Android 16 (Pixel)",
+            },
           },
           {
-            title: "„Anzeige“ wählen",
-            text: "Tippen Sie auf „Anzeige“. Bei manchen Handys heißt es „Display“ oder „Anzeige und Helligkeit“.",
-            tip: "Oben in den Einstellungen gibt es eine Lupe. Tippen Sie dort „Schrift“ ein – so kommen Sie direkt hin.",
+            title: "„Display & Touchbedienung“ wählen",
+            text: "Wischen Sie etwas nach oben und tippen Sie auf „Display & Touchbedienung“.",
+            tip: "Oben in den Einstellungen gibt es die Lupe „In Einstellungen suchen“. Tippen Sie dort „Schrift“ ein – so kommen Sie direkt hin.",
+            image: {
+              src: "/screenshots/schrift-vergroessern/android-display.webp",
+              alt: "Einstellungen auf einem Android-Handy. Der Eintrag „Display & Touchbedienung“ ist markiert.",
+              credit: "Android 16 (Pixel)",
+            },
           },
           {
-            title: "Schriftgröße öffnen",
-            text: "Tippen Sie auf „Schriftgröße und -stil“ (Samsung) oder „Schriftgröße“ bzw. „Anzeigegröße und Text“ (andere Handys).",
+            title: "„Anzeigegröße und Text“ öffnen",
+            text: "Tippen Sie auf „Anzeigegröße und Text“.",
+            image: {
+              src: "/screenshots/schrift-vergroessern/android-anzeigegroesse.webp",
+              alt: "Seite „Display & Touchbedienung“. Der Eintrag „Anzeigegröße und Text“ ist markiert.",
+              credit: "Android 16 (Pixel)",
+            },
           },
           {
-            title: "Schieberegler bewegen",
-            text: "Legen Sie den Finger auf den Punkt des Schiebereglers und schieben Sie ihn nach rechts. Oben sehen Sie, wie groß die Schrift wird.",
-            tip: "Gleich darunter gibt es oft auch „Anzeigegröße“ oder „Bildschirmzoom“. Damit werden auch Knöpfe und Symbole größer.",
+            title: "Schrift größer stellen",
+            text: "Unter „Schriftgröße“ schieben Sie den Punkt nach rechts. Oder Sie tippen rechts daneben mehrmals auf „+“. Oben in der „Vorschau“ sehen Sie, wie groß die Schrift wird.",
+            tip: "Beim ersten Mal erscheint der Hinweis „Schriftgröße wurde zu den Schnelleinstellungen hinzugefügt“. Tippen Sie einfach daneben. Mit „Anzeigegröße“ darunter werden auch Knöpfe und Symbole größer.",
+            image: {
+              src: "/screenshots/schrift-vergroessern/android-schieberegler.webp",
+              alt: "Seite „Anzeigegröße und Text“. Der Schieberegler „Schriftgröße“ mit der Plus-Taste ist markiert.",
+              credit: "Android 16 (Pixel)",
+            },
           },
           {
             title: "Fertig",
@@ -175,6 +196,34 @@ export const grundlagen: Guide[] = [
           {
             title: "Fertig",
             text: "Wischen Sie vom unteren Rand nach oben (oder drücken Sie die Home-Taste). Die neue Größe gilt jetzt in den meisten Apps.",
+          },
+        ],
+      },
+      {
+        device: "samsung",
+        unverified: true,
+        steps: [
+          {
+            title: "Einstellungen öffnen",
+            text: "Wischen Sie auf dem Startbildschirm von unten nach oben. Jetzt sehen Sie alle Apps. Tippen Sie auf das Zahnrad „Einstellungen“.",
+          },
+          {
+            title: "„Anzeige“ wählen",
+            text: "Wischen Sie etwas nach oben und tippen Sie auf „Anzeige“.",
+            tip: "Oben in den Einstellungen gibt es eine Lupe. Tippen Sie dort „Schrift“ ein – so kommen Sie direkt hin.",
+          },
+          {
+            title: "„Schriftgröße und -stil“ öffnen",
+            text: "Tippen Sie auf „Schriftgröße und -stil“.",
+          },
+          {
+            title: "Schrift größer stellen",
+            text: "Unter „Schriftgröße“ schieben Sie den Punkt nach rechts. Oben sehen Sie, wie groß die Schrift wird.",
+            tip: "Unter „Anzeige“ gibt es außerdem „Bildschirmzoom“. Damit werden auch Knöpfe und Symbole größer.",
+          },
+          {
+            title: "Fertig",
+            text: "Gehen Sie mit der Zurück-Taste oder einer Wischbewegung zum Startbildschirm. Die neue Größe gilt jetzt in den meisten Apps.",
           },
         ],
       },
@@ -346,17 +395,32 @@ export const grundlagen: Guide[] = [
             text: "Tippen Sie auf das Zahnrad-Symbol „Einstellungen“.",
           },
           {
-            title: "WLAN-Bereich öffnen",
-            text: "Samsung: Tippen Sie auf „Verbindungen“ und dann auf „WLAN“. Andere Handys (z. B. Google Pixel): Tippen Sie auf „Netzwerk & Internet“ und dann auf „Internet“.",
+            title: "„Netzwerk & Internet“ öffnen",
+            text: "Tippen Sie auf „Netzwerk & Internet“ und dann auf „Internet“.",
+            image: {
+              src: "/screenshots/wlan-verbinden/android-netzwerk.webp",
+              alt: "Einstellungen auf einem Android-Handy. Der Eintrag „Netzwerk & Internet“ ist markiert.",
+              credit: "Android 16 (Pixel)",
+            },
             tip: "Oben in den Einstellungen gibt es eine Lupe. Tippen Sie dort „WLAN“ ein – so kommen Sie direkt hin.",
           },
           {
             title: "WLAN einschalten",
-            text: "Ganz oben ist ein Schalter. Ist er grau, tippen Sie darauf. Er wird farbig – WLAN ist jetzt an.",
+            text: "Neben „WLAN“ ist ein Schalter. Ist er grau, tippen Sie darauf. Er wird farbig – WLAN ist jetzt an.",
+            image: {
+              src: "/screenshots/wlan-verbinden/android-wlan-schalter.webp",
+              alt: "Seite „Internet“. Der Schalter neben „WLAN“ ist markiert.",
+              credit: "Android 16 (Pixel)",
+            },
           },
           {
             title: "Ihr WLAN auswählen",
             text: "Nach ein paar Sekunden erscheint eine Liste mit WLAN-Namen. Tippen Sie auf den Namen Ihres WLANs – den finden Sie auf dem Router.",
+            image: {
+              src: "/screenshots/wlan-verbinden/android-wlan-auswaehlen.webp",
+              alt: "Seite „Internet“ mit der Liste der WLANs. Ein WLAN-Name ist markiert.",
+              credit: "Android 16 (Pixel)",
+            },
             tip: "Sie sehen viele fremde Namen? Das sind die WLANs Ihrer Nachbarn. Nehmen Sie nur den Namen, der auf Ihrem Router steht.",
           },
           {
@@ -400,9 +464,42 @@ export const grundlagen: Guide[] = [
           },
         ],
       },
+      {
+        device: "samsung",
+        unverified: true,
+        steps: [
+          {
+            title: "Einstellungen öffnen",
+            text: "Tippen Sie auf das Zahnrad-Symbol „Einstellungen“.",
+          },
+          {
+            title: "„Verbindungen“ öffnen",
+            text: "Tippen Sie auf „Verbindungen“ und dann auf „WLAN“.",
+            tip: "Oben in den Einstellungen gibt es eine Lupe. Tippen Sie dort „WLAN“ ein – so kommen Sie direkt hin.",
+          },
+          {
+            title: "WLAN einschalten",
+            text: "Ganz oben ist ein Schalter. Ist er grau, tippen Sie darauf. Er wird blau – WLAN ist jetzt an.",
+          },
+          {
+            title: "Ihr WLAN auswählen",
+            text: "Nach ein paar Sekunden erscheint eine Liste mit WLAN-Namen. Tippen Sie auf den Namen Ihres WLANs – den finden Sie auf dem Router.",
+            tip: "Sie sehen viele fremde Namen? Das sind die WLANs Ihrer Nachbarn. Nehmen Sie nur den Namen, der auf Ihrem Router steht.",
+          },
+          {
+            title: "Passwort eingeben",
+            text: "Tippen Sie das Passwort vom Router ein. Achten Sie genau auf jede Ziffer. Tippen Sie dann auf „Verbinden“.",
+            tip: "Tippen Sie auf das Augen-Symbol neben dem Feld. Dann sehen Sie, was Sie eingetippt haben.",
+          },
+          {
+            title: "Prüfen, ob es geklappt hat",
+            text: "Unter dem Namen steht jetzt „Verbunden“. Oben am Bildschirmrand sehen Sie ein Fächer-Symbol. Ab jetzt verbindet sich das Handy zu Hause von selbst.",
+          },
+        ],
+      },
     ],
     takeaways: ["WLAN-Name und Passwort stehen auf dem Router.", "Einmal verbunden, klappt es zu Hause automatisch."],
-    reviewNote: "Android: Menüweg bei Samsung („Verbindungen“ → „WLAN“) und Pixel („Netzwerk & Internet“ → „Internet“) auf aktuellem Gerät prüfen.",
+    reviewNote: "Menüweg prüfen: Samsung „Verbindungen“ → „WLAN“ (Schalter blau); Google Pixel „Netzwerk & Internet“ → „Internet“ → Schalter „WLAN“.",
   },
   {
     slug: "taschenlampe-einschalten",
@@ -416,6 +513,7 @@ export const grundlagen: Guide[] = [
     checked: "2026-11",
     keywords: ["Taschenlampe", "Licht", "Lampe", "dunkel", "Kontrollzentrum", "Schnelleinstellungen"],
     needs: ["Ihr Handy"],
+    reviewNote: "Samsung (One UI 7/8): Schnelleinstellungen von rechts oben, Benachrichtigungen von links oben – auf aktuellem Gerät prüfen. Bei Einstellung „Zusammen“ öffnet jede Wischbewegung beides.",
     variants: [
       {
         device: "android",
@@ -428,10 +526,20 @@ export const grundlagen: Guide[] = [
           {
             title: "„Taschenlampe“ antippen",
             text: "Tippen Sie auf den Knopf mit der kleinen Lampe. Darunter steht „Taschenlampe“. Die Lampe auf der Rückseite des Handys leuchtet jetzt.",
+            image: {
+              src: "/screenshots/taschenlampe-einschalten/android-taschenlampe.webp",
+              alt: "Schnelleinstellungen eines Android-Handys. Die Kachel „Taschenlampe“ (Aus) ist markiert.",
+              credit: "Android 16 (Pixel)",
+            },
           },
           {
             title: "Wieder ausschalten",
             text: "Wischen Sie wieder von oben nach unten und tippen Sie noch einmal auf „Taschenlampe“.",
+            image: {
+              src: "/screenshots/taschenlampe-einschalten/android-taschenlampe-an.webp",
+              alt: "Schnelleinstellungen. Die Kachel „Taschenlampe“ ist hell und zeigt „An“.",
+              credit: "Android 16 (Pixel)",
+            },
           },
         ],
       },
@@ -450,6 +558,25 @@ export const grundlagen: Guide[] = [
           {
             title: "Wieder ausschalten",
             text: "Tippen Sie noch einmal auf das Lampen-Symbol.",
+          },
+        ],
+      },
+      {
+        device: "samsung",
+        unverified: true,
+        steps: [
+          {
+            title: "Von rechts oben nach unten wischen",
+            text: "Legen Sie den Finger ganz oben rechts an den Bildschirmrand und ziehen Sie ihn nach unten. Es erscheinen runde Knöpfe – die „Schnelleinstellungen“.",
+            tip: "Sie sehen nur Benachrichtigungen? Dann haben Sie links oben gewischt. Wischen Sie noch einmal von rechts oben nach unten.",
+          },
+          {
+            title: "„Taschenlampe“ antippen",
+            text: "Tippen Sie auf den Knopf mit der kleinen Lampe. Darunter steht „Taschenlampe“. Die Lampe auf der Rückseite des Handys leuchtet jetzt.",
+          },
+          {
+            title: "Wieder ausschalten",
+            text: "Wischen Sie wieder von rechts oben nach unten und tippen Sie noch einmal auf „Taschenlampe“.",
           },
         ],
       },
@@ -476,24 +603,44 @@ export const grundlagen: Guide[] = [
         steps: [
           {
             title: "App „Kontakte“ öffnen",
-            text: "Tippen Sie auf das Symbol „Kontakte“. Es zeigt meist eine Person auf farbigem Hintergrund.",
+            text: "Tippen Sie auf das blaue Symbol mit der weißen Person. Es heißt „Kontakte“.",
           },
           {
             title: "Neuen Kontakt anlegen",
-            text: "Tippen Sie auf das Plus-Zeichen (+). Bei Samsung ist es oben rechts, bei anderen Handys ein Knopf unten rechts („Kontakt erstellen“).",
-            tip: "Fragt das Handy, wo der Kontakt gespeichert werden soll, wählen Sie Ihr Google- bzw. Samsung-Konto. Dann geht er bei einem neuen Handy nicht verloren.",
+            text: "Tippen Sie unten rechts auf den Knopf mit dem Plus-Zeichen (+). Er heißt „Kontakt erstellen“.",
+            image: {
+              src: "/screenshots/kontakt-speichern/android-kontakt-erstellen.webp",
+              alt: "App „Kontakte“. Unten rechts ist der Knopf „Kontakt erstellen“ mit dem Plus markiert.",
+              credit: "Android 16 (Pixel)",
+            },
+            tip: "Fragt das Handy, wo der Kontakt gespeichert werden soll, wählen Sie Ihr Google-Konto. Dann geht er bei einem neuen Handy nicht verloren.",
           },
           {
             title: "Namen eingeben",
             text: "Tippen Sie in das Feld „Vorname“ und schreiben Sie den Namen. Darunter tragen Sie den „Nachnamen“ ein.",
+            image: {
+              src: "/screenshots/kontakt-speichern/android-namen.webp",
+              alt: "Formular „Kontakt erstellen“. Die Felder „Vorname“ und „Nachname“ sind markiert.",
+              credit: "Android 16 (Pixel)",
+            },
           },
           {
             title: "Telefonnummer eingeben",
             text: "Tippen Sie in das Feld „Telefon“ und tippen Sie die Nummer ein. Für Handynummern können Sie sie ganz normal mit 0 am Anfang eingeben, zum Beispiel 0170 1234567.",
+            image: {
+              src: "/screenshots/kontakt-speichern/android-telefon.webp",
+              alt: "Formular mit Max Mustermann. Das Feld „Telefon“ mit 0170 1234567 ist markiert.",
+              credit: "Android 16 (Pixel)",
+            },
           },
           {
             title: "Speichern",
-            text: "Tippen Sie auf „Speichern“ (unten oder oben rechts). Fertig – der Name erscheint jetzt, wenn diese Person anruft.",
+            text: "Tippen Sie oben rechts auf „Speichern“. Fertig – der Name erscheint jetzt, wenn diese Person anruft.",
+            image: {
+              src: "/screenshots/kontakt-speichern/android-speichern.webp",
+              alt: "Ausgefülltes Formular „Kontakt erstellen“. Oben rechts ist „Speichern“ markiert.",
+              credit: "Android 16 (Pixel)",
+            },
           },
         ],
       },
@@ -526,9 +673,36 @@ export const grundlagen: Guide[] = [
           },
         ],
       },
+      {
+        device: "samsung",
+        unverified: true,
+        steps: [
+          {
+            title: "App „Kontakte“ öffnen",
+            text: "Tippen Sie auf das orangefarbene Symbol mit der weißen Person. Es heißt „Kontakte“.",
+          },
+          {
+            title: "Neuen Kontakt anlegen",
+            text: "Tippen Sie oben rechts auf das Plus-Zeichen (+).",
+            tip: "Fragt das Handy, wo der Kontakt gespeichert werden soll, wählen Sie Ihr Google- oder Samsung-Konto. Dann geht er bei einem neuen Handy nicht verloren.",
+          },
+          {
+            title: "Namen eingeben",
+            text: "Tippen Sie in das Feld „Vorname“ und schreiben Sie den Namen. Darunter tragen Sie den „Nachnamen“ ein.",
+          },
+          {
+            title: "Telefonnummer eingeben",
+            text: "Tippen Sie in das Feld „Telefon“ und tippen Sie die Nummer ein. Handynummern geben Sie ganz normal mit 0 am Anfang ein, zum Beispiel 0170 1234567.",
+          },
+          {
+            title: "Speichern",
+            text: "Tippen Sie unten auf „Speichern“. Fertig – der Name erscheint jetzt, wenn diese Person anruft.",
+          },
+        ],
+      },
     ],
     takeaways: ["Gespeicherte Kontakte zeigen beim Anruf den Namen.", "Kontakte im Konto speichern – dann sind sie auch auf einem neuen Handy da."],
-    reviewNote: "Android: Lage des Plus-Knopfs in Samsung „Kontakte“ und Google „Kontakte“ prüfen. iPhone: Seit iOS 26 hat die Telefon-App ein neues Layout – prüfen, ob „Kontakte“ unten noch so heißt.",
+    reviewNote: "Samsung „Kontakte“: Plus oben rechts, Felder „Vorname“/„Nachname“ (ggf. erst Pfeil neben „Name“), „Speichern“ unten prüfen. Google „Kontakte“ (Pixel): Knopf „Kontakt erstellen“ unten rechts, „Speichern“ oben rechts prüfen. iPhone: Seit iOS 26 hat die Telefon-App ein neues Layout – prüfen, ob „Kontakte“ unten noch so heißt.",
   },
   {
     slug: "foto-machen",
@@ -543,6 +717,7 @@ export const grundlagen: Guide[] = [
     checked: "2026-11",
     keywords: ["Foto", "Kamera", "Bild", "fotografieren", "Galerie", "Fotos"],
     needs: ["Ihr Handy"],
+    reviewNote: "Samsung: Modus-Namen in der Kamera, Seitentaste 2x = Kamera, Vorschaubild unten links, App „Galerie“ prüfen. Pixel: Vorschaubild-Lage und Hinweis auf App „Fotos“ prüfen.",
     variants: [
       {
         device: "android",
@@ -566,7 +741,7 @@ export const grundlagen: Guide[] = [
           },
           {
             title: "Foto ansehen",
-            text: "Tippen Sie unten auf das kleine Vorschaubild neben dem Auslöser. Später finden Sie alle Fotos in der App „Galerie“ (Samsung) oder „Fotos“ (andere Handys).",
+            text: "Tippen Sie unten auf das kleine Vorschaubild neben dem Auslöser. Später finden Sie alle Fotos in der App „Fotos“ (bunte Windrad-Blüte).",
           },
         ],
       },
@@ -594,6 +769,34 @@ export const grundlagen: Guide[] = [
           {
             title: "Foto ansehen",
             text: "Tippen Sie unten links auf das kleine Vorschaubild. Später finden Sie alle Fotos in der App „Fotos“ (bunte Blüte).",
+          },
+        ],
+      },
+      {
+        device: "samsung",
+        unverified: true,
+        steps: [
+          {
+            title: "Kamera öffnen",
+            text: "Tippen Sie auf das Symbol „Kamera“. Es sieht aus wie ein kleiner Fotoapparat.",
+            tip: "Schneller geht es mit der Seitentaste: Drücken Sie sie zweimal schnell hintereinander.",
+          },
+          {
+            title: "„Foto“ einstellen",
+            text: "Unten über dem großen weißen Knopf stehen Wörter wie „Porträt“, „Foto“, „Video“. Prüfen Sie, dass „Foto“ hervorgehoben ist. Sonst tippen Sie auf „Foto“.",
+          },
+          {
+            title: "Motiv anpeilen und scharfstellen",
+            text: "Halten Sie das Handy ruhig mit beiden Händen. Tippen Sie auf dem Bildschirm einmal auf die Stelle, die scharf sein soll, zum Beispiel ein Gesicht.",
+            tip: "Größer heranholen: Legen Sie zwei Finger auf den Bildschirm und ziehen Sie sie auseinander.",
+          },
+          {
+            title: "Auslösen",
+            text: "Tippen Sie auf den großen weißen Knopf unten in der Mitte. Ein kurzes Klicken oder Blinken zeigt: Das Foto ist gemacht.",
+          },
+          {
+            title: "Foto ansehen",
+            text: "Tippen Sie unten links auf das kleine Vorschaubild. Später finden Sie alle Fotos in der App „Galerie“.",
           },
         ],
       },

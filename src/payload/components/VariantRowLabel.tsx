@@ -2,7 +2,7 @@
 
 import { useRowLabel } from "@payloadcms/ui";
 
-const devices: Record<string, string> = { android: "Android", iphone: "iPhone", computer: "Computer" };
+const devices: Record<string, string> = { android: "Google Pixel und andere", samsung: "Samsung", iphone: "iPhone", computer: "Computer" };
 
 export function VariantRowLabel() {
   const { data, rowNumber } = useRowLabel<{ label?: string; device?: string; steps?: unknown[] }>();

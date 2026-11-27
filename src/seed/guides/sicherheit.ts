@@ -78,7 +78,12 @@ export const sicherheit: Guide[] = [
       },
       {
         title: "Mail löschen oder melden",
-        text: "Löschen Sie die Mail. Viele Postfächer haben auch einen Knopf „Spam“ oder „Phishing melden“. Die Verbraucherzentrale sammelt Phishing-Mails im „Phishing-Radar“.",
+        text: "Löschen Sie die Mail. Viele Postfächer haben auch einen Knopf „Spam“ oder „Phishing melden“. Die Verbraucherzentrale sammelt Phishing-Mails im „Phishing-Radar“: Leiten Sie die Mail an die grün markierte Adresse weiter.",
+        image: {
+          src: "/screenshots/phishing-mails-erkennen/phishing-radar.webp",
+          alt: "Seite „Phishing-Radar“ der Verbraucherzentrale. Die E-Mail-Adresse phishing@verbraucherzentrale.nrw ist markiert.",
+          credit: "verbraucherzentrale.de",
+        },
       },
       {
         title: "Doch geklickt?",
@@ -168,7 +173,12 @@ export const sicherheit: Guide[] = [
       },
       {
         title: "Faktenchecks nutzen",
-        text: "Seiten wie „correctiv.org/faktencheck“ oder der „ARD-Faktenfinder“ prüfen bekannte Falschmeldungen. Suchen Sie dort nach dem Thema.",
+        text: "Seiten wie „correctiv.org/faktencheck“ oder der „ARD-Faktenfinder“ prüfen bekannte Falschmeldungen. Klicken Sie oben rechts auf die Lupe und suchen Sie nach dem Thema.",
+        image: {
+          src: "/screenshots/fakes-und-ki-erkennen/faktencheck-suchen.webp",
+          alt: "Faktencheck-Seite von Correctiv. Oben rechts ist die Lupe für die Suche markiert.",
+          credit: "correctiv.org",
+        },
       },
     ],
     takeaways: ["Starke Gefühle sind ein Warnzeichen.", "Quelle prüfen, Details ansehen.", "Familien-Codewort gegen gefälschte Stimmen."],
@@ -269,17 +279,32 @@ export const sicherheit: Guide[] = [
             text: "Tippen Sie auf das Zahnrad-Symbol „Einstellungen“.",
           },
           {
-            title: "Update-Bereich öffnen",
-            text: "Samsung: Wischen Sie ganz nach unten und tippen Sie auf „Software-Update“. Andere Handys (z. B. Google Pixel): Tippen Sie auf „System“ und dann auf „Software-Updates“.",
+            title: "„System“ öffnen",
+            text: "Wischen Sie ganz nach unten und tippen Sie auf „System“ und dann auf „Softwareupdates“.",
+            image: {
+              src: "/screenshots/handy-aktualisieren/android-system.webp",
+              alt: "Einstellungen auf einem Android-Handy. Der Eintrag „System“ ist markiert.",
+              credit: "Android 16 (Pixel)",
+            },
             tip: "Oben in den Einstellungen gibt es eine Lupe. Tippen Sie „Update“ ein.",
           },
           {
             title: "Nach Updates suchen",
-            text: "Samsung: Tippen Sie auf „Herunterladen und installieren“. Pixel: Tippen Sie auf „Systemupdate“. Das Handy sucht jetzt nach neuen Versionen.",
+            text: "Tippen Sie auf „Systemupdate“. Das Handy sucht jetzt nach neuen Versionen.",
+            image: {
+              src: "/screenshots/handy-aktualisieren/android-systemupdate.webp",
+              alt: "Seite „Softwareupdates“. Der Eintrag „Systemupdate“ ist markiert.",
+              credit: "Android 16 (Pixel)",
+            },
           },
           {
             title: "Update installieren",
-            text: "Gibt es ein Update, tippen Sie auf „Herunterladen“ bzw. „Jetzt installieren“. Das Handy startet dabei neu. Das kann 15 bis 30 Minuten dauern – lassen Sie es in Ruhe.",
+            text: "Steht dort „Dein System ist auf dem neuesten Stand“, ist alles in Ordnung. Sie können zur Sicherheit auf „Nach Updates suchen“ tippen. Gibt es ein Update, tippen Sie auf „Herunterladen und installieren“. Danach tippen Sie auf „Jetzt neu starten“. Das Handy startet dabei neu. Das kann 15 bis 30 Minuten dauern – lassen Sie es in Ruhe.",
+            image: {
+              src: "/screenshots/handy-aktualisieren/android-nach-updates-suchen.webp",
+              alt: "Seite „Dein System ist auf dem neuesten Stand“. Unten rechts ist „Nach Updates suchen“ markiert.",
+              credit: "Android 16 (Pixel)",
+            },
           },
           {
             title: "Auch Apps aktualisieren",
@@ -312,16 +337,44 @@ export const sicherheit: Guide[] = [
           },
         ],
       },
+      {
+        device: "samsung",
+        unverified: true,
+        steps: [
+          {
+            title: "Einstellungen öffnen",
+            text: "Tippen Sie auf das Zahnrad-Symbol „Einstellungen“.",
+          },
+          {
+            title: "„Software-Update“ öffnen",
+            text: "Wischen Sie ganz nach unten und tippen Sie auf „Software-Update“.",
+            tip: "Oben in den Einstellungen gibt es eine Lupe. Tippen Sie „Update“ ein.",
+          },
+          {
+            title: "Nach Updates suchen",
+            text: "Tippen Sie auf „Herunterladen und installieren“. Das Handy sucht jetzt nach neuen Versionen.",
+          },
+          {
+            title: "Update installieren",
+            text: "Gibt es ein Update, tippen Sie auf „Herunterladen“ und danach auf „Jetzt installieren“. Das Handy startet dabei neu. Das kann 15 bis 30 Minuten dauern – lassen Sie es in Ruhe.",
+          },
+          {
+            title: "Auch Apps aktualisieren",
+            text: "Öffnen Sie den Play Store. Tippen Sie oben rechts auf Ihr Profilbild, dann auf „Apps und Gerät verwalten“ und auf „Alle aktualisieren“.",
+            tip: "Einige Samsung-Apps werden über den „Galaxy Store“ aktualisiert. Das Handy meldet sich, wenn dort etwas Neues da ist.",
+          },
+        ],
+      },
     ],
     takeaways: ["Updates schützen vor Betrügern.", "Am besten automatische Updates einschalten."],
-    reviewNote: "Android: Samsung- und Pixel-Menünamen prüfen; Play-Store-Weg „Apps und Gerät verwalten“ prüfen.",
+    reviewNote: "Samsung: „Software-Update“ → „Herunterladen und installieren“ → „Jetzt installieren“ prüfen. Pixel: „System“ → „Softwareupdates“ (Schreibweise!) → „Systemupdate“ → „Jetzt neu starten“ prüfen. Play-Store-Weg „Apps und Gerät verwalten“ prüfen.",
   },
   {
     slug: "nummer-blockieren",
     title: "Lästige Anrufer und Nummern blockieren",
     summary: "Werbung, Betrüger oder ständige Anrufe: So sperren Sie eine Nummer, damit sie Sie nicht mehr erreicht.",
     category: "sicherheit",
-    app: "Telefon-App (Android: Google „Telefon“, iPhone: „Telefon“)",
+    app: "Telefon-App (Samsung „Telefon“, Google „Telefon“, iPhone „Telefon“)",
     devices: ["android", "iphone"],
     difficulty: "leicht",
     minutes: 3,
@@ -330,7 +383,7 @@ export const sicherheit: Guide[] = [
     keywords: ["blockieren", "sperren", "Werbeanruf", "Spam", "unerwünschte Anrufe", "Nummer sperren"],
     needs: ["Die Nummer steht in Ihrer Anrufliste"],
     unverified: true,
-    reviewNote: "Android: Weg in Google „Telefon“ (Eintrag lange drücken → „Blockieren/Spam melden“) und Samsung „Telefon“ (anders!) prüfen – ggf. Samsung als eigene Variante. iPhone: Seit iOS 26 neues Layout der Telefon-App, Tab-Namen prüfen.",
+    reviewNote: "Samsung „Telefon“: Tab „Letzte“, Eintrag antippen → „i“ (Details) → „Blockieren“ sowie Weg zu „Nummern blockieren“ prüfen. Google „Telefon“ (Pixel): Tab „Startseite“ (seit Neugestaltung 2025), Eintrag lange drücken → „Blockieren/Spam melden“ prüfen. iPhone: Seit iOS 26 neues Layout der Telefon-App, Tab-Namen prüfen.",
     variants: [
       {
         device: "android",
@@ -338,19 +391,34 @@ export const sicherheit: Guide[] = [
         steps: [
           {
             title: "Telefon-App öffnen",
-            text: "Tippen Sie auf das Symbol mit dem Telefonhörer.",
+            text: "Tippen Sie auf das Symbol mit dem Telefonhörer. Es heißt „Telefon“.",
           },
           {
             title: "Anrufliste öffnen",
-            text: "Tippen Sie unten auf „Anrufliste“ bzw. „Letzte“. Sie sehen die letzten Anrufe.",
+            text: "Tippen Sie unten auf „Anrufliste“. Dort sehen Sie die letzten Anrufe.",
+            image: {
+              src: "/screenshots/nummer-blockieren/android-anrufliste.webp",
+              alt: "Telefon-App. Unten ist der Reiter „Anrufliste“ markiert.",
+              credit: "Android 16 (Pixel)",
+            },
           },
           {
             title: "Nummer lange gedrückt halten",
             text: "Legen Sie den Finger auf die Nummer, die Sie sperren möchten, und lassen Sie ihn kurz liegen. Es öffnet sich ein Menü.",
+            image: {
+              src: "/screenshots/nummer-blockieren/android-eintrag.webp",
+              alt: "Anrufliste mit einem Anruf von 03012345678. Der Eintrag ist markiert.",
+              credit: "Android 16 (Pixel)",
+            },
           },
           {
             title: "„Blockieren“ wählen",
-            text: "Tippen Sie auf „Blockieren/Spam melden“ bzw. „Blockieren“. Bestätigen Sie mit „Blockieren“.",
+            text: "Tippen Sie auf „Blockieren/Spam melden“. Bestätigen Sie mit „Blockieren“.",
+            image: {
+              src: "/screenshots/nummer-blockieren/android-blockieren.webp",
+              alt: "Menü nach langem Drücken. „Blockieren/Spam melden“ ist markiert.",
+              credit: "Android 16 (Pixel)",
+            },
             tip: "Ein Haken bei „Als Spam melden“ hilft, andere Menschen vor dieser Nummer zu warnen.",
           },
         ],
@@ -375,6 +443,29 @@ export const sicherheit: Guide[] = [
             title: "„Anrufer blockieren“",
             text: "Wischen Sie ganz nach unten und tippen Sie auf „Anrufer blockieren“. Bestätigen Sie mit „Kontakt blockieren“.",
             tip: "Gegen viele unbekannte Anrufe: Unter „Einstellungen“ → „Apps“ → „Telefon“ gibt es Optionen für unbekannte Anrufer.",
+          },
+        ],
+      },
+      {
+        device: "samsung",
+        unverified: true,
+        steps: [
+          {
+            title: "Telefon-App öffnen",
+            text: "Tippen Sie auf das grüne Symbol mit dem weißen Telefonhörer. Es heißt „Telefon“.",
+          },
+          {
+            title: "Anrufliste öffnen",
+            text: "Tippen Sie unten auf „Letzte“. Sie sehen die letzten Anrufe.",
+          },
+          {
+            title: "Details zur Nummer öffnen",
+            text: "Tippen Sie einmal auf die Nummer, die Sie sperren möchten. Darunter erscheinen kleine Symbole. Tippen Sie auf das „i“ im Kreis („Details“).",
+          },
+          {
+            title: "„Blockieren“ wählen",
+            text: "Tippen Sie unten auf „Blockieren“. Bestätigen Sie mit „Blockieren“.",
+            tip: "Alle blockierten Nummern sehen Sie in der Telefon-App unter den drei Punkten (⋮) → „Einstellungen“ → „Nummern blockieren“.",
           },
         ],
       },
@@ -467,16 +558,31 @@ export const sicherheit: Guide[] = [
             text: "Tippen Sie auf das Zahnrad-Symbol „Einstellungen“.",
           },
           {
-            title: "„Sicherheit und Notfall“ öffnen",
-            text: "Tippen Sie auf „Sicherheit und Notfall“ und dann auf „Notruf-SOS“.",
+            title: "„Notfälle & Sicherheit“ öffnen",
+            text: "Wischen Sie nach unten und tippen Sie auf „Notfälle & Sicherheit“ und dann auf „Notfall-SOS“.",
+            image: {
+              src: "/screenshots/notruf-sos-einrichten/android-notfall-sos.webp",
+              alt: "Seite „Notfälle & Sicherheit“. Der Eintrag „Notfall-SOS“ ist markiert.",
+              credit: "Android 16 (Pixel)",
+            },
           },
           {
             title: "Funktion einschalten",
-            text: "Schalten Sie den Schalter oben ein. Ab jetzt gilt: Drücken Sie fünfmal schnell die Seitentaste, ruft das Handy die 112 an.",
+            text: "Bei „Notfall-SOS“ steht meist schon „An“. Auf der Seite „Notfall-SOS“ prüfen Sie unter „Notfallaktionen“, dass der Schalter „Rettungsdienst anrufen“ eingeschaltet ist. Ab jetzt gilt: Drücken Sie fünfmal oder öfter schnell die Ein/Aus-Taste, ruft das Handy die 112 an.",
+            image: {
+              src: "/screenshots/notruf-sos-einrichten/android-rettungsdienst.webp",
+              alt: "Seite „Notfall-SOS“. Unter „Notfallaktionen“ ist der Schalter „Rettungsdienst anrufen“ markiert.",
+              credit: "Android 16 (Pixel)",
+            },
           },
           {
             title: "Notfallkontakte informieren (optional)",
-            text: "Darunter können Sie einstellen, dass Ihre Notfallkontakte eine Nachricht mit Ihrem Standort bekommen.",
+            text: "Darunter können Sie „Informationen mit Notfallkontakten teilen“ einschalten. Dann bekommen Ihre Notfallkontakte eine Nachricht mit Ihrem Standort. Dafür müssen Sie mit Ihrem Google-Konto angemeldet sein.",
+            image: {
+              src: "/screenshots/notruf-sos-einrichten/android-kontakte-teilen.webp",
+              alt: "Seite „Notfall-SOS“. Die Einstellung „Informationen mit Notfallkontakten teilen“ ist markiert.",
+              credit: "Android 16 (Pixel)",
+            },
             warning: "Probieren Sie die Funktion nicht aus – sonst ruft das Handy wirklich die 112. Bei einem versehentlichen Anruf: Nicht auflegen, sondern kurz sagen, dass es ein Versehen war.",
           },
         ],
@@ -504,9 +610,33 @@ export const sicherheit: Guide[] = [
           },
         ],
       },
+      {
+        device: "samsung",
+        unverified: true,
+        steps: [
+          {
+            title: "Einstellungen öffnen",
+            text: "Tippen Sie auf das Zahnrad-Symbol „Einstellungen“.",
+          },
+          {
+            title: "„Sicherheit und Notfall“ öffnen",
+            text: "Wischen Sie nach unten und tippen Sie auf „Sicherheit und Notfall“ und dann auf „Notruf SOS“.",
+          },
+          {
+            title: "Funktion einschalten",
+            text: "Schalten Sie den Schalter oben ein. Ab jetzt gilt: Drücken Sie fünfmal schnell die Seitentaste, ruft das Handy die 112 an.",
+            tip: "Mit „Countdown“ zählt das Handy vor dem Anruf ein paar Sekunden herunter. So können Sie ein Versehen noch abbrechen.",
+          },
+          {
+            title: "Notfallkontakte informieren (optional)",
+            text: "Darunter können Sie einstellen, dass Ihre Notfallkontakte eine Nachricht mit Ihrem Standort bekommen.",
+            warning: "Probieren Sie die Funktion nicht aus – sonst ruft das Handy wirklich die 112. Bei einem versehentlichen Anruf: Nicht auflegen, sondern kurz sagen, dass es ein Versehen war.",
+          },
+        ],
+      },
     ],
     takeaways: ["Mehrmals Seitentaste drücken = Notruf 112.", "Nicht ausprobieren – der Anruf ist echt."],
-    reviewNote: "Android: Menüweg „Sicherheit und Notfall“ → „Notruf-SOS“ bei Samsung und Pixel prüfen.",
+    reviewNote: "Samsung: „Sicherheit und Notfall“ → „Notruf SOS“ (Schreibweise!) → Schalter, „Countdown“ prüfen. Pixel: „Sicherheit und Notfall“ → „Notfall-SOS“ → „Notfall-SOS verwenden“ prüfen.",
     related: ["notfallpass-handy"],
   },
   {
@@ -532,17 +662,27 @@ export const sicherheit: Guide[] = [
             text: "Tippen Sie auf das Zahnrad-Symbol „Einstellungen“.",
           },
           {
-            title: "Sperrbildschirm-Bereich öffnen",
-            text: "Samsung: Tippen Sie auf „Sperrbildschirm und AOD“ und dann auf „Sperrbildschirmtyp“. Andere Handys (z. B. Google Pixel): Tippen Sie auf „Sicherheit und Datenschutz“ → „Entsperren des Geräts“ → „Displaysperre“.",
+            title: "„Datenschutz & Sicherheit“ öffnen",
+            text: "Tippen Sie auf „Datenschutz & Sicherheit“, dann auf „Geräteentsperrung“ und auf „Displaysperre“.",
+            image: {
+              src: "/screenshots/bildschirmsperre-einrichten/android-datenschutz.webp",
+              alt: "Einstellungen auf einem Android-Handy. Der Eintrag „Datenschutz & Sicherheit“ ist markiert.",
+              credit: "Android 16 (Pixel)",
+            },
             tip: "Schneller: Oben auf die Lupe tippen und „Sperre“ eingeben.",
           },
           {
             title: "„PIN“ wählen",
             text: "Tippen Sie auf „PIN“. Geben Sie mindestens sechs Ziffern ein, tippen Sie auf „Weiter“ und wiederholen Sie die PIN zur Bestätigung.",
+            image: {
+              src: "/screenshots/bildschirmsperre-einrichten/android-pin.webp",
+              alt: "Seite „Displaysperre auswählen“. Der Eintrag „PIN“ ist markiert.",
+              credit: "Android 16 (Pixel)",
+            },
           },
           {
             title: "Fingerabdruck hinzufügen (optional)",
-            text: "Das Handy bietet danach „Fingerabdrücke“ an. Folgen Sie den Anweisungen und legen Sie den Finger mehrmals auf den Sensor, bis 100 Prozent erreicht sind.",
+            text: "Das Handy bietet danach „Entsperrung per Fingerabdruck“ an. Folgen Sie den Anweisungen und legen Sie den Finger mehrmals auf den Sensor, bis 100 Prozent erreicht sind.",
           },
         ],
       },
@@ -567,9 +707,32 @@ export const sicherheit: Guide[] = [
           },
         ],
       },
+      {
+        device: "samsung",
+        unverified: true,
+        steps: [
+          {
+            title: "Einstellungen öffnen",
+            text: "Tippen Sie auf das Zahnrad-Symbol „Einstellungen“.",
+          },
+          {
+            title: "„Sperrbildschirm und AOD“ öffnen",
+            text: "Tippen Sie auf „Sperrbildschirm und AOD“ und dann auf „Sperrbildschirmtyp“.",
+            tip: "Schneller: Oben auf die Lupe tippen und „Sperre“ eingeben.",
+          },
+          {
+            title: "„PIN“ wählen",
+            text: "Tippen Sie auf „PIN“. Geben Sie mindestens sechs Ziffern ein, tippen Sie auf „Weiter“ und wiederholen Sie die PIN zur Bestätigung. Tippen Sie auf „OK“.",
+          },
+          {
+            title: "Fingerabdruck hinzufügen (optional)",
+            text: "Unter „Sperrbildschirmtyp“ können Sie danach „Fingerabdrücke“ einschalten. Folgen Sie den Anweisungen und legen Sie den Finger mehrmals auf den Sensor, bis 100 Prozent erreicht sind.",
+          },
+        ],
+      },
     ],
     takeaways: ["Ohne Sperre kann jeder Finder Ihr Handy benutzen.", "Code aufschreiben und sicher zu Hause aufbewahren."],
-    reviewNote: "Android: Samsung („Sperrbildschirm und AOD“) und Pixel-Menüweg prüfen.",
+    reviewNote: "Samsung: „Sperrbildschirm und AOD“ → „Sperrbildschirmtyp“ → „PIN“, Fingerabdrücke prüfen. Pixel: „Sicherheit und Datenschutz“ → „Geräteentsperrung“ → „Displaysperre“ und Fingerabdruck-Angebot prüfen.",
     related: ["sichere-passwoerter"],
   },
 ];

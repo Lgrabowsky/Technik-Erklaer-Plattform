@@ -167,28 +167,58 @@ export const alltag: Guide[] = [
     steps: [
       {
         title: "Gmail öffnen",
-        text: "Öffnen Sie Ihren Browser und tippen Sie oben „gmail.com“ ein. Melden Sie sich an, falls nötig.",
+        text: "Öffnen Sie Ihren Browser und tippen Sie oben „gmail.com“ ein. Sind Sie nicht angemeldet, klicken Sie oben rechts auf „Anmelden“.",
+        image: {
+          src: "/screenshots/email-mit-anhang/gmail-anmelden.webp",
+          alt: "Gmail-Startseite. Oben rechts ist der Knopf „Anmelden“ markiert.",
+          credit: "gmail.com",
+        },
       },
       {
         title: "„Schreiben“ klicken",
         text: "Klicken Sie oben links auf den Knopf „Schreiben“ mit dem Stift. Unten rechts öffnet sich ein Fenster für die neue E-Mail.",
+        image: {
+          src: "/screenshots/email-mit-anhang/schreiben.webp",
+          alt: "Gmail-Posteingang. Oben links ist der Knopf „Schreiben“ markiert. Die E-Mails sind unkenntlich gemacht.",
+          credit: "gmail.com",
+        },
       },
       {
         title: "Empfänger und Betreff",
         text: "Klicken Sie in das Feld „An“ und geben Sie die E-Mail-Adresse ein. Klicken Sie in „Betreff“ und schreiben Sie kurz, worum es geht, zum Beispiel „Unterlagen zu meinem Antrag“.",
+        image: {
+          src: "/screenshots/email-mit-anhang/an-und-betreff.webp",
+          alt: "Fenster „Neue Nachricht“ unten rechts. Die Felder „An“ und „Betreff“ sind markiert.",
+          credit: "gmail.com",
+        },
       },
       {
         title: "Text schreiben",
         text: "Klicken Sie in das große Feld darunter und schreiben Sie Ihre Nachricht.",
+        image: {
+          src: "/screenshots/email-mit-anhang/text-schreiben.webp",
+          alt: "Neue E-Mail mit Beispiel-Adresse und Betreff. Das große Textfeld mit „Guten Tag, anbei die Unterlagen.“ ist markiert.",
+          credit: "gmail.com",
+        },
       },
       {
         title: "Datei anhängen",
         text: "Klicken Sie unten auf die Büroklammer („Dateien anhängen“). Ein Fenster zeigt die Ordner Ihres Computers. Klicken Sie auf die Datei und dann auf „Öffnen“. Die Datei erscheint unten in der E-Mail.",
+        image: {
+          src: "/screenshots/email-mit-anhang/datei-anhaengen.webp",
+          alt: "Neue E-Mail. Unten in der Leiste ist die Büroklammer „Dateien anhängen“ markiert.",
+          credit: "gmail.com",
+        },
         tip: "Gescannte Dokumente vom Handy liegen meist nicht auf dem Computer. Schicken Sie sie dann direkt vom Handy (siehe „Dokument scannen“).",
       },
       {
         title: "Senden",
         text: "Prüfen Sie Adresse, Betreff und Anhang. Klicken Sie auf den blauen Knopf „Senden“.",
+        image: {
+          src: "/screenshots/email-mit-anhang/senden.webp",
+          alt: "Fertige E-Mail an max.mustermann@example.de. Unten links ist der blaue Knopf „Senden“ markiert.",
+          credit: "gmail.com",
+        },
         warning: "Öffnen Sie selbst nie Anhänge aus E-Mails, die Sie nicht erwartet haben – besonders keine ZIP-Dateien.",
       },
     ],
