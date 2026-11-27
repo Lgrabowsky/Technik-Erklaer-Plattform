@@ -1,8 +1,5 @@
 import type { Guide } from "../../content/types";
 
-/** Bildnachweis für Bilder aus der iPhone-Nachbildung (werkzeuge/iphone-nachbildung) */
-const CREDIT = "Nachgestellte Ansicht (iOS 27), kein Original-Screenshot";
-
 export const grundlagen: Guide[] = [
   {
     slug: "app-installieren",
@@ -153,45 +150,25 @@ export const grundlagen: Guide[] = [
       {
         device: "iphone",
         // Weg laut Apple-Support (iOS 27): „Einstellungen“ > „Erscheinungsbild“ > „Textgröße“.
-        // Bilder aus werkzeuge/iphone-nachbildung (nachgestellt, nicht vom echten Gerät).
+        // Bilder folgen als echte Screenshots (iPhone in der Cloud).
         steps: [
           {
             title: "Einstellungen öffnen",
             text: "Tippen Sie auf dem Home-Bildschirm auf das graue Zahnrad-Symbol „Einstellungen“.",
-            image: {
-              src: "/screenshots/schrift-vergroessern/iphone-1-einstellungen.webp",
-              alt: "Home-Bildschirm des iPhone, das Symbol „Einstellungen“ ist grün umrandet.",
-              credit: CREDIT,
-            },
           },
           {
             title: "„Erscheinungsbild“ wählen",
             text: "Wischen Sie etwas nach oben und tippen Sie auf „Erscheinungsbild“.",
             tip: "Sie finden kein „Erscheinungsbild“? Dann hat Ihr iPhone noch iOS 26. Tippen Sie dort auf „Anzeige & Helligkeit“ – die nächsten Schritte sind gleich.",
-            image: {
-              src: "/screenshots/schrift-vergroessern/iphone-2-erscheinungsbild.webp",
-              alt: "Liste der Einstellungen, der Eintrag „Erscheinungsbild“ ist grün umrandet.",
-              credit: CREDIT,
-            },
           },
           {
             title: "„Textgröße“ öffnen",
             text: "Tippen Sie auf „Textgröße“.",
-            image: {
-              src: "/screenshots/schrift-vergroessern/iphone-3-textgroesse.webp",
-              alt: "Seite „Erscheinungsbild“, der Eintrag „Textgröße“ ist grün umrandet.",
-              credit: CREDIT,
-            },
           },
           {
             title: "Schieberegler bewegen",
             text: "Unten sehen Sie einen Schieberegler mit einem kleinen und einem großen „A“. Legen Sie den Finger auf den Punkt und schieben Sie ihn nach rechts. Der Text oben wird größer.",
             tip: "Noch größer geht es unter „Einstellungen“ → „Bedienungshilfen“ → „Anzeige & Textgröße“ → „Größerer Text“.",
-            image: {
-              src: "/screenshots/schrift-vergroessern/iphone-4-regler.webp",
-              alt: "Seite „Textgröße“, der Schieberegler unten ist grün umrandet.",
-              credit: CREDIT,
-            },
           },
           {
             title: "Fertig",

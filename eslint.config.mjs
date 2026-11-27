@@ -16,8 +16,6 @@ const eslintConfig = defineConfig([
     "src/migrations/**",
     "src/payload-types.ts",
     "src/app/(payload)/**",
-    // Eigenständiges Werkzeug (Browser-Skripte), nicht Teil der App:
-    "werkzeuge/**",
   ]),
 ]);
 
