@@ -149,14 +149,17 @@ export const grundlagen: Guide[] = [
       },
       {
         device: "iphone",
+        // Weg laut Apple-Support (iOS 27): „Einstellungen“ > „Erscheinungsbild“ > „Textgröße“.
+        // Bilder folgen als echte Screenshots (iPhone in der Cloud).
         steps: [
           {
             title: "Einstellungen öffnen",
-            text: "Tippen Sie auf das graue Zahnrad-Symbol „Einstellungen“.",
+            text: "Tippen Sie auf dem Home-Bildschirm auf das graue Zahnrad-Symbol „Einstellungen“.",
           },
           {
-            title: "„Anzeige & Helligkeit“ wählen",
-            text: "Wischen Sie etwas nach oben und tippen Sie auf „Anzeige & Helligkeit“.",
+            title: "„Erscheinungsbild“ wählen",
+            text: "Wischen Sie etwas nach oben und tippen Sie auf „Erscheinungsbild“.",
+            tip: "Sie finden kein „Erscheinungsbild“? Dann hat Ihr iPhone noch iOS 26. Tippen Sie dort auf „Anzeige & Helligkeit“ – die nächsten Schritte sind gleich.",
           },
           {
             title: "„Textgröße“ öffnen",
@@ -164,7 +167,7 @@ export const grundlagen: Guide[] = [
           },
           {
             title: "Schieberegler bewegen",
-            text: "Legen Sie den Finger auf den Punkt unten und schieben Sie ihn nach rechts. Die Beispielschrift wird größer.",
+            text: "Unten sehen Sie einen Schieberegler mit einem kleinen und einem großen „A“. Legen Sie den Finger auf den Punkt und schieben Sie ihn nach rechts. Der Text oben wird größer.",
             tip: "Noch größer geht es unter „Einstellungen“ → „Bedienungshilfen“ → „Anzeige & Textgröße“ → „Größerer Text“.",
           },
           {
